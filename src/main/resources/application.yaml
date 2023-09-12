@@ -1,0 +1,19 @@
+spring:
+  main:
+    banner-mode: off
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/BankDataBase
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: 208634dkfl
+    username: root
+
+  jpa:
+    defer-datasource-initialization: false
+    open-in-view: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL57Dialect
+
+
+
