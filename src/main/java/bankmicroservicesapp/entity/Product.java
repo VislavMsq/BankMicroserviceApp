@@ -8,9 +8,12 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 import java.util.UUID;
+
+import static jakarta.persistence.CascadeType.*;
 
 @Entity
 @Table(name = "products", schema = "bankdatabase")
@@ -40,6 +43,9 @@ public class Product {
     @Column(name = "updated_at")
     private LocalDate updatedAt;
 
+    @OneToMany(mappedBy = "agreement", fetch = FetchType.LAZY,
+            cascade = {MERGE, PERSIST, REFRESH})
+    private Set<Agreement> agreements;
 
 
     @Override

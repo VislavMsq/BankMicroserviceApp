@@ -21,6 +21,7 @@ import static jakarta.persistence.CascadeType.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Agreement {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")

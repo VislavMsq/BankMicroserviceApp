@@ -20,18 +20,11 @@ import static jakarta.persistence.CascadeType.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Transaction {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private UUID id;
-
-    @JoinColumn(name = "debit_account_id", referencedColumnName = "id")
-    @ManyToOne(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
-    private Account debitAccountId;
-
-    @JoinColumn(name = "credit_account_id", referencedColumnName = "id")
-    @ManyToOne(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
-    private Account creditAccountId;
 
     @Column(name = "transaction_type")
     private PlugTypeTransaction type;
@@ -44,6 +37,14 @@ public class Transaction {
 
     @Column(name = "created_at")
     private LocalDate createdAt;
+
+    @JoinColumn(name = "debit_account_id", referencedColumnName = "id")
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
+    private Account debitAccountId;
+
+    @JoinColumn(name = "credit_account_id", referencedColumnName = "id")
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
+    private Account creditAccountId;
 
     @Override
     public boolean equals(Object o) {

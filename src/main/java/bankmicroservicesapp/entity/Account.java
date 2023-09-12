@@ -10,6 +10,7 @@ import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.Objects;
+import java.util.Set;
 import java.util.UUID;
 
 import static jakarta.persistence.CascadeType.*;
@@ -23,14 +24,10 @@ import static jakarta.persistence.CascadeType.*;
 public class Account {
 
 
-    @Id // primary kay
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO) // генерация UUID
-    @Column(name = "id") // название колонки
+    @Column(name = "id")
     private UUID id;
-
-    @JoinColumn(name = "client_id", referencedColumnName = "id")
-    @OneToOne(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
-    private User user;
 
     @Column(name = "account_name")
     private String name;
@@ -55,6 +52,22 @@ public class Account {
 
     @Column(name = "updated_at")
     private LocalDate updatedAt;
+
+    @JoinColumn(name = "client_id", referencedColumnName = "id")
+    @OneToOne(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
+    private User user;
+
+    @OneToMany(mappedBy = "account", fetch = FetchType.LAZY,
+            cascade = {MERGE, PERSIST, REFRESH})
+    private Set<Agreement> agreements;
+
+    @OneToMany(mappedBy = "account", fetch = FetchType.LAZY,
+            cascade = {MERGE, PERSIST, REFRESH})
+    private Set<Transaction> debits;
+
+    @OneToMany(mappedBy = "account", fetch = FetchType.LAZY,
+            cascade = {MERGE, PERSIST, REFRESH})
+    private Set<Transaction> credits;
 
     @Override
     public boolean equals(Object o) {
