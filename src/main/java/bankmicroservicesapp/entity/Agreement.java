@@ -1,6 +1,6 @@
 package bankmicroservicesapp.entity;
 
-import bankmicroservicesapp.entity.plugEnum.PlugStatusAgreement;
+import bankmicroservicesapp.entity.plugEnum.StatusAgreement;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,7 +9,6 @@ import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.Objects;
-import java.util.Set;
 import java.util.UUID;
 
 import static jakarta.persistence.CascadeType.*;
@@ -34,7 +33,7 @@ public class Agreement {
     private String currencyCode;
 
     @Column(name = "agreement_status")
-    private PlugStatusAgreement status;
+    private StatusAgreement status;
 
     @Column(name = "discount")
     private double discount;
@@ -59,9 +58,9 @@ public class Agreement {
     @ManyToOne(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
     private Product product;
 
-    @JoinColumn(name = "manager_id")
+    @JoinColumn(name = "manager_id", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
-    private User manager;
+    private Employee manager;
 
     @Override
     public boolean equals(Object o) {
@@ -80,9 +79,6 @@ public class Agreement {
     public String toString() {
         return "Agreement{" +
                 "id=" + id +
-                ", account=" + account +
-                ", product=" + product +
-                ", user=" + manager +
                 ", interestRate=" + interestRate +
                 ", currencyCode='" + currencyCode + '\'' +
                 ", status=" + status +
@@ -91,6 +87,9 @@ public class Agreement {
                 ", sum=" + sum +
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
+                ", account=" + account +
+                ", product=" + product +
+                ", manager=" + manager +
                 '}';
     }
 }

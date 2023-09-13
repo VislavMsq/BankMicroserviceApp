@@ -1,6 +1,6 @@
 package bankmicroservicesapp.entity;
 
-import bankmicroservicesapp.entity.plugEnum.PlugTypeTransaction;
+import bankmicroservicesapp.entity.plugEnum.TypeTransaction;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -27,7 +27,7 @@ public class Transaction {
     private UUID id;
 
     @Column(name = "transaction_type")
-    private PlugTypeTransaction type;
+    private TypeTransaction type;
 
     @Column(name = "amount")
     private double amount;
@@ -63,12 +63,12 @@ public class Transaction {
     public String toString() {
         return "Transaction{" +
                 "id=" + id +
-                ", debitAccountId=" + debitAccountId +
-                ", creditAccountId=" + creditAccountId +
                 ", type=" + type +
                 ", amount=" + amount +
                 ", description='" + description + '\'' +
                 ", createdAt=" + createdAt +
+                ", debitAccountId=" + debitAccountId +
+                ", creditAccountId=" + creditAccountId +
                 '}';
     }
 }

@@ -1,4 +1,4 @@
 package bankmicroservicesapp.entity.plugEnum;
 
-public enum PlugStatusAgreement {
+public enum EmployeeType {
 }

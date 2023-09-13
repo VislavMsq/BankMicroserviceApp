@@ -1,6 +1,5 @@
 package bankmicroservicesapp.entity;
 
-import bankmicroservicesapp.entity.plugEnum.PlugStatusClient;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,9 +23,6 @@ public class User {
     @Column(name = "id")
     private UUID id;
 
-    @Column(name = "user_status")
-    private PlugStatusClient status;
-
     @Column(name = "tax_code")
     private String taxCode;
 
@@ -47,9 +43,6 @@ public class User {
 
     @Column(name = "phone")
     private String phone;
-
-    @Column(name = "user_type")
-    private String userType;
 
     @Column(name = "created_at")
     private LocalDate createdAt;
@@ -74,7 +67,6 @@ public class User {
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", status=" + status +
                 ", taxCode='" + taxCode + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
@@ -82,7 +74,6 @@ public class User {
                 ", userPassword='" + userPassword + '\'' +
                 ", address='" + address + '\'' +
                 ", phone='" + phone + '\'' +
-                ", userType='" + userType + '\'' +
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
                 '}';

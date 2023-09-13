@@ -1,7 +1,7 @@
 package bankmicroservicesapp.entity;
 
-import bankmicroservicesapp.entity.plugEnum.PlugStatusAccount;
-import bankmicroservicesapp.entity.plugEnum.PlugTypeAccount;
+import bankmicroservicesapp.entity.plugEnum.StatusAccount;
+import bankmicroservicesapp.entity.plugEnum.TypeAccount;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,9 +23,8 @@ import static jakarta.persistence.CascadeType.*;
 @NoArgsConstructor
 public class Account {
 
-
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO) // генерация UUID
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private UUID id;
 
@@ -33,10 +32,10 @@ public class Account {
     private String name;
 
     @Column(name = "account_type")
-    private PlugTypeAccount type;
+    private TypeAccount type;
 
     @Column(name = "account_status")
-    private PlugStatusAccount status;
+    private StatusAccount status;
 
     @Column(name = "balance")
     private double balance;
@@ -57,16 +56,13 @@ public class Account {
     @OneToOne(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
     private User user;
 
-    @OneToMany(mappedBy = "account", fetch = FetchType.LAZY,
-            cascade = {MERGE, PERSIST, REFRESH})
+    @OneToMany(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
     private Set<Agreement> agreements;
 
-    @OneToMany(mappedBy = "account", fetch = FetchType.LAZY,
-            cascade = {MERGE, PERSIST, REFRESH})
+    @OneToMany(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
     private Set<Transaction> debits;
 
-    @OneToMany(mappedBy = "account", fetch = FetchType.LAZY,
-            cascade = {MERGE, PERSIST, REFRESH})
+    @OneToMany(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
     private Set<Transaction> credits;
 
     @Override
@@ -86,7 +82,6 @@ public class Account {
     public String toString() {
         return "Account{" +
                 "id=" + id +
-                ", clientId=" + user +
                 ", name='" + name + '\'' +
                 ", type=" + type +
                 ", status=" + status +
@@ -96,6 +91,9 @@ public class Account {
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
                 ", user=" + user +
+                ", agreements=" + agreements +
+                ", debits=" + debits +
+                ", credits=" + credits +
                 '}';
     }
 }
