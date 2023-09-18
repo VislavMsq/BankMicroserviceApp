@@ -31,3 +31,14 @@ build/
 
 ### VS Code ###
 .vscode/
+/src/main/java/bankmicroservicesapp/passhelper/
+
+### ProjectExcluded ###
+8F9DAD96-340F-456D-9BC1-96CCBE73A560.jpg
+BankMicroservicesApp.iml
+HELP.md
+mvnw
+mvnw.cmd
+Project Description (1).xlsx
+readme.md
+Specification.pdf
