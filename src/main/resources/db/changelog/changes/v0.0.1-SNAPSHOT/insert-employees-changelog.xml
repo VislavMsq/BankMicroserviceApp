@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet author="Vladislav M." id="insert employees table">
+        <insert tableName="employees">
+            <column name="id" value="5b92d682-015a-4a12-9e25-33daa97ebdec"/>
+            <column name="user_id" value="b7a76a6d-20b0-4e16-9ac6-a82d8a452736"/>
+            <column name="employee_type" value="LoanManager"/>
+            <column name="employee_status" value="Free"/>
+            <column name="created_at" value="2023-08-18 14:30:00"/>
+            <column name="updated_at" value="2023-09-18 12:11:00"/>
+        </insert>
+        <insert tableName="employees">
+            <column name="id" value="f55c9e21-8995-4a73-b6cc-e23cc13efa39"/>
+            <column name="user_id" value="211abbe0-6af7-4492-83f9-ae7d61382abc"/>
+            <column name="employee_type" value="FinanceManager"/>
+            <column name="employee_status" value="Free"/>
+            <column name="created_at" value="2023-08-18 14:30:00"/>
+            <column name="updated_at" value="2023-09-18 12:11:00"/>
+        </insert>
+        <insert tableName="employees">
+            <column name="id" value="b243a938-8297-4f3f-bb32-a186378b6c49"/>
+            <column name="user_id" value="b85819e9-e3ce-4433-a580-17693dda1ec7"/>
+            <column name="employee_type" value="InsuranceManager"/>
+            <column name="employee_status" value="Free"/>
+            <column name="created_at" value="2023-08-18 14:30:00"/>
+            <column name="updated_at" value="2023-09-18 12:11:00"/>
+        </insert>
+        <insert tableName="employees">
+            <column name="id" value="86a238e3-d380-4bd9-adb4-6c6d95310096"/>
+            <column name="user_id" value="be23da43-761e-4290-94dd-d3592b906768"/>
+            <column name="employee_type" value="FinanceManager"/>
+            <column name="employee_status" value="Free"/>
+            <column name="created_at" value="2023-08-18 14:30:00"/>
+            <column name="updated_at" value="2023-09-18 12:11:00"/>
+        </insert>
+        <insert tableName="employees">
+            <column name="id" value="26d76f8c-1e24-4b36-9664-dc9d6416b1a1"/>
+            <column name="user_id" value="4b0eff95-d80c-4510-81b9-b431d1692166"/>
+            <column name="employee_type" value="LoanManager"/>
+            <column name="employee_status" value="Free"/>
+            <column name="created_at" value="2023-08-18 14:30:00"/>
+            <column name="updated_at" value="2023-09-18 12:11:00"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet author="Vladislav M." id="insert agreements table">
+        <insert tableName="agreements">
+            <column name="id" value="a242f83f-a341-45f4-9430-e43cfbf55361"/>
+            <column name="account_id" value="d29e21a7-ec86-4001-a211-86ca28c584ea"/>
+            <column name="product_id" value="9cacda22-eaa2-43b0-b3f5-581d70388cd2"/>
+            <column name="manager_id" value="5b92d682-015a-4a12-9e25-33daa97ebdec"/>
+            <column name="interest_rate" value="13.30"/>
+            <column name="currency_code" value="USD"/>
+            <column name="agreement_status" value="Completed"/>
+            <column name="agreement_limit" value="5000.0"/>
+            <column name="sum" value="5000.0"/>
+            <column name="created_at" value="2023-06-14 15:46:33"/>
+            <column name="updated_at" value="2023-07-12 15:56:12"/>
+        </insert>
+        <insert tableName="agreements">
+            <column name="id" value="f3f2e4a1-4d3d-4797-8be6-37ab849ccbaa"/>
+            <column name="account_id" value="4210e088-3a7d-4aba-821a-df1a076c24d4"/>
+            <column name="product_id" value="23ba09c7-ae60-41a2-ba58-66ebaf916bfe"/>
+            <column name="manager_id" value="f55c9e21-8995-4a73-b6cc-e23cc13efa39"/>
+            <column name="interest_rate" value="11.10"/>
+            <column name="currency_code" value="USD"/>
+            <column name="agreement_status" value="Completed"/>
+            <column name="agreement_limit" value="5000.0"/>
+            <column name="sum" value="5000.0"/>
+            <column name="created_at" value="2023-02-23 12:26:00"/>
+            <column name="updated_at" value="2023-08-22 09:13:00"/>
+        </insert>
+        <insert tableName="agreements">
+            <column name="id" value="7899b72f-854d-4b2f-9fe9-a6f152d077b2"/>
+            <column name="account_id" value="fa01f434-98d4-4e6a-a2d6-755c60dcb6cf"/>
+            <column name="product_id" value="60587cf0-aaa3-475a-8ef8-aa452c6e8fe9"/>
+            <column name="manager_id" value="b243a938-8297-4f3f-bb32-a186378b6c49"/>
+            <column name="interest_rate" value="12.20"/>
+            <column name="currency_code" value="USD"/>
+            <column name="agreement_status" value="Completed"/>
+            <column name="agreement_limit" value="500.0"/>
+            <column name="sum" value="5000.0"/>
+            <column name="created_at" value="2023-01-28 08:41:21"/>
+            <column name="updated_at" value="2023-08-12 12:55:12"/>
+        </insert>
+        <insert tableName="agreements">
+            <column name="id" value="7444782f-2aa5-4441-a8fe-23e011c47b15"/>
+            <column name="account_id" value="fca81f38-1f36-4b02-a646-d066458da668"/>
+            <column name="product_id" value="25cd8073-241b-4239-884c-574ea4588fa7"/>
+            <column name="manager_id" value="86a238e3-d380-4bd9-adb4-6c6d95310096"/>
+            <column name="interest_rate" value="10.20"/>
+            <column name="currency_code" value="USD"/>
+            <column name="agreement_status" value="Completed"/>
+            <column name="agreement_limit" value="5000.0"/>
+            <column name="sum" value="5000.0"/>
+            <column name="created_at" value="2023-01-28 08:41:21"/>
+            <column name="updated_at" value="2023-08-12 12:55:12"/>
+        </insert>
+        <insert tableName="agreements">
+            <column name="id" value="8d4e5db6-3680-4f52-9e19-2cb5499c8cfb"/>
+            <column name="account_id" value="1d380feb-b424-42c2-ad2b-8e593f6533bd"/>
+            <column name="product_id" value="36c58152-4a2f-4053-b565-3db2b1e8ae43"/>
+            <column name="manager_id" value="26d76f8c-1e24-4b36-9664-dc9d6416b1a1"/>
+            <column name="interest_rate" value="9.15"/>
+            <column name="currency_code" value="USD"/>
+            <column name="agreement_status" value="Completed"/>
+            <column name="agreement_limit" value="5000.0"/>
+            <column name="sum" value="5000.0"/>
+            <column name="created_at" value="2023-01-28 08:41:21"/>
+            <column name="updated_at" value="2023-08-12 12:55:12"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

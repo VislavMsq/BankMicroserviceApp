@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet author="Vladislav M." id="insert accounts table">
+        <insert tableName="accounts">
+            <column name="id" value="d29e21a7-ec86-4001-a211-86ca28c584ea"/>
+            <column name="client_id" value="2538cc96-e3ff-4a96-9d19-ba3759ad1d87"/>
+            <column name="account_name" value="John.Smith"/>
+            <column name="account_type" value="Personal"/>
+            <column name="account_status" value="New"/>
+            <column name="balance" value="3500.00"/>
+            <column name="currency_code" value="EUR"/>
+            <column name="bank_rating" value="5"/>
+            <column name="created_at" value="2023-09-15 10:20:00"/>
+            <column name="updated_at" value="2023-09-18 11:01:00"/>
+        </insert>
+        <insert tableName="accounts">
+            <column name="id" value="4210e088-3a7d-4aba-821a-df1a076c24d4"/>
+            <column name="client_id" value="26cbd100-02c0-4477-837d-dea633a48252"/>
+            <column name="account_name" value="Jacques.Dubois"/>
+            <column name="account_type" value="Personal"/>
+            <column name="account_status" value="New"/>
+            <column name="balance" value="7200.00"/>
+            <column name="currency_code" value="USD"/>
+            <column name="bank_rating" value="5"/>
+            <column name="created_at" value="2023-09-15 10:21:00"/>
+            <column name="updated_at" value="2023-09-18 11:02:00"/>
+        </insert>
+        <insert tableName="accounts">
+            <column name="id" value="fa01f434-98d4-4e6a-a2d6-755c60dcb6cf"/>
+            <column name="client_id" value="3b6397e8-d11b-48f9-ae74-cae3e19fb0d4"/>
+            <column name="account_name" value="Miguel.Rodríguez"/>
+            <column name="account_type" value="Personal"/>
+            <column name="account_status" value="New"/>
+            <column name="balance" value="6900.00"/>
+            <column name="currency_code" value="USD"/>
+            <column name="bank_rating" value="5"/>
+            <column name="created_at" value="2023-09-15 10:22:00"/>
+            <column name="updated_at" value="2023-09-18 11:03:00"/>
+        </insert>
+        <insert tableName="accounts">
+            <column name="id" value="fca81f38-1f36-4b02-a646-d066458da668"/>
+            <column name="client_id" value="52fc5bed-8959-436f-8efb-b66bdd47959d"/>
+            <column name="account_name" value="Pierre.Dupont"/>
+            <column name="account_type" value="Personal"/>
+            <column name="account_status" value="New"/>
+            <column name="balance" value="190500.00"/>
+            <column name="currency_code" value="TRY"/>
+            <column name="bank_rating" value="5"/>
+            <column name="created_at" value="2023-09-15 10:23:00"/>
+            <column name="updated_at" value="2023-09-18 11:04:00"/>
+        </insert>
+        <insert tableName="accounts">
+            <column name="id" value="1d380feb-b424-42c2-ad2b-8e593f6533bd"/>
+            <column name="client_id" value="636f9932-8c10-4046-906a-151a794aa10a"/>
+            <column name="account_name" value="Giovanni.Bianchi"/>
+            <column name="account_type" value="Personal"/>
+            <column name="account_status" value="New"/>
+            <column name="balance" value="82000.00"/>
+            <column name="currency_code" value="EUR"/>
+            <column name="bank_rating" value="5"/>
+            <column name="created_at" value="2023-09-15 10:24:00"/>
+            <column name="updated_at" value="2023-09-18 11:05:00"/>
+        </insert>
+        <insert tableName="accounts">
+            <column name="id" value="9af291fa-b96e-48d4-ae9b-72a14221a5ac"/>
+            <column name="client_id" value="86e768e1-7890-4323-aea3-86607998d09a"/>
+            <column name="account_name" value="Sofia.García"/>
+            <column name="account_type" value="Personal"/>
+            <column name="account_status" value="New"/>
+            <column name="balance" value="12500.00"/>
+            <column name="currency_code" value="EUR"/>
+            <column name="bank_rating" value="5"/>
+            <column name="created_at" value="2023-09-15 10:25:00"/>
+            <column name="updated_at" value="2023-09-18 11:06:00"/>
+        </insert>
+        <insert tableName="accounts">
+            <column name="id" value="e439f166-1880-4879-a003-7f5005d58e77"/>
+            <column name="client_id" value="8f3c7555-f31c-4fe0-b846-09760134a43d"/>
+            <column name="account_name" value="Luca.Rossi"/>
+            <column name="account_type" value="Personal"/>
+            <column name="account_status" value="New"/>
+            <column name="balance" value="72000.00"/>
+            <column name="currency_code" value="PLN"/>
+            <column name="bank_rating" value="5"/>
+            <column name="created_at" value="2023-09-15 10:26:00"/>
+            <column name="updated_at" value="2023-09-18 11:07:00"/>
+        </insert>
+        <insert tableName="accounts">
+            <column name="id" value="d5a475dd-f044-4618-b372-cd0638002b5a"/>
+            <column name="client_id" value="95373e88-f655-43f8-a086-06434e10a60a"/>
+            <column name="account_name" value="Emma.Smith"/>
+            <column name="account_type" value="Personal"/>
+            <column name="account_status" value="New"/>
+            <column name="balance" value="18000.00"/>
+            <column name="currency_code" value="USD"/>
+            <column name="bank_rating" value="5"/>
+            <column name="created_at" value="2023-09-15 10:26:00"/>
+            <column name="updated_at" value="2023-09-18 11:07:00"/>
+        </insert>
+        <insert tableName="accounts">
+            <column name="id" value="a687792b-fc16-46db-9b53-da1ae8b713ea"/>
+            <column name="client_id" value="a1ce95e4-e2c4-4573-91e0-2857d219b6b9"/>
+            <column name="account_name" value="Sophie.Müller"/>
+            <column name="account_type" value="Personal"/>
+            <column name="account_status" value="New"/>
+            <column name="balance" value="33200.00"/>
+            <column name="currency_code" value="EUR"/>
+            <column name="bank_rating" value="5"/>
+            <column name="created_at" value="2023-09-15 10:27:00"/>
+            <column name="updated_at" value="2023-09-18 11:08:00"/>
+        </insert>
+        <insert tableName="accounts">
+            <column name="id" value="cae95cbd-758f-4063-b68a-161eb4cfd6be"/>
+            <column name="client_id" value="b203e0f5-8e55-411f-971b-64bb8d028328"/>
+            <column name="account_name" value="Luca.Moretti"/>
+            <column name="account_type" value="Personal"/>
+            <column name="account_status" value="New"/>
+            <column name="balance" value="192000.00"/>
+            <column name="currency_code" value="CZK"/>
+            <column name="bank_rating" value="5"/>
+            <column name="created_at" value="2023-09-15 10:30:00"/>
+            <column name="updated_at" value="2023-09-18 11:21:00"/>
+        </insert>
+        <insert tableName="accounts">
+            <column name="id" value="2f477735-825a-42f2-9bbc-58ec2a91dd4b"/>
+            <column name="client_id" value="e484cda6-dbda-459f-a97a-3f8a601cc135"/>
+            <column name="account_name" value="Eva.Müller"/>
+            <column name="account_type" value="Personal"/>
+            <column name="account_status" value="New"/>
+            <column name="balance" value="820.00"/>
+            <column name="currency_code" value="USD"/>
+            <column name="bank_rating" value="5"/>
+            <column name="created_at" value="2023-09-15 10:32:00"/>
+            <column name="updated_at" value="2023-09-18 11:23:00"/>
+        </insert>
+        <insert tableName="accounts">
+            <column name="id" value="057ec2ac-fa1e-4410-825b-582919440f8c"/>
+            <column name="client_id" value="ee7a4a8c-7149-4a3a-a84e-0e1489ec8d3f"/>
+            <column name="account_name" value="Lars.Nielsen"/>
+            <column name="account_type" value="Personal"/>
+            <column name="account_status" value="New"/>
+            <column name="balance" value="330.00"/>
+            <column name="currency_code" value="EUR"/>
+            <column name="bank_rating" value="5"/>
+            <column name="created_at" value="2023-09-15 10:33:00"/>
+            <column name="updated_at" value="2023-09-18 11:26:00"/>
+        </insert>
+        <insert tableName="accounts">
+            <column name="id" value="f8a45c4d-ea62-4992-8a17-89a04d1ee253"/>
+            <column name="client_id" value="ef6942fc-70c0-4c0a-ae18-72c220b12785"/>
+            <column name="account_name" value="Maria.Garcia"/>
+            <column name="account_type" value="Personal"/>
+            <column name="account_status" value="New"/>
+            <column name="balance" value="980.00"/>
+            <column name="currency_code" value="EUR"/>
+            <column name="bank_rating" value="5"/>
+            <column name="created_at" value="2023-09-15 10:36:00"/>
+            <column name="updated_at" value="2023-09-18 11:21:00"/>
+        </insert>
+        <insert tableName="accounts">
+            <column name="id" value="95a47558-4d2f-4608-ac60-8678c3c1c781"/>
+            <column name="client_id" value="f334ccc8-3578-4101-b453-d590ecd3646e"/>
+            <column name="account_name" value="Hans.Jensen"/>
+            <column name="account_type" value="Personal"/>
+            <column name="account_status" value="New"/>
+            <column name="balance" value="3290.00"/>
+            <column name="currency_code" value="EUR"/>
+            <column name="bank_rating" value="5"/>
+            <column name="created_at" value="2023-09-15 10:40:00"/>
+            <column name="updated_at" value="2023-09-18 11:11:00"/>
+        </insert>
+        <insert tableName="accounts">
+            <column name="id" value="05ebe134-0d14-4675-99ef-d07da2b2212f"/>
+            <column name="client_id" value="ff047ece-ad76-4f25-b542-9c117a91532a"/>
+            <column name="account_name" value="Anna.Petrova"/>
+            <column name="account_type" value="Personal"/>
+            <column name="account_status" value="New"/>
+            <column name="balance" value="87000.00"/>
+            <column name="currency_code" value="UAH"/>
+            <column name="bank_rating" value="5"/>
+            <column name="created_at" value="2023-09-15 10:50:00"/>
+            <column name="updated_at" value="2023-09-18 11:55:00"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
