@@ -1,7 +1,7 @@
 package bankmicroservicesapp.entity;
 
-import bankmicroservicesapp.entity.plugEnum.StatusAccount;
-import bankmicroservicesapp.entity.plugEnum.TypeAccount;
+import bankmicroservicesapp.entity.enums.StatusAccount;
+import bankmicroservicesapp.entity.enums.TypeAccount;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -32,9 +32,11 @@ public class Account {
     private String name;
 
     @Column(name = "account_type")
+    @Enumerated(EnumType.STRING)
     private TypeAccount type;
 
     @Column(name = "account_status")
+    @Enumerated(EnumType.STRING)
     private StatusAccount status;
 
     @Column(name = "balance")

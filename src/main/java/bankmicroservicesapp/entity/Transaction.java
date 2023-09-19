@@ -1,6 +1,6 @@
 package bankmicroservicesapp.entity;
 
-import bankmicroservicesapp.entity.plugEnum.TypeTransaction;
+import bankmicroservicesapp.entity.enums.TypeTransaction;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -27,6 +27,7 @@ public class Transaction {
     private UUID id;
 
     @Column(name = "transaction_type")
+    @Enumerated(EnumType.STRING)
     private TypeTransaction type;
 
     @Column(name = "amount")
@@ -35,8 +36,8 @@ public class Transaction {
     @Column(name = "transaction_description")
     private String description;
 
-    @Column(name = "created_at")
-    private LocalDate createdAt;
+    @Column(name = "updated_at")
+    private LocalDate updatedAt;
 
     @JoinColumn(name = "debit_account_id", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
@@ -66,7 +67,7 @@ public class Transaction {
                 ", type=" + type +
                 ", amount=" + amount +
                 ", description='" + description + '\'' +
-                ", createdAt=" + createdAt +
+                ", createdAt=" + updatedAt +
                 ", debitAccountId=" + debitAccountId +
                 ", creditAccountId=" + creditAccountId +
                 '}';

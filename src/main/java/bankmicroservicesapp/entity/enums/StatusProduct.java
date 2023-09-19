@@ -1,4 +1,4 @@
-package bankmicroservicesapp.entity.plugEnum;
+package bankmicroservicesapp.entity.enums;
 
 public enum StatusProduct {
     Archived,

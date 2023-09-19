@@ -1,6 +1,6 @@
 package bankmicroservicesapp.entity;
 
-import bankmicroservicesapp.entity.plugEnum.StatusAgreement;
+import bankmicroservicesapp.entity.enums.StatusAgreement;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -33,6 +33,7 @@ public class Agreement {
     private String currencyCode;
 
     @Column(name = "agreement_status")
+    @Enumerated(EnumType.STRING)
     private StatusAgreement status;
 
     @Column(name = "discount")

@@ -3,10 +3,10 @@ spring:
     banner-mode: off
 
   datasource:
-    url: jdbc:mysql://localhost:3306/BankDataBase
+    password: ${spring.datasource.password}
+    url: ${spring.datasource.url}
+    username: ${spring.datasource.username}
     driver-class-name: com.mysql.cj.jdbc.Driver
-    password: 208634dkfl
-    username: root
 
   jpa:
     defer-datasource-initialization: false
@@ -14,6 +14,10 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
+
+  liquibase:
+    change-log: classpath:/db/changelog/changelog-master.xml
+
 
 
 

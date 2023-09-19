@@ -1,5 +1,6 @@
 package bankmicroservicesapp.entity;
 
+import bankmicroservicesapp.entity.enums.EmployeeType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -8,7 +9,10 @@ import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.Objects;
+import java.util.Set;
 import java.util.UUID;
+
+import static jakarta.persistence.CascadeType.*;
 
 @Entity
 @Table(name = "users", schema = "bankdatabase")
@@ -50,6 +54,10 @@ public class User {
     @Column(name = "updated_at")
     private LocalDate updatedAt;
 
+    @OneToOne(fetch = FetchType.LAZY,
+            cascade = {MERGE, PERSIST, REFRESH})
+    private Employee employee;
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -76,6 +84,7 @@ public class User {
                 ", phone='" + phone + '\'' +
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
+                ", employee=" + employee +
                 '}';
     }
 }

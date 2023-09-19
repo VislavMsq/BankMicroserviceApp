@@ -1,7 +1,7 @@
 package bankmicroservicesapp.entity;
 
-import bankmicroservicesapp.entity.plugEnum.StatusProduct;
-import bankmicroservicesapp.entity.plugEnum.TypeProduct;
+import bankmicroservicesapp.entity.enums.StatusProduct;
+import bankmicroservicesapp.entity.enums.TypeProduct;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -29,9 +29,11 @@ public class Product {
     private UUID id;
 
     @Column(name = "product_type")
+    @Enumerated(EnumType.STRING)
     private TypeProduct productType;
 
     @Column(name = "product_status")
+    @Enumerated(EnumType.STRING)
     private StatusProduct productStatus;
 
     @Column(name = "interest_rate")

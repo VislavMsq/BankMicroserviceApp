@@ -1,7 +1,7 @@
 package bankmicroservicesapp.entity;
 
-import bankmicroservicesapp.entity.plugEnum.EmployeeStatus;
-import bankmicroservicesapp.entity.plugEnum.EmployeeType;
+import bankmicroservicesapp.entity.enums.EmployeeStatus;
+import bankmicroservicesapp.entity.enums.EmployeeType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -29,15 +29,17 @@ public class Employee {
     private UUID id;
 
     @Column(name = "employee_type")
+    @Enumerated(EnumType.STRING)
     private EmployeeType type;
 
     @Column(name = "employee_status")
+    @Enumerated(EnumType.STRING)
     private EmployeeStatus status;
 
     @Column(name = "created_at")
     private LocalDate createdAt;
 
-    @Column(name = "update_at")
+    @Column(name = "updated_at")
     private LocalDate updatedAt;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
