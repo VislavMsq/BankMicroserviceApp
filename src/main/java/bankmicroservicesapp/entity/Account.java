@@ -2,6 +2,7 @@ package bankmicroservicesapp.entity;
 
 import bankmicroservicesapp.entity.enums.StatusAccount;
 import bankmicroservicesapp.entity.enums.TypeAccount;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -43,7 +44,7 @@ public class Account {
     private double balance;
 
     @Column(name = "currency_code")
-    private int currencyCode;
+    private String currencyCode; // был инт
 
     @Column(name = "bank_rating")
     private int bankRating;
@@ -54,30 +55,35 @@ public class Account {
     @Column(name = "updated_at")
     private LocalDate updatedAt;
 
+    @JsonIgnore
     @JoinColumn(name = "client_id", referencedColumnName = "id")
     @OneToOne(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
     private User user;
 
+    @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
     private Set<Agreement> agreements;
 
+    @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
     private Set<Transaction> debits;
 
+    @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
     private Set<Transaction> credits;
+
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Account account = (Account) o;
-        return Objects.equals(id, account.id) && Objects.equals(user, account.user) && Objects.equals(name, account.name);
+        return Objects.equals(id, account.id) && Objects.equals(name, account.name) && Objects.equals(user, account.user);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, user, name);
+        return Objects.hash(id, name, user);
     }
 
     @Override

@@ -14,7 +14,7 @@
             </not>
         </preConditions>
         <createTable tableName="users">
-            <column name="id" type="UUID" >
+            <column name="id" type="binary(16)" >
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="tax_code" type="varchar(20)">
@@ -56,7 +56,7 @@
             </not>
         </preConditions>
         <createTable tableName="products">
-            <column name="id" type="UUID">
+            <column name="id" type="binary(16)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="product_type" type="varchar(20)">
@@ -86,10 +86,10 @@
             </not>
         </preConditions>
         <createTable tableName="accounts">
-            <column name="id" type="UUID">
+            <column name="id" type="binary(16)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="client_id" type="UUID">
+            <column name="client_id" type="binary(16)">
                 <constraints foreignKeyName="client_id" references="users(id)" nullable="false"/>
             </column>
             <column name="account_name" type="varchar(20)">
@@ -128,10 +128,10 @@
             </not>
         </preConditions>
         <createTable tableName="employees">
-            <column name="id" type="UUID">
+            <column name="id" type="binary(16)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="user_id" type="UUID">
+            <column name="user_id" type="binary(16)">
                 <constraints foreignKeyName="user_id" references="users(id)" nullable="false"/>
             </column>
             <column name="employee_type" type="varchar(20)">
@@ -158,13 +158,13 @@
             </not>
         </preConditions>
         <createTable tableName="transactions">
-            <column name="id" type="UUID">
+            <column name="id" type="binary(16)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="debit_account_id" type="UUID">
+            <column name="debit_account_id" type="binary(16)">
                 <constraints foreignKeyName="debit_account_id" references="accounts(id)" nullable="false"/>
             </column>
-            <column name="credit_account_id" type="UUID">
+            <column name="credit_account_id" type="binary(16)">
                 <constraints foreignKeyName="credit_account_id" references="accounts(id)" nullable="false"/>
             </column>
             <column name="transaction_type" type="varchar(20)">
@@ -191,16 +191,16 @@
             </not>
         </preConditions>
         <createTable tableName="agreements">
-            <column name="id" type="UUID">
+            <column name="id" type="binary(16)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="account_id" type="UUID">
+            <column name="account_id" type="binary(16)">
                 <constraints foreignKeyName="account_id" references="accounts(id)" nullable="false"/>
             </column>
-            <column name="product_id" type="UUID">
+            <column name="product_id" type="binary(16)">
                 <constraints foreignKeyName="product_id" references="products(id)" nullable="false"/>
             </column>
-            <column name="manager_id" type="UUID">
+            <column name="manager_id" type="binary(16)">
                 <constraints foreignKeyName="manager_id" references="employees(id)" nullable="false"/>
             </column>
             <column name="interest_rate" type="decimal(6,4)">

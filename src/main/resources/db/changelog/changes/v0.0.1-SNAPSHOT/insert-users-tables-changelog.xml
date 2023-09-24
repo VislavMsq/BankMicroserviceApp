@@ -8,7 +8,7 @@
 
     <changeSet author="Vladislav M." id="insert users table">
         <insert tableName="users">
-            <column name="id" value="2538cc96-e3ff-4a96-9d19-ba3759ad1d87"/>
+            <column name="id" valueComputed="UUID_TO_BIN('2538cc96-e3ff-4a96-9d19-ba3759ad1d87')"/>
             <column name="first_name" value="John"/>
             <column name="last_name" value="Smith"/>
             <column name="email" value="john.smith@gmail.com"/>
@@ -20,7 +20,7 @@
             <column name="updated_at" value="2023-09-18 12:12:00"/>
         </insert>
         <insert tableName="users">
-            <column name="id" value="ef6942fc-70c0-4c0a-ae18-72c220b12785"/>
+            <column name="id" valueComputed="UUID_TO_BIN('ef6942fc-70c0-4c0a-ae18-72c220b12785')"/>
             <column name="first_name" value="Maria"/>
             <column name="last_name" value="Garcia"/>
             <column name="email" value="maria.garcia@gmail.com"/>
@@ -32,7 +32,7 @@
             <column name="updated_at" value="2023-09-18 12:13:00"/>
         </insert>
         <insert tableName="users">
-            <column name="id" value="8f3c7555-f31c-4fe0-b846-09760134a43d"/>
+            <column name="id" valueComputed="UUID_TO_BIN('8f3c7555-f31c-4fe0-b846-09760134a43d')"/>
             <column name="first_name" value="Luca"/>
             <column name="last_name" value="Rossi"/>
             <column name="email" value="luca.rossi@gmail.com"/>
@@ -44,7 +44,7 @@
             <column name="updated_at" value="2023-09-18 12:14:00"/>
         </insert>
         <insert tableName="users">
-            <column name="id" value="a1ce95e4-e2c4-4573-91e0-2857d219b6b9"/>
+            <column name="id" valueComputed="UUID_TO_BIN('a1ce95e4-e2c4-4573-91e0-2857d219b6b9')"/>
             <column name="first_name" value="Sophie"/>
             <column name="last_name" value="Müller"/>
             <column name="email" value="sophie.muller@gmail.com"/>
@@ -56,7 +56,7 @@
             <column name="updated_at" value="2023-09-18 12:15:00"/>
         </insert>
         <insert tableName="users">
-            <column name="id" value="52fc5bed-8959-436f-8efb-b66bdd47959d"/>
+            <column name="id" valueComputed="UUID_TO_BIN('52fc5bed-8959-436f-8efb-b66bdd47959d')"/>
             <column name="first_name" value="Pierre"/>
             <column name="last_name" value="Dupont"/>
             <column name="email" value="pierre.dupont@gmail.com"/>
@@ -68,7 +68,7 @@
             <column name="updated_at" value="2023-09-18 12:16:00"/>
         </insert>
         <insert tableName="users">
-            <column name="id" value="ff047ece-ad76-4f25-b542-9c117a91532a"/>
+            <column name="id" valueComputed="UUID_TO_BIN('ff047ece-ad76-4f25-b542-9c117a91532a')"/>
             <column name="first_name" value="Anna"/>
             <column name="last_name" value="Petrova"/>
             <column name="email" value="anna.petrov@gmail.com"/>
@@ -80,7 +80,7 @@
             <column name="updated_at" value="2023-09-18 12:44:00"/>
         </insert>
         <insert tableName="users">
-            <column name="id" value="f334ccc8-3578-4101-b453-d590ecd3646e"/>
+            <column name="id" valueComputed="UUID_TO_BIN('f334ccc8-3578-4101-b453-d590ecd3646e')"/>
             <column name="first_name" value="Hans"/>
             <column name="last_name" value="Jensen"/>
             <column name="email" value="hans.jensen@gmail.com"/>
@@ -92,7 +92,7 @@
             <column name="updated_at" value="2023-09-18 12:17:00"/>
         </insert>
         <insert tableName="users">
-            <column name="id" value="86e768e1-7890-4323-aea3-86607998d09a"/>
+            <column name="id" valueComputed="UUID_TO_BIN('86e768e1-7890-4323-aea3-86607998d09a')"/>
             <column name="first_name" value="Sofia"/>
             <column name="last_name" value="García"/>
             <column name="email" value="sofia.garcia@gmail.com"/>
@@ -104,7 +104,7 @@
             <column name="updated_at" value="2023-09-18 12:18:00"/>
         </insert>
         <insert tableName="users">
-            <column name="id" value="636f9932-8c10-4046-906a-151a794aa10a"/>
+            <column name="id" valueComputed="UUID_TO_BIN('636f9932-8c10-4046-906a-151a794aa10a')"/>
             <column name="first_name" value="Giovanni"/>
             <column name="last_name" value="Bianchi"/>
             <column name="email" value="giovanni.bianch@gmail.com"/>
@@ -115,9 +115,8 @@
             <column name="created_at" value="2023-08-20 11:37:00"/>
             <column name="updated_at" value="2023-09-18 12:19:00"/>
         </insert>
-
         <insert tableName="users">
-            <column name="id" value="95373e88-f655-43f8-a086-06434e10a60a"/>
+            <column name="id" valueComputed="UUID_TO_BIN('95373e88-f655-43f8-a086-06434e10a60a')"/>
             <column name="first_name" value="Emma"/>
             <column name="last_name" value="Smith"/>
             <column name="email" value="emma.smith@gmail.com"/>
@@ -129,7 +128,7 @@
             <column name="updated_at" value="2023-09-18 12:20:00"/>
         </insert>
         <insert tableName="users">
-            <column name="id" value="3b6397e8-d11b-48f9-ae74-cae3e19fb0d4"/>
+            <column name="id" valueComputed="UUID_TO_BIN('3b6397e8-d11b-48f9-ae74-cae3e19fb0d4')"/>
             <column name="first_name" value="Miguel"/>
             <column name="last_name" value="Rodríguez"/>
             <column name="email" value="miguel.rodriguez@gmail.com"/>
@@ -141,7 +140,7 @@
             <column name="updated_at" value="2023-09-18 12:21:00"/>
         </insert>
         <insert tableName="users">
-            <column name="id" value="b203e0f5-8e55-411f-971b-64bb8d028328"/>
+            <column name="id" valueComputed="UUID_TO_BIN('b203e0f5-8e55-411f-971b-64bb8d028328')"/>
             <column name="first_name" value="Luca"/>
             <column name="last_name" value="Moretti"/>
             <column name="email" value="luca.moretti@gmail.com"/>
@@ -153,7 +152,7 @@
             <column name="updated_at" value="2023-09-18 12:22:00"/>
         </insert>
         <insert tableName="users">
-            <column name="id" value="e484cda6-dbda-459f-a97a-3f8a601cc135"/>
+            <column name="id" valueComputed="UUID_TO_BIN('e484cda6-dbda-459f-a97a-3f8a601cc135')"/>
             <column name="first_name" value="Eva"/>
             <column name="last_name" value="Müller"/>
             <column name="email" value="eva.muller@gmail.com"/>
@@ -165,7 +164,7 @@
             <column name="updated_at" value="2023-09-18 12:23:00"/>
         </insert>
         <insert tableName="users">
-            <column name="id" value="26cbd100-02c0-4477-837d-dea633a48252"/>
+            <column name="id" valueComputed="UUID_TO_BIN('26cbd100-02c0-4477-837d-dea633a48252')"/>
             <column name="first_name" value="Jacques"/>
             <column name="last_name" value="Dubois"/>
             <column name="email" value="jacques.dubois@gmail.com"/>
@@ -177,7 +176,7 @@
             <column name="updated_at" value="2023-09-18 12:24:00"/>
         </insert>
         <insert tableName="users">
-            <column name="id" value="ee7a4a8c-7149-4a3a-a84e-0e1489ec8d3f"/>
+            <column name="id" valueComputed="UUID_TO_BIN('ee7a4a8c-7149-4a3a-a84e-0e1489ec8d3f')"/>
             <column name="first_name" value="Lars"/>
             <column name="last_name" value="Nielsen"/>
             <column name="email" value="lars.nielsen@gmail.com"/>
@@ -190,7 +189,7 @@
         </insert>
         <!--   Employees   -->
         <insert tableName="users">
-            <column name="id" value="b7a76a6d-20b0-4e16-9ac6-a82d8a452736"/>
+            <column name="id" valueComputed="UUID_TO_BIN('b7a76a6d-20b0-4e16-9ac6-a82d8a452736')"/>
             <column name="first_name" value="Elena"/>
             <column name="last_name" value="López"/>
             <column name="email" value="elena.lopez@gmail.com"/>
@@ -202,7 +201,7 @@
             <column name="updated_at" value="2023-09-18 12:30:00"/>
         </insert>
         <insert tableName="users">
-            <column name="id" value="211abbe0-6af7-4492-83f9-ae7d61382abc"/>
+            <column name="id" valueComputed="UUID_TO_BIN('211abbe0-6af7-4492-83f9-ae7d61382abc')"/>
             <column name="first_name" value="Marco"/>
             <column name="last_name" value="Ferrari"/>
             <column name="email" value="marco.ferrari@gmail.com"/>
@@ -214,7 +213,7 @@
             <column name="updated_at" value="2023-09-18 12:35:00"/>
         </insert>
         <insert tableName="users">
-            <column name="id" value="b85819e9-e3ce-4433-a580-17693dda1ec7"/>
+            <column name="id" valueComputed="UUID_TO_BIN('b85819e9-e3ce-4433-a580-17693dda1ec7')"/>
             <column name="first_name" value="Emily"/>
             <column name="last_name" value="Wilson"/>
             <column name="email" value="emily.wilson@gmail.com"/>
@@ -226,7 +225,7 @@
             <column name="updated_at" value="2023-09-18 12:11:00"/>
         </insert>
         <insert tableName="users">
-            <column name="id" value="be23da43-761e-4290-94dd-d3592b906768"/>
+            <column name="id" valueComputed="UUID_TO_BIN('be23da43-761e-4290-94dd-d3592b906768')"/>
             <column name="first_name" value="Sofia"/>
             <column name="last_name" value="Lindström"/>
             <column name="email" value="sofia.lindstrom@gmail.com"/>
@@ -238,7 +237,7 @@
             <column name="updated_at" value="2023-09-18 13:23:00"/>
         </insert>
         <insert tableName="users">
-            <column name="id" value="4b0eff95-d80c-4510-81b9-b431d1692166"/>
+            <column name="id" valueComputed="UUID_TO_BIN('4b0eff95-d80c-4510-81b9-b431d1692166')"/>
             <column name="first_name" value="Matej"/>
             <column name="last_name" value="Novák"/>
             <column name="email" value=" matej.novak@gmail.com"/>

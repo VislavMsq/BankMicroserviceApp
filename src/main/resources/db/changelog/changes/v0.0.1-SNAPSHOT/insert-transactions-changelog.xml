@@ -8,90 +8,90 @@
 
     <changeSet author="Vladislav M." id="insert transactions table">
         <insert tableName="transactions">
-            <column name="id" value="e8a80db8-d837-4e6b-822a-10f72fa65f67"/>
-            <column name="debit_account_id" value="d29e21a7-ec86-4001-a211-86ca28c584ea"/>
-            <column name="credit_account_id" value="4210e088-3a7d-4aba-821a-df1a076c24d4"/>
+            <column name="id" valueComputed="UUID_TO_BIN('e8a80db8-d837-4e6b-822a-10f72fa65f67')"/>
+            <column name="debit_account_id" valueComputed="UUID_TO_BIN('d29e21a7-ec86-4001-a211-86ca28c584ea')"/>
+            <column name="credit_account_id" valueComputed="UUID_TO_BIN('4210e088-3a7d-4aba-821a-df1a076c24d4')"/>
             <column name="transaction_type" value="TransferFunds"/>
             <column name="amount" value="0.0"/>
             <column name="transaction_description" value="for cookies"/>
             <column name="updated_at" value="2023-08-21 13:20:00"/>
         </insert>
         <insert tableName="transactions">
-            <column name="id" value="3e17c956-07bd-4aee-bf7c-666fe7ca05d3"/>
-            <column name="debit_account_id" value="4210e088-3a7d-4aba-821a-df1a076c24d4"/>
-            <column name="credit_account_id" value="fa01f434-98d4-4e6a-a2d6-755c60dcb6cf"/>
+            <column name="id" valueComputed="UUID_TO_BIN('3e17c956-07bd-4aee-bf7c-666fe7ca05d3')"/>
+            <column name="debit_account_id" valueComputed="UUID_TO_BIN('4210e088-3a7d-4aba-821a-df1a076c24d4')"/>
+            <column name="credit_account_id" valueComputed="UUID_TO_BIN('fa01f434-98d4-4e6a-a2d6-755c60dcb6cf')"/>
             <column name="transaction_type" value="TransferFunds"/>
             <column name="amount" value="0.0"/>
             <column name="transaction_description" value="for cookies"/>
             <column name="updated_at" value="2023-05-22 14:25:00"/>
         </insert>
         <insert tableName="transactions">
-            <column name="id" value="f482c64b-e229-4950-94af-297c1087ac9e"/>
-            <column name="debit_account_id" value="05ebe134-0d14-4675-99ef-d07da2b2212f"/>
-            <column name="credit_account_id" value="fca81f38-1f36-4b02-a646-d066458da668"/>
+            <column name="id" valueComputed="UUID_TO_BIN('f482c64b-e229-4950-94af-297c1087ac9e')"/>
+            <column name="debit_account_id" valueComputed="UUID_TO_BIN('05ebe134-0d14-4675-99ef-d07da2b2212f')"/>
+            <column name="credit_account_id" valueComputed="UUID_TO_BIN('fca81f38-1f36-4b02-a646-d066458da668')"/>
             <column name="transaction_type" value="TransferFunds"/>
             <column name="amount" value="0.0"/>
             <column name="transaction_description" value="for cookies"/>
             <column name="updated_at" value="2023-06-01 11:00:00"/>
         </insert>
         <insert tableName="transactions">
-            <column name="id" value="06752bb6-809f-400a-afff-50aaf6ccd647"/>
-            <column name="debit_account_id" value="fca81f38-1f36-4b02-a646-d066458da668"/>
-            <column name="credit_account_id" value="1d380feb-b424-42c2-ad2b-8e593f6533bd"/>
+            <column name="id" valueComputed="UUID_TO_BIN('06752bb6-809f-400a-afff-50aaf6ccd647')"/>
+            <column name="debit_account_id" valueComputed="UUID_TO_BIN('fca81f38-1f36-4b02-a646-d066458da668')"/>
+            <column name="credit_account_id" valueComputed="UUID_TO_BIN('1d380feb-b424-42c2-ad2b-8e593f6533bd')"/>
             <column name="transaction_type" value="TransferFunds"/>
             <column name="amount" value="0.0"/>
             <column name="transaction_description" value="for cookies"/>
             <column name="updated_at" value="2023-08-22 08:10:00"/>
         </insert>
         <insert tableName="transactions">
-            <column name="id" value="78451308-b0bb-4eda-bc26-8239b3af2cab"/>
-            <column name="debit_account_id" value="1d380feb-b424-42c2-ad2b-8e593f6533bd"/>
-            <column name="credit_account_id" value="9af291fa-b96e-48d4-ae9b-72a14221a5ac"/>
+            <column name="id" valueComputed="UUID_TO_BIN('78451308-b0bb-4eda-bc26-8239b3af2cab')"/>
+            <column name="debit_account_id" valueComputed="UUID_TO_BIN('1d380feb-b424-42c2-ad2b-8e593f6533bd')"/>
+            <column name="credit_account_id" valueComputed="UUID_TO_BIN('9af291fa-b96e-48d4-ae9b-72a14221a5ac')"/>
             <column name="transaction_type" value="TransferFunds"/>
             <column name="amount" value="0.0"/>
             <column name="transaction_description" value="for cookies"/>
             <column name="updated_at" value="2023-08-23 17:50:00"/>
         </insert>
         <insert tableName="transactions">
-            <column name="id" value="d2da5f6e-2bd6-463f-96f9-3635217f65fb"/>
-            <column name="debit_account_id" value="9af291fa-b96e-48d4-ae9b-72a14221a5ac"/>
-            <column name="credit_account_id" value="e439f166-1880-4879-a003-7f5005d58e77"/>
+            <column name="id" valueComputed="UUID_TO_BIN('d2da5f6e-2bd6-463f-96f9-3635217f65fb')"/>
+            <column name="debit_account_id" valueComputed="UUID_TO_BIN('9af291fa-b96e-48d4-ae9b-72a14221a5ac')"/>
+            <column name="credit_account_id" valueComputed="UUID_TO_BIN('e439f166-1880-4879-a003-7f5005d58e77')"/>
             <column name="transaction_type" value="TransferFunds"/>
             <column name="amount" value="0.0"/>
             <column name="transaction_description" value="for cookies"/>
             <column name="updated_at" value="2023-01-13 20:48:00"/>
         </insert>
         <insert tableName="transactions">
-            <column name="id" value="64a7301f-c93e-4e01-8e81-2d7e9453f152"/>
-            <column name="debit_account_id" value="e439f166-1880-4879-a003-7f5005d58e77"/>
-            <column name="credit_account_id" value="d5a475dd-f044-4618-b372-cd0638002b5a"/>
+            <column name="id" valueComputed="UUID_TO_BIN('64a7301f-c93e-4e01-8e81-2d7e9453f152')"/>
+            <column name="debit_account_id" valueComputed="UUID_TO_BIN('e439f166-1880-4879-a003-7f5005d58e77')"/>
+            <column name="credit_account_id" valueComputed="UUID_TO_BIN('d5a475dd-f044-4618-b372-cd0638002b5a')"/>
             <column name="transaction_type" value="TransferFunds"/>
             <column name="amount" value="0.0"/>
             <column name="transaction_description" value="for cookies"/>
             <column name="updated_at" value="2023-01-01 12:33:00"/>
         </insert>
         <insert tableName="transactions">
-            <column name="id" value="0a548796-87f9-47d9-8165-189a1522e6b8"/>
-            <column name="debit_account_id" value="a687792b-fc16-46db-9b53-da1ae8b713ea"/>
-            <column name="credit_account_id" value="cae95cbd-758f-4063-b68a-161eb4cfd6be"/>
+            <column name="id" valueComputed="UUID_TO_BIN('0a548796-87f9-47d9-8165-189a1522e6b8')"/>
+            <column name="debit_account_id" valueComputed="UUID_TO_BIN('a687792b-fc16-46db-9b53-da1ae8b713ea')"/>
+            <column name="credit_account_id" valueComputed="UUID_TO_BIN('cae95cbd-758f-4063-b68a-161eb4cfd6be')"/>
             <column name="transaction_type" value="TransferFunds"/>
             <column name="amount" value="0.0"/>
             <column name="transaction_description" value="for cookies"/>
             <column name="updated_at" value="2023-06-14 21:20:00"/>
         </insert>
         <insert tableName="transactions">
-            <column name="id" value="99ca873b-9aa2-4eab-9e4f-d0d8ba05afa9"/>
-            <column name="debit_account_id" value="2f477735-825a-42f2-9bbc-58ec2a91dd4b"/>
-            <column name="credit_account_id" value="057ec2ac-fa1e-4410-825b-582919440f8c"/>
+            <column name="id" valueComputed="UUID_TO_BIN('99ca873b-9aa2-4eab-9e4f-d0d8ba05afa9')"/>
+            <column name="debit_account_id" valueComputed="UUID_TO_BIN('2f477735-825a-42f2-9bbc-58ec2a91dd4b')"/>
+            <column name="credit_account_id" valueComputed="UUID_TO_BIN('057ec2ac-fa1e-4410-825b-582919440f8c')"/>
             <column name="transaction_type" value="TransferFunds"/>
             <column name="amount" value="0.0"/>
             <column name="transaction_description" value="for cookies"/>
             <column name="updated_at" value="2023-07-04 12:12:00"/>
         </insert>
         <insert tableName="transactions">
-            <column name="id" value="5a271eb6-5ac0-41ba-9a10-a3f1f9fbf2da"/>
-            <column name="debit_account_id" value="f8a45c4d-ea62-4992-8a17-89a04d1ee253"/>
-            <column name="credit_account_id" value="95a47558-4d2f-4608-ac60-8678c3c1c781"/>
+            <column name="id" valueComputed="UUID_TO_BIN('5a271eb6-5ac0-41ba-9a10-a3f1f9fbf2da')"/>
+            <column name="debit_account_id" valueComputed="UUID_TO_BIN('f8a45c4d-ea62-4992-8a17-89a04d1ee253')"/>
+            <column name="credit_account_id" valueComputed="UUID_TO_BIN('95a47558-4d2f-4608-ac60-8678c3c1c781')"/>
             <column name="transaction_type" value="TransferFunds"/>
             <column name="amount" value="0.0"/>
             <column name="transaction_description" value="for cookies"/>

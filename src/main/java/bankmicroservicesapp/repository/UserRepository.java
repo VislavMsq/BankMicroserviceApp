@@ -1,11 +1,12 @@
 package bankmicroservicesapp.repository;
 
-import bankmicroservicesapp.entity.Account;
+import bankmicroservicesapp.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.UUID;
+
 @Repository
-public interface AccountRepository extends JpaRepository<Account,UUID> {
+public interface UserRepository extends JpaRepository<User, UUID> {
 
 }

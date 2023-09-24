@@ -5,10 +5,10 @@
         xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
         http://www.liquibase.org/xml/ns/dbchangelog-ext https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
-<!--    products     -->
+    <!--    products     -->
     <changeSet author="Vladislav M." id="insert products table">
         <insert tableName="products">
-            <column name="id" value="9cacda22-eaa2-43b0-b3f5-581d70388cd2"/>
+            <column name="id" valueComputed="UUID_TO_BIN('9cacda22-eaa2-43b0-b3f5-581d70388cd2')"/>
             <column name="product_status" value="Available"/>
             <column name="product_type" value="PersonalLoans"/>
             <column name="interest_rate" value="5.00"/>
@@ -16,7 +16,7 @@
             <column name="updated_at" value="2023-09-18 12:11:00"/>
         </insert>
         <insert tableName="products">
-            <column name="id" value="23ba09c7-ae60-41a2-ba58-66ebaf916bfe"/>
+            <column name="id" valueComputed="UUID_TO_BIN('23ba09c7-ae60-41a2-ba58-66ebaf916bfe')"/>
             <column name="product_status" value="Available"/>
             <column name="product_type" value="MortgageLoans"/>
             <column name="interest_rate" value="2.75"/>
@@ -24,7 +24,7 @@
             <column name="updated_at" value="2023-09-18 13:41:00"/>
         </insert>
         <insert tableName="products">
-            <column name="id" value="60587cf0-aaa3-475a-8ef8-aa452c6e8fe9"/>
+            <column name="id" valueComputed="UUID_TO_BIN('60587cf0-aaa3-475a-8ef8-aa452c6e8fe9')"/>
             <column name="product_status" value="Available"/>
             <column name="product_type" value="AutoLoans"/>
             <column name="interest_rate" value="4.49"/>
@@ -32,7 +32,7 @@
             <column name="updated_at" value="2023-09-13 12:11:00"/>
         </insert>
         <insert tableName="products">
-            <column name="id" value="25cd8073-241b-4239-884c-574ea4588fa7"/>
+            <column name="id" valueComputed="UUID_TO_BIN('25cd8073-241b-4239-884c-574ea4588fa7')"/>
             <column name="product_status" value="Promotion"/>
             <column name="product_type" value="Deposits"/>
             <column name="interest_rate" value="2.99"/>
@@ -40,7 +40,7 @@
             <column name="updated_at" value="2023-07-19 11:13:00"/>
         </insert>
         <insert tableName="products">
-            <column name="id" value="36c58152-4a2f-4053-b565-3db2b1e8ae43"/>
+            <column name="id" valueComputed="UUID_TO_BIN('36c58152-4a2f-4053-b565-3db2b1e8ae43')"/>
             <column name="product_status" value="Promotion"/>
             <column name="product_type" value="Savings"/>
             <column name="interest_rate" value="9.22"/>
@@ -48,7 +48,7 @@
             <column name="updated_at" value="2023-08-19 15:20:00"/>
         </insert>
         <insert tableName="products">
-            <column name="id" value="dcdbe4ac-9355-4014-91d5-e283a007b659"/>
+            <column name="id" valueComputed="UUID_TO_BIN('dcdbe4ac-9355-4014-91d5-e283a007b659')"/>
             <column name="product_status" value="Promotion"/>
             <column name="product_type" value="InvestmentFunds"/>
             <column name="interest_rate" value="8.60"/>
@@ -56,7 +56,7 @@
             <column name="updated_at" value="2023-06-20 13:19:00"/>
         </insert>
         <insert tableName="products">
-            <column name="id" value="a7b1f911-e5db-41ba-8f5f-16a2049228a0"/>
+            <column name="id" valueComputed="UUID_TO_BIN('a7b1f911-e5db-41ba-8f5f-16a2049228a0')"/>
             <column name="product_status" value="Available"/>
             <column name="product_type" value="AutoInsurance"/>
             <column name="interest_rate" value="5.87"/>
@@ -64,7 +64,7 @@
             <column name="updated_at" value="2023-04-20 12:23:00"/>
         </insert>
         <insert tableName="products">
-            <column name="id" value="a346692a-305e-45c4-a552-b982c252aaea"/>
+            <column name="id" valueComputed="UUID_TO_BIN('a346692a-305e-45c4-a552-b982c252aaea')"/>
             <column name="product_status" value="Available"/>
             <column name="product_type" value="HomeInsurance"/>
             <column name="interest_rate" value="5.22"/>
@@ -72,7 +72,7 @@
             <column name="updated_at" value="2023-06-16 16:14:00"/>
         </insert>
         <insert tableName="products">
-            <column name="id" value="81d4032b-39b4-4705-ab6c-3384e478f151"/>
+            <column name="id" valueComputed="UUID_TO_BIN('81d4032b-39b4-4705-ab6c-3384e478f151')"/>
             <column name="product_status" value="Archived"/>
             <column name="product_type" value="HealthInsurance"/>
             <column name="interest_rate" value="3.35"/>
@@ -80,7 +80,7 @@
             <column name="updated_at" value="2023-03-19 17:19:00"/>
         </insert>
         <insert tableName="products">
-            <column name="id" value="e5949180-d64a-4c66-a355-aba692b890e6"/>
+            <column name="id" valueComputed="UUID_TO_BIN('e5949180-d64a-4c66-a355-aba692b890e6')"/>
             <column name="product_status" value="NotAvailable"/>
             <column name="product_type" value="LifeInsurance"/>
             <column name="interest_rate" value="4.84"/>

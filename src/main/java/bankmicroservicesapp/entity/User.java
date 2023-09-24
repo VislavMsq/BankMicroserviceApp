@@ -1,6 +1,5 @@
 package bankmicroservicesapp.entity;
 
-import bankmicroservicesapp.entity.enums.EmployeeType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,7 +8,6 @@ import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.Objects;
-import java.util.Set;
 import java.util.UUID;
 
 import static jakarta.persistence.CascadeType.*;
