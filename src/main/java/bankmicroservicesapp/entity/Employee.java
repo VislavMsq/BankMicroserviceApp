@@ -47,19 +47,19 @@ public class Employee {
 
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     @OneToOne(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
-    private User userId;
+    private User user;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Employee employee = (Employee) o;
-        return Objects.equals(id, employee.id) && Objects.equals(userId, employee.userId);
+        return Objects.equals(id, employee.id) && Objects.equals(user, employee.user);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, userId);
+        return Objects.hash(id, user);
     }
 
     @Override
@@ -71,7 +71,7 @@ public class Employee {
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
                 ", agreements=" + agreements +
-                ", userId=" + userId +
+                ", userId=" + user +
                 '}';
     }
 }

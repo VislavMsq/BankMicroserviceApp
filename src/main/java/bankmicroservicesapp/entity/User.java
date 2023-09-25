@@ -1,5 +1,6 @@
 package bankmicroservicesapp.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -52,8 +53,12 @@ public class User {
     @Column(name = "updated_at")
     private LocalDate updatedAt;
 
-    @OneToOne(fetch = FetchType.LAZY,
-            cascade = {MERGE, PERSIST, REFRESH})
+    @JsonIgnore
+    @OneToOne(mappedBy = "user", fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
+    private Account account;
+
+    @JsonIgnore
+    @OneToOne(mappedBy = "user", fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
     private Employee employee;
 
     @Override
@@ -61,7 +66,10 @@ public class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return Objects.equals(id, user.id) && Objects.equals(taxCode, user.taxCode) && Objects.equals(email, user.email) && Objects.equals(phone, user.phone);
+        return Objects.equals(id, user.id) &&
+                Objects.equals(taxCode, user.taxCode) &&
+                Objects.equals(email, user.email) &&
+                Objects.equals(phone, user.phone);
     }
 
     @Override
@@ -82,6 +90,7 @@ public class User {
                 ", phone='" + phone + '\'' +
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
+                ", account=" + account +
                 ", employee=" + employee +
                 '}';
     }
