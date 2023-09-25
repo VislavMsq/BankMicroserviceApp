@@ -4,7 +4,7 @@ spring:
 
   datasource:
     password: ${spring.datasource.password}
-    url: ${spring.datasource.url}
+    url: ${spring.datasource.url}?createDatabaseIfNotExist=true
     username: ${spring.datasource.username}
     driver-class-name: com.mysql.cj.jdbc.Driver
 
@@ -17,6 +17,7 @@ spring:
 
   liquibase:
     change-log: classpath:/db/changelog/changelog-master.xml
+    drop-first: true
 
 
 

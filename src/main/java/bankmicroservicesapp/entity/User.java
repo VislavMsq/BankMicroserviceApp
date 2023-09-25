@@ -8,7 +8,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 import java.util.UUID;
 
 import static jakarta.persistence.CascadeType.*;
@@ -48,14 +51,14 @@ public class User {
     private String phone;
 
     @Column(name = "created_at")
-    private LocalDate createdAt;
+    private LocalDateTime createdAt;
 
     @Column(name = "updated_at")
-    private LocalDate updatedAt;
+    private LocalDateTime updatedAt;
 
     @JsonIgnore
-    @OneToOne(mappedBy = "user", fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
-    private Account account;
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
+    private Set<Account> accounts = new HashSet<>();
 
     @JsonIgnore
     @OneToOne(mappedBy = "user", fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
@@ -90,7 +93,6 @@ public class User {
                 ", phone='" + phone + '\'' +
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
-                ", account=" + account +
                 ", employee=" + employee +
                 '}';
     }

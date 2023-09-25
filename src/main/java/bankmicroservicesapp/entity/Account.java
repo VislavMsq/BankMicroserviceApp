@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.Set;
 import java.util.UUID;
@@ -44,20 +45,20 @@ public class Account {
     private double balance;
 
     @Column(name = "currency_code")
-    private String currencyCode; // был инт
+    private String currencyCode;
 
     @Column(name = "bank_rating")
     private int bankRating;
 
     @Column(name = "created_at")
-    private LocalDate createdAt;
+    private LocalDateTime createdAt;
 
     @Column(name = "updated_at")
-    private LocalDate updatedAt;
+    private LocalDateTime updatedAt;
 
     @JsonIgnore
     @JoinColumn(name = "client_id", referencedColumnName = "id")
-    @OneToOne(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
     private User user;
 
     @JsonIgnore
