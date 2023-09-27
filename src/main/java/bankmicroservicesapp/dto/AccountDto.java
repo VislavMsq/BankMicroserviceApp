@@ -11,5 +11,4 @@ public class AccountDto {
     private Double balance;
     private String currencyCode;
     private Integer bankRating;
-
 }

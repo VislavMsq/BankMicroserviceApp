@@ -1,6 +1,7 @@
 package bankmicroservicesapp.entity;
 
 import bankmicroservicesapp.entity.enums.TypeTransaction;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -39,10 +40,12 @@ public class Transaction {
     @Column(name = "updated_at")
     private LocalDate updatedAt;
 
+    @JsonIgnore
     @JoinColumn(name = "debit_account_id", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
     private Account debitAccountId;
 
+    @JsonIgnore
     @JoinColumn(name = "credit_account_id", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
     private Account creditAccountId;

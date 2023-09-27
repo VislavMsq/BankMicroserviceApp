@@ -57,8 +57,10 @@ public class User {
     private LocalDateTime updatedAt;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
-    private Set<Account> accounts = new HashSet<>();
+    @OneToOne(mappedBy = "user",
+               fetch = FetchType.LAZY,
+               cascade = {MERGE, PERSIST, REFRESH})
+    private Account account;
 
     @JsonIgnore
     @OneToOne(mappedBy = "user", fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
@@ -85,15 +87,8 @@ public class User {
         return "User{" +
                 "id=" + id +
                 ", taxCode='" + taxCode + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
                 ", userPassword='" + userPassword + '\'' +
-                ", address='" + address + '\'' +
                 ", phone='" + phone + '\'' +
-                ", createdAt=" + createdAt +
-                ", updatedAt=" + updatedAt +
-                ", employee=" + employee +
                 '}';
     }
 }

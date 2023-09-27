@@ -1,9 +1,8 @@
 package bankmicroservicesapp.service;
 
+import bankmicroservicesapp.dto.ProductDto;
 import bankmicroservicesapp.entity.Product;
 
-import java.util.List;
-
 public interface ProductService {
-    List<Product> getAll();
+    Product updateProduct(ProductDto productDto);
 }

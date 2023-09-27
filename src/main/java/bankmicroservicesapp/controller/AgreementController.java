@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/agreement")
 public class AgreementController {
@@ -26,4 +28,9 @@ public class AgreementController {
         }
         throw new ResponseStatusException(HttpStatus.OK);
     }
+
+//    @GetMapping("/get/agreementManager")
+//    public List<Agreement> findAgreementManager(String managerId){
+//
+//    }
 }

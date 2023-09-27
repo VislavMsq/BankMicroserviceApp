@@ -2,6 +2,7 @@ package bankmicroservicesapp.entity;
 
 import bankmicroservicesapp.entity.enums.StatusProduct;
 import bankmicroservicesapp.entity.enums.TypeProduct;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,6 +10,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.Set;
 import java.util.UUID;
@@ -40,11 +42,12 @@ public class Product {
     private double interestRate;
 
     @Column(name = "created_at")
-    private LocalDate createdAt;
+    private LocalDateTime createdAt;
 
     @Column(name = "updated_at")
-    private LocalDate updatedAt;
+    private LocalDateTime updatedAt;
 
+    @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY,
             cascade = {MERGE, PERSIST, REFRESH})
     private Set<Agreement> agreements;

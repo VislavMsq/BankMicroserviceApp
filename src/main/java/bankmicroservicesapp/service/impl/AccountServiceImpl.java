@@ -5,14 +5,17 @@ import bankmicroservicesapp.entity.Account;
 import bankmicroservicesapp.entity.User;
 import bankmicroservicesapp.entity.enums.StatusAccount;
 import bankmicroservicesapp.entity.enums.TypeAccount;
+import bankmicroservicesapp.mapper.AccountMapper;
 import bankmicroservicesapp.repository.AccountRepository;
 import bankmicroservicesapp.repository.UserRepository;
 import bankmicroservicesapp.service.AccountService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -20,10 +23,13 @@ public class AccountServiceImpl implements AccountService {
 
     private final AccountRepository accountRepository;
     private final UserRepository userRepository;
+    private final AccountMapper accountMapper;
 
-    public AccountServiceImpl(AccountRepository accountRepository,UserRepository  userRepository) {
+    @Autowired
+    public AccountServiceImpl(AccountRepository accountRepository, UserRepository userRepository, AccountMapper accountMapper) {
         this.accountRepository = accountRepository;
         this.userRepository = userRepository;
+        this.accountMapper = accountMapper;
     }
 
     @Override
@@ -42,5 +48,16 @@ public class AccountServiceImpl implements AccountService {
         account.setUser(user);
         accountRepository.save(account);
         return account;
+    }
+
+    @Override
+    @Transactional
+    public List<AccountDto> getAllAccountWhereStatusIsNew() {
+        List<Account> accounts = accountRepository.findAll(Example.of(new Account()));
+//        List<Account> accounts = accountRepository.findAll();
+        List<AccountDto> accountListDto = accountMapper.accountToAccountsDto(accounts);
+        return accountListDto.stream()
+                .filter(el -> el.getStatus().equals("New"))
+                .toList();
     }
 }

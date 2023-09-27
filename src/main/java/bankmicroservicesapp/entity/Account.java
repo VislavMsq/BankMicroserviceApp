@@ -58,7 +58,7 @@ public class Account {
 
     @JsonIgnore
     @JoinColumn(name = "client_id", referencedColumnName = "id")
-    @ManyToOne(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
+    @OneToOne(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
     private User user;
 
     @JsonIgnore
