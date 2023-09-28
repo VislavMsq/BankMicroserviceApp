@@ -1,7 +1,6 @@
 package bankmicroservicesapp.entity;
 
 import bankmicroservicesapp.entity.enums.StatusAgreement;
-import bankmicroservicesapp.mapper.AgreementMapper;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -58,7 +57,7 @@ public class Agreement {
 
     @JoinColumn(name = "product_id", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
-    private AgreementMapper.Product product;
+    private Product product;
 
     @JoinColumn(name = "manager_id", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})

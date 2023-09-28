@@ -1,5 +1,6 @@
 package bankmicroservicesapp.controller;
 
+import bankmicroservicesapp.dto.AgreementDto;
 import bankmicroservicesapp.entity.Agreement;
 import bankmicroservicesapp.service.AgreementService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/agreement")
@@ -30,7 +32,7 @@ public class AgreementController {
     }
 
     @GetMapping("/get/agreementManager")
-    public List<Agreement> findAgreementManager(String managerId) {
-        return null;
+    public List<AgreementDto> findAgreementManager(@RequestParam(name = "managerId") UUID managerId) {
+        return agreementService.findAgreementWhereManagerId(managerId);
     }
 }

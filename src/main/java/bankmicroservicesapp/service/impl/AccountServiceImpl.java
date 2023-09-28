@@ -48,10 +48,6 @@ public class AccountServiceImpl implements AccountService {
     public List<AccountDto> getAllByStatus(String status) {
         List<Account> accounts = accountRepository.findAllByStatus(StatusAccount.valueOf(status));
         return accountMapper.accountsToAccountsDto(accounts);
-//        List<AccountDto> accountListDto = accountMapper.accountToAccountsDto(accounts);
-//        return accountListDto.stream()
-//                .filter(el -> el.getStatus().equals("New"))
-//                .toList();
     }
 }
 

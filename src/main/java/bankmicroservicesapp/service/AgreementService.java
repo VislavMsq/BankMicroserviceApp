@@ -1,11 +1,12 @@
 package bankmicroservicesapp.service;
 
-import bankmicroservicesapp.entity.Agreement;
+import bankmicroservicesapp.dto.AgreementDto;
 
 import java.util.List;
+import java.util.UUID;
 
 public interface AgreementService {
     void deleteById(String agreementId);
 
-    List<Agreement> findAgreementWhereManagerId(String managerId);
+    List<AgreementDto> findAgreementWhereManagerId(UUID managerId);
 }

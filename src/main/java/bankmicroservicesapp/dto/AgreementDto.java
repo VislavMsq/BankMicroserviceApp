@@ -5,6 +5,8 @@ import lombok.Data;
 
 @Data
 public class AgreementDto {
+    // product
+    String productName;
     // current
     String interestRate;
     String currencyCode;
@@ -13,8 +15,6 @@ public class AgreementDto {
     String agreementLimit;
     String sum;
 
-    // employee
-    String managerId;
 
 
 }

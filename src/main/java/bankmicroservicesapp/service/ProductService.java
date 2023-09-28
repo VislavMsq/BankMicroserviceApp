@@ -1,8 +1,8 @@
 package bankmicroservicesapp.service;
 
 import bankmicroservicesapp.dto.ProductDto;
-import bankmicroservicesapp.mapper.AgreementMapper;
+import bankmicroservicesapp.entity.Product;
 
 public interface ProductService {
-    AgreementMapper.Product updateProduct(ProductDto productDto);
+    Product updateProduct(ProductDto productDto);
 }
