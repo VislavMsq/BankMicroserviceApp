@@ -8,5 +8,5 @@ import java.util.List;
 public interface AccountService {
     Account createdAccount(AccountDto accountDto);
 
-    List<AccountDto> getAllAccountWhereStatusIsNew();
+    List<AccountDto> getAllByStatus(String status);
 }

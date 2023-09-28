@@ -21,8 +21,8 @@ public class AccountController {
         return accountService.createdAccount(accountDto);
     }
 
-    @GetMapping("/get/status")
-    public List<AccountDto> getAllStatus() {
-        return accountService.getAllAccountWhereStatusIsNew();
+    @GetMapping("/get-all/by-status")
+    public List<AccountDto> getAllStatus(@RequestParam(name = "status") String status) { // передаем параментр
+        return accountService.getAllByStatus(status);
     }
 }

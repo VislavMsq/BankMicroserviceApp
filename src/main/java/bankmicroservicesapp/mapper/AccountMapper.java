@@ -2,22 +2,37 @@ package bankmicroservicesapp.mapper;
 
 import bankmicroservicesapp.dto.AccountDto;
 import bankmicroservicesapp.entity.Account;
-import org.mapstruct.IterableMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Named;
 
 import java.util.List;
+import java.util.UUID;
 
 @Mapper(componentModel = "spring")
 public interface AccountMapper {
 
-    @Named("toDto")
-    @Mapping(source = "name", target = "name")
+    @Mapping(source = "user.id", target = "userId", qualifiedByName = "UUIDtoString")
     AccountDto toDto(Account account);
 
-    @IterableMapping(qualifiedByName = "toDto")
-        // указываем, чтобы каждый акк должен прогонятся через метод и записываться в лист
-    List<AccountDto> accountToAccountsDto(List<Account> accounts);
+    List<AccountDto> accountsToAccountsDto(List<Account> accounts);
 
+    @Mapping(source = "balance", target = "balance", qualifiedByName = "toDouble")
+    @Mapping(source = "bankRating", target = "bankRating", qualifiedByName = "toInt")
+    Account toEntity(AccountDto accountDto);
+
+    @Named("toDouble")
+    default Double toDoubleParse(String string) {
+        return Double.parseDouble(string);
+    }
+
+    @Named("toInt")
+    default Integer toIntParse(String string) {
+        return Integer.parseInt(string);
+    }
+
+    @Named("UUIDtoString")
+    default String toUUIDParse(UUID uuid) {
+        return uuid.toString();
+    }
 }

@@ -1,7 +1,7 @@
 package bankmicroservicesapp.controller;
 
 import bankmicroservicesapp.dto.ProductDto;
-import bankmicroservicesapp.entity.Product;
+import bankmicroservicesapp.mapper.AgreementMapper;
 import bankmicroservicesapp.service.ProductService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,7 +18,7 @@ public class ProductController {
     }
 
     @PostMapping("/update")
-    public Product updateProduct(@RequestBody ProductDto productDto) {
+    public AgreementMapper.Product updateProduct(@RequestBody ProductDto productDto) {
         return productService.updateProduct(productDto);
     }
 }

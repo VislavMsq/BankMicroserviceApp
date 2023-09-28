@@ -29,8 +29,8 @@ public class AgreementController {
         throw new ResponseStatusException(HttpStatus.OK);
     }
 
-//    @GetMapping("/get/agreementManager")
-//    public List<Agreement> findAgreementManager(String managerId){
-//
-//    }
+    @GetMapping("/get/agreementManager")
+    public List<Agreement> findAgreementManager(String managerId) {
+        return null;
+    }
 }

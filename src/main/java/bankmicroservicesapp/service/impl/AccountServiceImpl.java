@@ -10,7 +10,6 @@ import bankmicroservicesapp.repository.AccountRepository;
 import bankmicroservicesapp.repository.UserRepository;
 import bankmicroservicesapp.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -35,13 +34,7 @@ public class AccountServiceImpl implements AccountService {
     @Override
     @Transactional
     public Account createdAccount(AccountDto accountDto) {
-        Account account = new Account();
-        account.setName(accountDto.getName());
-        account.setType(TypeAccount.valueOf(accountDto.getType()));
-        account.setStatus(StatusAccount.valueOf(accountDto.getStatus()));
-        account.setBalance(accountDto.getBalance());
-        account.setCurrencyCode(accountDto.getCurrencyCode());
-        account.setBankRating(accountDto.getBankRating());
+        Account account = accountMapper.toEntity(accountDto);
         account.setUpdatedAt(LocalDateTime.now());
         account.setCreatedAt(LocalDateTime.now());
         User user = userRepository.findById(UUID.fromString(accountDto.getUserId())).orElse(null);
@@ -52,12 +45,13 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     @Transactional
-    public List<AccountDto> getAllAccountWhereStatusIsNew() {
-        List<Account> accounts = accountRepository.findAll(Example.of(new Account()));
-//        List<Account> accounts = accountRepository.findAll();
-        List<AccountDto> accountListDto = accountMapper.accountToAccountsDto(accounts);
-        return accountListDto.stream()
-                .filter(el -> el.getStatus().equals("New"))
-                .toList();
+    public List<AccountDto> getAllByStatus(String status) {
+        List<Account> accounts = accountRepository.findAllByStatus(StatusAccount.valueOf(status));
+        return accountMapper.accountsToAccountsDto(accounts);
+//        List<AccountDto> accountListDto = accountMapper.accountToAccountsDto(accounts);
+//        return accountListDto.stream()
+//                .filter(el -> el.getStatus().equals("New"))
+//                .toList();
     }
 }
+

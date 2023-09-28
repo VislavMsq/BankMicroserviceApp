@@ -56,20 +56,16 @@ public class Account {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
-    @JsonIgnore
     @JoinColumn(name = "client_id", referencedColumnName = "id")
     @OneToOne(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
     private User user;
 
-    @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
     private Set<Agreement> agreements;
 
-    @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
     private Set<Transaction> debits;
 
-    @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
     private Set<Transaction> credits;
 

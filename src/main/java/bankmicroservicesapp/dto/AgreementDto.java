@@ -1,18 +1,20 @@
 package bankmicroservicesapp.dto;
 
 import bankmicroservicesapp.entity.enums.StatusAgreement;
+import lombok.Data;
 
+@Data
 public class AgreementDto {
     // current
-    private String interestRate;
-    private String currencyCode;
-    private String status;
-    private String discount;
-    private double agreementLimit;
-    private double sum;
+    String interestRate;
+    String currencyCode;
+    String status;
+    String discount;
+    String agreementLimit;
+    String sum;
 
     // employee
-    private String managerId;
+    String managerId;
 
 
 }
