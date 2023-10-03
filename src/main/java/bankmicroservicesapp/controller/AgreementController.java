@@ -35,4 +35,9 @@ public class AgreementController {
     public List<AgreementDto> findAgreementManager(@RequestParam(name = "managerId") UUID managerId) {
         return agreementService.findAgreementWhereManagerId(managerId);
     }
+
+    @GetMapping("/get/clientId")
+    public List<AgreementDto> findAgreementsClientIdIs(@RequestParam(name = "clientId") UUID clientId){
+        return agreementService.findAgreementsWhereClientIdIs(clientId);
+    }
 }

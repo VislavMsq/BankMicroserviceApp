@@ -7,11 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.HashSet;
 import java.util.Objects;
-import java.util.Set;
 import java.util.UUID;
 
 import static jakarta.persistence.CascadeType.*;
@@ -58,8 +55,8 @@ public class User {
 
     @JsonIgnore
     @OneToOne(mappedBy = "user",
-               fetch = FetchType.LAZY,
-               cascade = {MERGE, PERSIST, REFRESH})
+            fetch = FetchType.LAZY,
+            cascade = {MERGE, PERSIST, REFRESH})
     private Account account;
 
     @JsonIgnore

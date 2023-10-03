@@ -3,10 +3,10 @@ package bankmicroservicesapp.controller;
 import bankmicroservicesapp.dto.ProductDto;
 import bankmicroservicesapp.entity.Product;
 import bankmicroservicesapp.service.ProductService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.data.repository.query.Param;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/product")
@@ -20,5 +20,10 @@ public class ProductController {
     @PostMapping("/update")
     public Product updateProduct(@RequestBody ProductDto productDto) {
         return productService.updateProduct(productDto);
+    }
+
+    @GetMapping ("/get/interestRate")
+    public List<ProductDto> findProductAgreementStatus(@Param("quantityAgreement") Double quantityAgreement){
+        return productService.findAllProductWhereAgreementQuantityMoreThan(quantityAgreement);
     }
 }

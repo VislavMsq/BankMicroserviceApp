@@ -9,4 +9,6 @@ public interface AgreementService {
     void deleteById(String agreementId);
 
     List<AgreementDto> findAgreementWhereManagerId(UUID managerId);
+
+    List<AgreementDto> findAgreementsWhereClientIdIs(UUID clientId);
 }

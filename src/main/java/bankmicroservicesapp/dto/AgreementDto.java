@@ -7,6 +7,8 @@ import lombok.Data;
 public class AgreementDto {
     // product
     String productName;
+    //user
+    String userId;
     // current
     String interestRate;
     String currencyCode;
