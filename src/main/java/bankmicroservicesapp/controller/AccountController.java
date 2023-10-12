@@ -22,7 +22,7 @@ public class AccountController {
     }
 
     @GetMapping("/get-all/by-status")
-    public List<AccountDto> getAllStatus(@RequestParam(name = "status") String status) { // передаем параментр
+    public List<AccountDto> getAllStatus(@RequestParam(name = "status") String status) {
         return accountService.getAllByStatus(status);
     }
 }

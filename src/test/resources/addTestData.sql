@@ -1,0 +1,3 @@
+INSERT INTO users (id)
+VALUES
+    ('7d80f158-2eff-4328-9921-0792706fe2d5');

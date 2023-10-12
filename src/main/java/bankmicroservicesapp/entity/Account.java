@@ -1,5 +1,6 @@
 package bankmicroservicesapp.entity;
 
+import bankmicroservicesapp.entity.enums.Currency;
 import bankmicroservicesapp.entity.enums.StatusAccount;
 import bankmicroservicesapp.entity.enums.TypeAccount;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -45,7 +46,7 @@ public class Account {
     private double balance;
 
     @Column(name = "currency_code")
-    private String currencyCode;
+    private Currency currencyCode;
 
     @Column(name = "bank_rating")
     private int bankRating;

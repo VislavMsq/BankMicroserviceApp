@@ -48,6 +48,4 @@ public class AgreementServiceImpl implements AgreementService {
         List<Agreement> agreements = userRepository.findAgreementsClientIdIs(clientId);
         return agreementMapper.agreementToAgreementDto(agreements);
     }
-
-
 }
