@@ -1,5 +1,6 @@
 package bankmicroservicesapp.entity;
 
+import bankmicroservicesapp.entity.enums.Currency;
 import bankmicroservicesapp.entity.enums.StatusAgreement;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -30,7 +31,8 @@ public class Agreement {
     private double interestRate;
 
     @Column(name = "currency_code")
-    private String currencyCode;
+    @Enumerated(EnumType.STRING)
+    private Currency currencyCode;
 
     @Column(name = "agreement_status")
     @Enumerated(EnumType.STRING)

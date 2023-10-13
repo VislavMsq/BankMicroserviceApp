@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS users
 (
-    id            UUID PRIMARY KEY AUTO_INCREMENT,
+    id            varchar(50) PRIMARY KEY AUTO_INCREMENT,
     tax_code      varchar(20),
     first_name    varchar(20),
     last_name     varchar(50),
@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS users
 
 CREATE TABLE IF NOT EXISTS products
 (
-    id             UUID PRIMARY KEY AUTO_INCREMENT,
+    id             varchar(50) PRIMARY KEY AUTO_INCREMENT,
     product_type   varchar(70),
     product_status varchar(20),
     interest_rate  decimal(6, 4),
@@ -24,8 +24,8 @@ CREATE TABLE IF NOT EXISTS products
 
 CREATE TABLE IF NOT EXISTS accounts
 (
-    id             UUID PRIMARY KEY AUTO_INCREMENT,
-    client_id      UUID,
+    id             varchar(50) PRIMARY KEY AUTO_INCREMENT,
+    client_id      varchar(50),
     account_name   int,
     account_type   varchar(28) UNIQUE,
     account_status varchar(20),

@@ -5,6 +5,8 @@ import bankmicroservicesapp.entity.Account;
 import bankmicroservicesapp.entity.User;
 import bankmicroservicesapp.entity.enums.StatusAccount;
 import bankmicroservicesapp.entity.enums.TypeAccount;
+import bankmicroservicesapp.exeption.CreateAccountControllerException;
+import bankmicroservicesapp.exeption.ErrorMessage;
 import bankmicroservicesapp.mapper.AccountMapper;
 import bankmicroservicesapp.repository.AccountRepository;
 import bankmicroservicesapp.repository.UserRepository;
@@ -33,11 +35,18 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     @Transactional
-    public Account createdAccount(AccountDto accountDto) {
-        Account account = accountMapper.toEntity(accountDto);
+    public Account createdAccount(AccountDto accountDto) throws CreateAccountControllerException {
+        Account account;
+        User user;
+        try {
+            account = accountMapper.toEntity(accountDto);
+            user = userRepository.findById(UUID.fromString(accountDto.getUserId())).orElseThrow(
+                    () -> new CreateAccountControllerException((ErrorMessage.CREATED_ACCOUNT_IMPOSSIBLE)));
+        } catch (Exception e) {
+            throw new CreateAccountControllerException(ErrorMessage.CREATED_ACCOUNT_IMPOSSIBLE);
+        }
         account.setUpdatedAt(LocalDateTime.now());
         account.setCreatedAt(LocalDateTime.now());
-        User user = userRepository.findById(UUID.fromString(accountDto.getUserId())).orElse(null);
         account.setUser(user);
         accountRepository.save(account);
         return account;

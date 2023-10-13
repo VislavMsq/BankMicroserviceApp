@@ -46,6 +46,7 @@ public class Account {
     private double balance;
 
     @Column(name = "currency_code")
+    @Enumerated(EnumType.STRING)
     private Currency currencyCode;
 
     @Column(name = "bank_rating")
