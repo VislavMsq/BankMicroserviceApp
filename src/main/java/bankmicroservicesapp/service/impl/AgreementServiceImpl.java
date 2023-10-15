@@ -2,6 +2,9 @@ package bankmicroservicesapp.service.impl;
 
 import bankmicroservicesapp.dto.AgreementDto;
 import bankmicroservicesapp.entity.Agreement;
+import bankmicroservicesapp.exeption.ErrorMessage;
+import bankmicroservicesapp.exeption.InvalidIdException;
+import bankmicroservicesapp.helper.ValidUUID;
 import bankmicroservicesapp.mapper.AgreementMapper;
 import bankmicroservicesapp.repository.AgreementRepository;
 import bankmicroservicesapp.repository.EmployeeRepository;
@@ -31,8 +34,15 @@ public class AgreementServiceImpl implements AgreementService {
     }
 
     @Override
-    public void deleteById(String agreementId) throws NumberFormatException {
-        agreementRepository.deleteById(UUID.fromString(agreementId));
+    public boolean deleteById(String agreementId) throws InvalidIdException {
+        if (!ValidUUID.validationUUID(agreementId)) {
+            throw new InvalidIdException(ErrorMessage.INVALID_ID);
+        }
+        if (agreementRepository.existsById(UUID.fromString(agreementId))) {
+            agreementRepository.deleteById(UUID.fromString(agreementId));
+            return true;
+        }
+        return false;
     }
 
     @Override

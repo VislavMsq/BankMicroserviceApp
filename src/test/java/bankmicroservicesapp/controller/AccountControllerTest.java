@@ -53,7 +53,7 @@ class AccountControllerTest {
 //      Assertions.assertEquals(201,accountCreatingResult.getResponse().getStatus()); // переделать на 201 через респонс
         Assertions.assertEquals(200, accountCreatingResult.getResponse().getStatus());
 
-        String accountResultJson = accountCreatingResult.getResponse().getContentAsString(); // достали из результата запроса на 43, что он должен врентуть
+        String accountResultJson = accountCreatingResult.getResponse().getContentAsString(); // достали из результата запроса на 54, что он должен врентуть
         Account accountResult = objectMapper.readValue(accountResultJson, Account.class); // конвертирует ответ с 54 к классу аккаунт
 
         Assertions.assertEquals(accountDto.getName(), accountResult.getName()); // сравниваю поля

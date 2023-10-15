@@ -1,4 +1,4 @@
-package bankmicroservicesapp.passhelper;
+package bankmicroservicesapp.helper;
 
 import java.util.List;
 import java.util.UUID;

@@ -7,6 +7,7 @@ import bankmicroservicesapp.entity.enums.StatusAccount;
 import bankmicroservicesapp.entity.enums.TypeAccount;
 import bankmicroservicesapp.exeption.CreateAccountControllerException;
 import bankmicroservicesapp.exeption.ErrorMessage;
+import bankmicroservicesapp.exeption.InvalidStatusException;
 import bankmicroservicesapp.mapper.AccountMapper;
 import bankmicroservicesapp.repository.AccountRepository;
 import bankmicroservicesapp.repository.UserRepository;
@@ -54,7 +55,12 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     @Transactional
-    public List<AccountDto> getAllByStatus(String status) {
+    public List<AccountDto> getAllByStatus(String status) throws InvalidStatusException {
+        try {
+            StatusAccount.valueOf(status);
+        } catch (Exception e) {
+            throw new InvalidStatusException(ErrorMessage.INVALID_STATUS);
+        }
         List<Account> accounts = accountRepository.findAllByStatus(StatusAccount.valueOf(status));
         return accountMapper.accountsToAccountsDto(accounts);
     }

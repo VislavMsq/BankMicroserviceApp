@@ -1,12 +1,13 @@
 package bankmicroservicesapp.service;
 
 import bankmicroservicesapp.dto.AgreementDto;
+import bankmicroservicesapp.exeption.InvalidIdException;
 
 import java.util.List;
 import java.util.UUID;
 
 public interface AgreementService {
-    void deleteById(String agreementId);
+    boolean deleteById(String agreementId) throws InvalidIdException;
 
     List<AgreementDto> findAgreementWhereManagerId(UUID managerId);
 

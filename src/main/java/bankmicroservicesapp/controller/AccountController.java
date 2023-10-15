@@ -3,6 +3,7 @@ package bankmicroservicesapp.controller;
 import bankmicroservicesapp.dto.AccountDto;
 import bankmicroservicesapp.entity.Account;
 import bankmicroservicesapp.exeption.CreateAccountControllerException;
+import bankmicroservicesapp.exeption.InvalidStatusException;
 import bankmicroservicesapp.service.AccountService;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,7 +24,7 @@ public class AccountController {
     }
 
     @GetMapping("/get-all/by-status")
-    public List<AccountDto> getAllStatus(@RequestParam(name = "status") String status) {
+    public List<AccountDto> getAllStatus(@RequestParam(name = "status") String status) throws InvalidStatusException {
         return accountService.getAllByStatus(status);
     }
 }
