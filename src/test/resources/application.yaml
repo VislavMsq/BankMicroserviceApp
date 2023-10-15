@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:h2:file:./testdb;AUTO_SERVER=TRUE
+    url: jdbc:h2:file:./testDb;AUTO_SERVER=TRUE
     driverClassName: org.h2.Driver
     username: sa
   jpa:

@@ -63,6 +63,8 @@ class AccountControllerTest {
         Assertions.assertEquals(accountDto.getBankRating(), accountResult.getCurrencyCode().toString());
         Assertions.assertEquals(Double.parseDouble(accountDto.getBalance()), accountResult.getBalance());
 
+        Assertions.assertEquals(accountResult, accountResultJson);
+// 'assertEquals()' between objects of inconvertible types 'Account' and 'String'
 
     }
 }

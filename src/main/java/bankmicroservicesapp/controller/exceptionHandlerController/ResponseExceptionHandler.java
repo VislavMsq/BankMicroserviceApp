@@ -1,4 +1,4 @@
-package bankmicroservicesapp.controller;
+package bankmicroservicesapp.controller.exceptionHandlerController;
 
 
 import bankmicroservicesapp.exeption.CreateAccountControllerException;
