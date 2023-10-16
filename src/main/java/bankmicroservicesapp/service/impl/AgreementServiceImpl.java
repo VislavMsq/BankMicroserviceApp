@@ -34,7 +34,7 @@ public class AgreementServiceImpl implements AgreementService {
     }
 
     @Override
-    public boolean deleteById(String agreementId) throws InvalidIdException {
+    public boolean deleteById(String agreementId) {
         if (!ValidUUID.validationUUID(agreementId)) {
             throw new InvalidIdException(ErrorMessage.INVALID_ID);
         }

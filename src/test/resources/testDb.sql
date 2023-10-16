@@ -1,6 +1,7 @@
-CREATE TABLE IF NOT EXISTS users
+
+CREATE TABLE IF NOT EXISTS TESTDB.PUBLIC.USERS
 (
-    id            varchar(50) PRIMARY KEY ,
+    id            uuid PRIMARY KEY,
     tax_code      varchar(20),
     first_name    varchar(20),
     last_name     varchar(50),
@@ -12,9 +13,9 @@ CREATE TABLE IF NOT EXISTS users
     updated_at    TIMESTAMP
 );
 
-CREATE TABLE IF NOT EXISTS products
+CREATE TABLE IF NOT EXISTS TESTDB.PUBLIC.PRODUCTS
 (
-    id             varchar(50) PRIMARY KEY ,
+    id             uuid PRIMARY KEY,
     product_type   varchar(70),
     product_status varchar(20),
     interest_rate  decimal(6, 4),
@@ -22,12 +23,12 @@ CREATE TABLE IF NOT EXISTS products
     updated_at     TIMESTAMP
 );
 
-CREATE TABLE IF NOT EXISTS accounts
+CREATE TABLE IF NOT EXISTS TESTDB.PUBLIC.ACCOUNTS
 (
-    id             varchar(50) PRIMARY KEY ,
-    client_id      varchar(50),
-    account_name   int,
-    account_type   varchar(28) UNIQUE,
+    id             uuid PRIMARY KEY,
+    client_id      uuid,
+    account_name   varchar(40),
+    account_type   varchar(28) ,
     account_status varchar(20),
     balance        decimal(15, 2),
     currency_code  varchar(3),

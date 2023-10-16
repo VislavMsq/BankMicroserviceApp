@@ -1,6 +1,6 @@
 package bankmicroservicesapp.exeption;
 
-public class CreateAccountControllerException extends Exception {
+public class CreateAccountControllerException extends RuntimeException {
     public CreateAccountControllerException(String message) {
         super(message);
     }

@@ -1,3 +1,3 @@
-drop table if exists accounts;
-drop table if exists products;
-drop table if exists users;
+DROP TABLE IF EXISTS TESTDB.PUBLIC.ACCOUNTS;
+DROP TABLE IF EXISTS TESTDB.PUBLIC.PRODUCTS;
+DROP TABLE IF EXISTS TESTDB.PUBLIC.USERS;

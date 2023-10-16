@@ -8,7 +8,7 @@ import bankmicroservicesapp.exeption.InvalidStatusException;
 import java.util.List;
 
 public interface AccountService {
-    Account createdAccount(AccountDto accountDto) throws CreateAccountControllerException;
+    Account createdAccount(AccountDto accountDto);
 
     List<AccountDto> getAllByStatus(String status) throws InvalidStatusException;
 }

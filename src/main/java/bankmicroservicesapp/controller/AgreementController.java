@@ -23,7 +23,7 @@ public class AgreementController {
 
     @RequestMapping(value = "/delete/{agreementsId}", method = {RequestMethod.GET, RequestMethod.DELETE})
     @ResponseStatus(HttpStatus.OK)
-    public void deleteById(@PathVariable("agreementsId") String agreementsId) throws InvalidIdException, UserNotExistException {
+    public void deleteById(@PathVariable("agreementsId") String agreementsId) {
         if (!agreementService.deleteById(agreementsId)) {
             throw new UserNotExistException(ErrorMessage.USER_NOT_EXIST);
         }
