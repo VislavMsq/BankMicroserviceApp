@@ -48,6 +48,9 @@ public class AgreementServiceImpl implements AgreementService {
     @Override
     @Transactional
     public List<AgreementDto> findAgreementWhereManagerId(UUID managerId) {
+        if (!ValidUUID.validationUUID(managerId.toString())) {
+            throw new InvalidIdException(ErrorMessage.INVALID_ID);
+        }
         List<Agreement> agreementList = employeeRepository.findAgreementByManagerId(managerId);
         return agreementMapper.agreementToAgreementDto(agreementList);
     }
@@ -55,6 +58,9 @@ public class AgreementServiceImpl implements AgreementService {
     @Override
     @Transactional
     public List<AgreementDto> findAgreementsWhereClientIdIs(UUID clientId) {
+        if (!ValidUUID.validationUUID(clientId.toString())) {
+            throw new InvalidIdException(ErrorMessage.INVALID_ID);
+        }
         List<Agreement> agreements = userRepository.findAgreementsClientIdIs(clientId);
         return agreementMapper.agreementToAgreementDto(agreements);
     }

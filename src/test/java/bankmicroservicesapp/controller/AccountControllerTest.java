@@ -3,6 +3,7 @@ package bankmicroservicesapp.controller;
 import bankmicroservicesapp.dto.AccountDto;
 import bankmicroservicesapp.entity.Account;
 import bankmicroservicesapp.service.AccountService;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -15,6 +16,9 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 
 @SpringBootTest
@@ -22,15 +26,13 @@ import static org.springframework.security.test.web.servlet.request.SecurityMock
 @Sql("/dropTable.sql")
 @Sql("/testDb.sql")
 @Sql("/addTestData.sql")
-// создание тестовой базы и ее зачисты - аннатация
 class AccountControllerTest {
     //
     @Autowired
-    private MockMvc mockMvc; // мок для тестирования запросов
+    private MockMvc mockMvc;           // мок для тестирования запросов
     @Autowired
     private ObjectMapper objectMapper; // конвертор в джон
-    @Autowired
-    private AccountService accountService;
+
 
     @Test
     void shouldCreateAccount() throws Exception {
@@ -48,46 +50,53 @@ class AccountControllerTest {
         // when
         MvcResult accountCreatingResult = mockMvc.perform(MockMvcRequestBuilders.post("/account/create")
                         .contentType(MediaType.APPLICATION_JSON) // в каком формате вернет(или положит?) значение наш контроллер
-                        .with(csrf())               // ?
+                        .with(csrf())
                         .content(accountStringDto)) // кладем, что принимает контроллер
                 .andReturn();                       // возвращает ответ из контроллера
         // then
         // достал статус код
-//      Assertions.assertEquals(201,accountCreatingResult.getResponse().getStatus()); // переделать на 201 через респонс
         Assertions.assertEquals(200, accountCreatingResult.getResponse().getStatus());
 
-        String accountResultJson = accountCreatingResult.getResponse().getContentAsString(); // достали из результата запроса на 54, что он должен врентуть
-        Account accountResult = objectMapper.readValue(accountResultJson, Account.class); // конвертирует ответ с 54 к классу аккаунт
+        String accountResultJson = accountCreatingResult.getResponse().getContentAsString(); // достали стригну
+        Account accountResult = objectMapper.readValue(accountResultJson, Account.class);    // сконвертировали строку в дсон
 
-        Assertions.assertEquals(accountDto.getName(), accountResult.getName()); // сравниваю поля
+        Assertions.assertEquals(accountDto.getName(), accountResult.getName());              // сравниваю поля
         Assertions.assertEquals(accountDto.getType(), accountResult.getType().toString());
         Assertions.assertEquals(accountDto.getStatus(), accountResult.getStatus().toString());
         Assertions.assertEquals(accountDto.getCurrencyCode(), accountResult.getCurrencyCode().toString());
-        Assertions.assertEquals(accountDto.getBankRating(), accountResult.getCurrencyCode().toString());
+        Assertions.assertEquals(accountDto.getBankRating(), String.valueOf(accountResult.getBankRating()));
         Assertions.assertEquals(Double.parseDouble(accountDto.getBalance()), accountResult.getBalance());
 
     }
 
     @Test
+        // todo внести данные в аддтестдата которые там будут и которые я буду ожидать
     void getAllByStatusTest() throws Exception {
-        AccountDto accountDto = new AccountDto();
-        accountDto.setUserId("7d80f158-2eff-4328-9921-0792706fe2d5");
-        accountDto.setName("John.Jonson");
-        accountDto.setType("Business");
-        accountDto.setStatus("New");
-        accountDto.setCurrencyCode("EUR");
-        accountDto.setBankRating("5");
-        accountDto.setBalance("350.00");
-
-        String accountStringDto = objectMapper.writeValueAsString(accountDto);
+        List<AccountDto> expected = new ArrayList<>();
 
         MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/account/get-all/by-status")
-                        .contentType(MediaType.APPLICATION_JSON)
+                        .contentType(MediaType.APPLICATION_JSON) //  каком формате мы будем возвращать
                         .with(csrf())
-                        .content(accountStringDto))
+                        .param("New")) // body  //todo как положить через анатацию реквест парам в боди
                 .andReturn();
 
-        Assertions.assertEquals(200,mvcResult.getResponse().getStatus());
-        Assertions.assertFalse(accountService.getAllByStatus("New").isEmpty());
+        String accountResultJson = mvcResult.getResponse().getContentAsString(); // достали стригну
+
+        // преименновать                                                             // тут будет лист дто
+       // List<AccountDto> accountResult = objectMapper.readValue(accountResultJson, List < AccountDto >); // сконвертировали строку в дсон
+        // потом лист сравнить с ожидаемым ответом
+        // загрузить тестовые данные для проверки
+        List<AccountDto> actual = objectMapper.readValue(accountResultJson, new TypeReference<>() {
+        });
+
+        Assertions.assertEquals(200, mvcResult.getResponse().getStatus()); // ++
+        Assertions.assertEquals(expected, actual); // тут асерт своих ожидаемых означений
+        // лист результатов + ожидаемое значение какое я получу?
+
+/*
+ String accountResultJson = accountCreatingResult.getResponse().getContentAsString(); // достали стригну
+        Account accountResult = objectMapper.readValue(accountResultJson, Account.class); // сконвертировали строку в дсон
+ */
+
     }
 }

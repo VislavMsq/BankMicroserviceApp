@@ -19,12 +19,12 @@ public class AccountController {
     }
 
     @PostMapping("/create")
-    public Account createAccount(@RequestBody AccountDto accountDto) throws CreateAccountControllerException {
+    public Account createAccount(@RequestBody AccountDto accountDto){
         return accountService.createdAccount(accountDto);
     }
 
     @GetMapping("/get-all/by-status")
-    public List<AccountDto> getAllStatus(@RequestParam(name = "status") String status) throws InvalidStatusException {
+    public List<AccountDto> getAllStatus(@RequestParam(name = "status") String status){
         return accountService.getAllByStatus(status);
     }
 }

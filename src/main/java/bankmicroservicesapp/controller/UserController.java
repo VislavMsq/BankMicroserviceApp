@@ -1,6 +1,10 @@
 package bankmicroservicesapp.controller;
 
+import bankmicroservicesapp.controller.util.Valid;
 import bankmicroservicesapp.entity.User;
+import bankmicroservicesapp.exeption.ErrorMessage;
+import bankmicroservicesapp.exeption.InvalidIdException;
+import bankmicroservicesapp.exeption.UserNotExistException;
 import bankmicroservicesapp.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,13 +28,13 @@ public class UserController {
     @GetMapping("/{userId}")
     public User getById(@PathVariable("userId") String userId) {
         Optional<User> optUser;
-        try {
-            optUser = userService.findById(userId);
-        } catch (NumberFormatException e) {
-            throw new ResponseStatusException(HttpStatus.I_AM_A_TEAPOT);
+        if (!Valid.isValidUUID(userId)) {
+            throw new InvalidIdException(ErrorMessage.INVALID_ID);
         }
+        optUser = userService.findById(userId);
+
         if (optUser.isEmpty()) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+            throw new UserNotExistException(ErrorMessage.USER_NOT_EXIST);
         }
         return optUser.get();
     }

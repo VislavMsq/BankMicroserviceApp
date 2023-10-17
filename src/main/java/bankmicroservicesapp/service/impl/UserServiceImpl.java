@@ -18,7 +18,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Optional<User> findById(String userId) throws NumberFormatException {
+    public Optional<User> findById(String userId){
         return userRepository.findById(UUID.fromString(userId));
     }
 }

@@ -37,10 +37,9 @@ public class AccountServiceImpl implements AccountService {
     @Override
     @Transactional
     public Account createdAccount(AccountDto accountDto) {
-        Account account;
-        User user;
-        account = accountMapper.toEntity(accountDto);
-        user = userRepository.findById(UUID.fromString(accountDto.getUserId())).orElseThrow(
+
+        Account account = accountMapper.toEntity(accountDto);
+        User user = userRepository.findById(UUID.fromString(accountDto.getUserId())).orElseThrow(
                 () -> new CreateAccountControllerException((ErrorMessage.CREATED_ACCOUNT_IMPOSSIBLE)));
 
         account.setUpdatedAt(LocalDateTime.now());
@@ -53,7 +52,7 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     @Transactional
-    public List<AccountDto> getAllByStatus(String status) throws InvalidStatusException {
+    public List<AccountDto> getAllByStatus(String status){
         try {
             StatusAccount.valueOf(status);
         } catch (Exception e) {

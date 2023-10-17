@@ -1,5 +1,6 @@
 package bankmicroservicesapp.controller;
 
+import bankmicroservicesapp.controller.util.Valid;
 import bankmicroservicesapp.dto.AgreementDto;
 import bankmicroservicesapp.exeption.ErrorMessage;
 import bankmicroservicesapp.exeption.InvalidIdException;
@@ -37,6 +38,9 @@ public class AgreementController {
 
     @GetMapping("/get/clientId")
     public List<AgreementDto> findAgreementsClientIdIs(@RequestParam(name = "clientId") UUID clientId) {
+        if (!Valid.isValidUUID(clientId.toString())) {
+            throw new InvalidIdException(ErrorMessage.INVALID_ID);
+        }
         return agreementService.findAgreementsWhereClientIdIs(clientId);
     }
 }
