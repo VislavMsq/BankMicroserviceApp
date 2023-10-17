@@ -77,24 +77,19 @@ class AccountControllerTest {
         MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/account/get-all/by-status")
                         .contentType(MediaType.APPLICATION_JSON) //  каком формате мы будем возвращать
                         .with(csrf())
-                        .param("New")) // body  //todo как положить через анатацию реквест парам в боди
+                        .param("status", "New"))//todo как положить через анатацию реквест парам в боди
                 .andReturn();
 
-        String accountResultJson = mvcResult.getResponse().getContentAsString(); // достали стригну
+        String accountResultJson = mvcResult.getResponse().getContentAsString();     // достали стригну
 
-        // преименновать                                                             // тут будет лист дто
-       // List<AccountDto> accountResult = objectMapper.readValue(accountResultJson, List < AccountDto >); // сконвертировали строку в дсон
-        // потом лист сравнить с ожидаемым ответом
-        // загрузить тестовые данные для проверки
         List<AccountDto> actual = objectMapper.readValue(accountResultJson, new TypeReference<>() {
         });
 
         Assertions.assertEquals(200, mvcResult.getResponse().getStatus()); // ++
         Assertions.assertEquals(expected, actual); // тут асерт своих ожидаемых означений
-        // лист результатов + ожидаемое значение какое я получу?
 
 /*
- String accountResultJson = accountCreatingResult.getResponse().getContentAsString(); // достали стригну
+        String accountResultJson = accountCreatingResult.getResponse().getContentAsString(); // достали стригну
         Account accountResult = objectMapper.readValue(accountResultJson, Account.class); // сконвертировали строку в дсон
  */
 
