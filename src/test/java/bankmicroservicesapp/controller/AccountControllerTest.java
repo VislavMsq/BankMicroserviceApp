@@ -72,12 +72,23 @@ class AccountControllerTest {
     @Test
         // todo внести данные в аддтестдата которые там будут и которые я буду ожидать
     void getAllByStatusTest() throws Exception {
+
         List<AccountDto> expected = new ArrayList<>();
+        AccountDto accountDto = new AccountDto();
+        accountDto.setUserId("05ebe134-0d14-4675-99ef-d07da2b2212f");
+        accountDto.setName("Anna.Petrova");
+        accountDto.setType("personal");
+        accountDto.setStatus("Active");
+        accountDto.setCurrencyCode("RUB");
+        accountDto.setBankRating("5");
+        accountDto.setBalance("12250.00");
+
+        expected.add(accountDto);
 
         MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/account/get-all/by-status")
                         .contentType(MediaType.APPLICATION_JSON) //  каком формате мы будем возвращать
                         .with(csrf())
-                        .param("status", "New"))//todo как положить через анатацию реквест парам в боди
+                        .param("status", "Active"))//todo как положить через анатацию реквест парам в боди
                 .andReturn();
 
         String accountResultJson = mvcResult.getResponse().getContentAsString();     // достали стригну
