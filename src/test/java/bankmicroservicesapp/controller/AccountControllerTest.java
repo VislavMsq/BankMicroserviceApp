@@ -2,7 +2,6 @@ package bankmicroservicesapp.controller;
 
 import bankmicroservicesapp.dto.AccountDto;
 import bankmicroservicesapp.entity.Account;
-import bankmicroservicesapp.service.AccountService;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Assertions;
@@ -76,12 +75,12 @@ class AccountControllerTest {
         List<AccountDto> expected = new ArrayList<>();
         AccountDto accountDto = new AccountDto();
         accountDto.setUserId("05ebe134-0d14-4675-99ef-d07da2b2212f");
-        accountDto.setName("Anna.Petrova");
-        accountDto.setType("personal");
+        accountDto.setName("John.Smith");
+        accountDto.setType("Personal");
         accountDto.setStatus("Active");
-        accountDto.setCurrencyCode("RUB");
+        accountDto.setCurrencyCode("USD");
         accountDto.setBankRating("5");
-        accountDto.setBalance("12250.00");
+        accountDto.setBalance("12250.0");
 
         expected.add(accountDto);
 

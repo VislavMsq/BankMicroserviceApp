@@ -8,6 +8,17 @@ VALUES ('05ebe134-0d14-4675-99ef-d07da2b2212f', 'GB123456789', 'John', 'Smith',
         'john.smith@gmail.com',
         '98765676766546', '123 Main Street, London, UK', '+44 123 456 7890', '2023-09-18 12:12:00','2023-08-20 11:30:00');
 
+INSERT INTO ACCOUNTS (id, client_id, account_name, account_type, account_status, balance, currency_code, bank_rating, created_at, updated_at)
+VALUES ('11ebe124-0d14-4675-99ef-d07da2b2222a', '05ebe134-0d14-4675-99ef-d07da2b2212f', 'John.Smith', 'Personal',
+        'Active',
+        '12250.00','USD', '5','2023-09-18 12:12:00','2023-08-20 11:30:00');
+
+INSERT INTO ACCOUNTS (id, client_id, account_name, account_type, account_status, balance, currency_code, bank_rating, created_at, updated_at)
+VALUES ('11ebe124-0d14-4675-99ef-d07da2b2222a', '05ebe134-0d14-4675-99ef-d07da2b2212f', 'John.Smith', 'Personal',
+        'Active',
+        '12250.00','USD', '5','2023-09-18 12:12:00','2023-08-20 11:30:00');
+
+
 
 
 
