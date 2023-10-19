@@ -5,6 +5,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
@@ -24,7 +25,10 @@ import static org.springframework.security.test.web.servlet.request.SecurityMock
 @Sql("/testDb.sql")
 @Sql("/addTestData.sql")
 class AgreementControllerTest {
+
+    @Autowired
     private MockMvc mockMvc;
+    @Autowired
     private ObjectMapper objectMapper;
 
     @Test
@@ -37,31 +41,30 @@ class AgreementControllerTest {
         List<AgreementDto> expectedAgreementList = new ArrayList<>();
         AgreementDto agreementDto = new AgreementDto();
         agreementDto.setProductName("HealthInsurance");
-        agreementDto.setUserId("fca81f38-1f36-4b02-a646-d066458da668");
-        agreementDto.setInterestRate("10.2000");
+        agreementDto.setUserId("05ebe134-0d14-4675-99ef-d07da2b2212f");
+        agreementDto.setInterestRate("10.2");
         agreementDto.setCurrencyCode("USD");
         agreementDto.setStatus("Completed");
-        agreementDto.setDiscount("0.00");
-        agreementDto.setAgreementLimit("5000.00");
-        agreementDto.setSum("5000.00");
+        agreementDto.setDiscount("0.0");
+        agreementDto.setAgreementLimit("5000.0");
+        agreementDto.setSum("500.0");
 
         expectedAgreementList.add(agreementDto);
 
-        String agreementStr = objectMapper.writeValueAsString(expectedAgreementList);
-
-        MvcResult mockMvc1 = mockMvc.perform(MockMvcRequestBuilders.get("/agreement/managerId")
+        MvcResult mockMvc1 = mockMvc.perform(MockMvcRequestBuilders.get("/agreement/get/agreementManager")
                         .contentType(MediaType.APPLICATION_JSON)
                         .with(csrf())
-                        .content(agreementStr))
+                        .param("managerId", "5b92d682-015a-4a12-9e25-33daa97ebdec"))
                 .andReturn();
 
         String agreementResultJson = mockMvc1.getResponse().getContentAsString();
-        List<AgreementDto> actual = objectMapper.readValue(agreementResultJson, new TypeReference<>(){
+        System.out.println(agreementResultJson + "*********************************************");
+        List<AgreementDto> actual = objectMapper.readValue(agreementResultJson, new TypeReference<>() {
         });
 
-        Assertions.assertEquals(200,mockMvc1.getResponse().getStatus());
-        Assertions.assertEquals(actual,expectedAgreementList);
 
+        Assertions.assertEquals(200, mockMvc1.getResponse().getStatus());
+        Assertions.assertEquals(actual, expectedAgreementList);
     }
 
     @Test

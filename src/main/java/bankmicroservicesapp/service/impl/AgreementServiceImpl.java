@@ -1,10 +1,10 @@
 package bankmicroservicesapp.service.impl;
 
+import bankmicroservicesapp.controller.util.Valid;
 import bankmicroservicesapp.dto.AgreementDto;
 import bankmicroservicesapp.entity.Agreement;
 import bankmicroservicesapp.exeption.ErrorMessage;
 import bankmicroservicesapp.exeption.InvalidIdException;
-import bankmicroservicesapp.helper.ValidUUID;
 import bankmicroservicesapp.mapper.AgreementMapper;
 import bankmicroservicesapp.repository.AgreementRepository;
 import bankmicroservicesapp.repository.EmployeeRepository;
@@ -35,7 +35,7 @@ public class AgreementServiceImpl implements AgreementService {
 
     @Override
     public boolean deleteById(String agreementId) {
-        if (!ValidUUID.validationUUID(agreementId)) {
+        if (!Valid.isValidUUID(agreementId)) {
             throw new InvalidIdException(ErrorMessage.INVALID_ID);
         }
         if (agreementRepository.existsById(UUID.fromString(agreementId))) {
@@ -48,7 +48,7 @@ public class AgreementServiceImpl implements AgreementService {
     @Override
     @Transactional
     public List<AgreementDto> findAgreementWhereManagerId(UUID managerId) {
-        if (!ValidUUID.validationUUID(managerId.toString())) {
+        if (!Valid.isValidUUID(managerId.toString())) {
             throw new InvalidIdException(ErrorMessage.INVALID_ID);
         }
         List<Agreement> agreementList = employeeRepository.findAgreementByManagerId(managerId);
@@ -58,7 +58,7 @@ public class AgreementServiceImpl implements AgreementService {
     @Override
     @Transactional
     public List<AgreementDto> findAgreementsWhereClientIdIs(UUID clientId) {
-        if (!ValidUUID.validationUUID(clientId.toString())) {
+        if (!Valid.isValidUUID(clientId.toString())) {
             throw new InvalidIdException(ErrorMessage.INVALID_ID);
         }
         List<Agreement> agreements = userRepository.findAgreementsClientIdIs(clientId);

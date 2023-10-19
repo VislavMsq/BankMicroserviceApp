@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS ACCOUNTS
     bank_rating    int,
     created_at     TIMESTAMP,
     updated_at     TIMESTAMP,
-    FOREIGN KEY (client_id) REFERENCES users (id)
+    FOREIGN KEY (client_id) REFERENCES USERS (id)
 );
 
 CREATE TABLE IF NOT EXISTS EMPLOYEES
