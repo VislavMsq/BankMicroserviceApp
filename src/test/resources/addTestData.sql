@@ -20,7 +20,7 @@ VALUES ('11ebe124-0d14-4675-99ef-d07da2b2222a', '05ebe134-0d14-4675-99ef-d07da2b
         '12250.00', 'USD', '5', '2023-09-18 12:12:00', '2023-08-20 11:30:00');
 
 INSERT INTO PRODUCTS (id, product_type, product_status, interest_rate, created_at, updated_at)
-VALUES ('60587cf0-aaa3-475a-8ef8-aa452c6e8fe9', 'HealthInsurance', 'Available', '4.4900', '2023-09-18 12:12:00',
+VALUES ('60587cf0-aaa3-475a-8ef8-aa452c6e8fe9', 'HealthInsurance', 'Available', '2.9900', '2023-09-18 12:12:00',
         '2023-08-20 11:30:00');
 
 INSERT INTO AGREEMENTS (id, account_id, product_id, manager_id, interest_rate, currency_code, agreement_status,
@@ -30,6 +30,10 @@ VALUES ('a242f83f-a341-45f4-9430-e43cfbf55361', '11ebe124-0d14-4675-99ef-d07da2b
         '5b92d682-015a-4a12-9e25-33daa97ebdec', '10.2000', 'USD', 'Completed', '0.0', '5000.00', '500.0',
         '2023-01-28 08:41:21',
         '2023-08-12 12:55:12');
+
+
+
+
 
 
 

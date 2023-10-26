@@ -3,15 +3,14 @@ package bankmicroservicesapp.entity;
 import bankmicroservicesapp.entity.enums.Currency;
 import bankmicroservicesapp.entity.enums.StatusAccount;
 import bankmicroservicesapp.entity.enums.TypeAccount;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 import java.util.UUID;
@@ -62,14 +61,14 @@ public class Account {
     @OneToOne(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
     private User user;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
-    private Set<Agreement> agreements;
+    @OneToMany(mappedBy = "account",fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
+    private List<Agreement> agreements;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
-    private Set<Transaction> debits;
+    @OneToMany(mappedBy = "debitAccountId",fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
+    private List<Transaction> debits;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
-    private Set<Transaction> credits;
+    @OneToMany(mappedBy = "creditAccountId",fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
+    private List<Transaction> credits;
 
 
     @Override
@@ -77,12 +76,12 @@ public class Account {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Account account = (Account) o;
-        return Objects.equals(id, account.id) && Objects.equals(name, account.name) && Objects.equals(user, account.user);
+        return Objects.equals(id, account.id) && Objects.equals(name, account.name) && status == account.status;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, user);
+        return Objects.hash(id, name, status);
     }
 
     @Override
@@ -97,10 +96,6 @@ public class Account {
                 ", bankRating=" + bankRating +
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
-                ", user=" + user +
-                ", agreements=" + agreements +
-                ", debits=" + debits +
-                ", credits=" + credits +
                 '}';
     }
 }

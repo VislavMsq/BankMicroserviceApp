@@ -1,5 +1,6 @@
 package bankmicroservicesapp.controller;
 
+import bankmicroservicesapp.dto.TransactionDto;
 import bankmicroservicesapp.entity.Transaction;
 import bankmicroservicesapp.service.TransactionService;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +20,7 @@ public class TransactionController {
     }
 
     @GetMapping("/all")
-    public List<Transaction> getAllTransaction() {
+    public List<TransactionDto> getAllTransaction() {
         return transactionService.getAll();
     }
 }

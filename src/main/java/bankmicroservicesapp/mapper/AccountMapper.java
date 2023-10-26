@@ -12,7 +12,7 @@ import java.util.UUID;
 @Mapper(componentModel = "spring")
 public interface AccountMapper {
 
-    @Mapping(source = "user.id", target = "userId", qualifiedByName = "UUIDtoString")
+    @Mapping(source = "user.id", target = "userId", qualifiedByName = "UUIDToString")
     AccountDto toDto(Account account);
 
     List<AccountDto> accountsToAccountsDto(List<Account> accounts);
@@ -31,8 +31,8 @@ public interface AccountMapper {
         return Integer.parseInt(string);
     }
 
-    @Named("UUIDtoString")
-    default String toUUIDParse(UUID uuid) {
+    @Named("UUIDToString")
+    default String UUIDToString(UUID uuid) {
         return uuid.toString();
     }
 }

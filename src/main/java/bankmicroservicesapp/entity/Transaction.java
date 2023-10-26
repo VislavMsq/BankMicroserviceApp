@@ -40,12 +40,10 @@ public class Transaction {
     @Column(name = "updated_at")
     private LocalDate updatedAt;
 
-    @JsonIgnore
     @JoinColumn(name = "debit_account_id", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
     private Account debitAccountId;
 
-    @JsonIgnore
     @JoinColumn(name = "credit_account_id", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
     private Account creditAccountId;
@@ -55,12 +53,12 @@ public class Transaction {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Transaction that = (Transaction) o;
-        return Objects.equals(id, that.id) && Objects.equals(debitAccountId, that.debitAccountId);
+        return Objects.equals(id, that.id) && type == that.type && Objects.equals(description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, debitAccountId);
+        return Objects.hash(id, type, description);
     }
 
     @Override
@@ -70,9 +68,7 @@ public class Transaction {
                 ", type=" + type +
                 ", amount=" + amount +
                 ", description='" + description + '\'' +
-                ", createdAt=" + updatedAt +
-                ", debitAccountId=" + debitAccountId +
-                ", creditAccountId=" + creditAccountId +
+                ", updatedAt=" + updatedAt +
                 '}';
     }
 }

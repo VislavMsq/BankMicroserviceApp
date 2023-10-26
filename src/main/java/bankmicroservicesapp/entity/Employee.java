@@ -42,7 +42,7 @@ public class Employee {
     @Column(name = "updated_at")
     private LocalDate updatedAt;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
+    @OneToMany(mappedBy = "manager",fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
     private Set<Agreement> agreements;
 
     @JoinColumn(name = "user_id", referencedColumnName = "id")
@@ -54,12 +54,12 @@ public class Employee {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Employee employee = (Employee) o;
-        return Objects.equals(id, employee.id) && Objects.equals(user, employee.user);
+        return Objects.equals(id, employee.id) && type == employee.type && status == employee.status;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, user);
+        return Objects.hash(id, type, status);
     }
 
     @Override
@@ -70,8 +70,6 @@ public class Employee {
                 ", status=" + status +
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
-                ", agreements=" + agreements +
-                ", userId=" + user +
                 '}';
     }
 }

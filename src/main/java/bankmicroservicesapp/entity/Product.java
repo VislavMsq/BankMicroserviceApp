@@ -46,9 +46,7 @@ public class Product {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
-    @JsonIgnore
-    @OneToMany(fetch = FetchType.LAZY,
-            cascade = {MERGE, PERSIST, REFRESH})
+    @OneToMany(mappedBy = "product",fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
     private Set<Agreement> agreements;
 
     @Override
@@ -56,24 +54,23 @@ public class Product {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Product product = (Product) o;
-        return Objects.equals(id, product.id) && Objects.equals(productType, product.productType);
+        return Objects.equals(id, product.id) && productType == product.productType && productStatus == product.productStatus;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, productType);
+        return Objects.hash(id, productType, productStatus);
     }
 
     @Override
     public String toString() {
         return "Product{" +
                 "id=" + id +
-                ", productType='" + productType + '\'' +
-                ", productStatus='" + productStatus + '\'' +
+                ", productType=" + productType +
+                ", productStatus=" + productStatus +
                 ", interestRate=" + interestRate +
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
-                ", agreements=" + agreements +
                 '}';
     }
 }

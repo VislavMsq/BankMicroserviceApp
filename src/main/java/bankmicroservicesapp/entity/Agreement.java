@@ -70,12 +70,12 @@ public class Agreement {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Agreement agreement = (Agreement) o;
-        return Objects.equals(id, agreement.id) && Objects.equals(account, agreement.account) && Objects.equals(product, agreement.product);
+        return Double.compare(interestRate, agreement.interestRate) == 0 && Double.compare(sum, agreement.sum) == 0 && Objects.equals(id, agreement.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, account, product);
+        return Objects.hash(id, interestRate, sum);
     }
 
     @Override
@@ -83,16 +83,13 @@ public class Agreement {
         return "Agreement{" +
                 "id=" + id +
                 ", interestRate=" + interestRate +
-                ", currencyCode='" + currencyCode + '\'' +
+                ", currencyCode=" + currencyCode +
                 ", status=" + status +
                 ", discount=" + discount +
                 ", agreementLimit=" + agreementLimit +
                 ", sum=" + sum +
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
-                ", account=" + account +
-                ", product=" + product +
-                ", manager=" + manager +
                 '}';
     }
 }

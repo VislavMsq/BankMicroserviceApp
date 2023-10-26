@@ -25,9 +25,7 @@ public class AgreementController {
     @RequestMapping(value = "/delete/{agreementsId}", method = {RequestMethod.GET, RequestMethod.DELETE})
     @ResponseStatus(HttpStatus.OK)
     public void deleteById(@PathVariable("agreementsId") String agreementsId) {
-        if (!agreementService.deleteById(agreementsId)) {
-            throw new UserNotExistException(ErrorMessage.USER_NOT_EXIST);
-        }
+        agreementService.deleteById(agreementsId);
         throw new ResponseStatusException(HttpStatus.OK);
     }
 
@@ -36,7 +34,7 @@ public class AgreementController {
         return agreementService.findAgreementWhereManagerId(managerId);
     }
 
-    @GetMapping("/get/clientId")
+    @GetMapping("/get/agreementClientId")
     public List<AgreementDto> findAgreementsClientIdIs(@RequestParam(name = "clientId") UUID clientId) {
         if (!Valid.isValidUUID(clientId.toString())) {
             throw new InvalidIdException(ErrorMessage.INVALID_ID);

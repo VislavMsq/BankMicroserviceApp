@@ -5,6 +5,7 @@ import bankmicroservicesapp.dto.AgreementDto;
 import bankmicroservicesapp.entity.Agreement;
 import bankmicroservicesapp.exeption.ErrorMessage;
 import bankmicroservicesapp.exeption.InvalidIdException;
+import bankmicroservicesapp.exeption.UserNotExistException;
 import bankmicroservicesapp.mapper.AgreementMapper;
 import bankmicroservicesapp.repository.AgreementRepository;
 import bankmicroservicesapp.repository.EmployeeRepository;
@@ -22,7 +23,6 @@ public class AgreementServiceImpl implements AgreementService {
     private final AgreementRepository agreementRepository;
     private final AgreementMapper agreementMapper;
     private final EmployeeRepository employeeRepository;
-
     private final UserRepository userRepository;
 
 
@@ -34,23 +34,19 @@ public class AgreementServiceImpl implements AgreementService {
     }
 
     @Override
-    public boolean deleteById(String agreementId) {
+    public void deleteById(String agreementId) {
         if (!Valid.isValidUUID(agreementId)) {
             throw new InvalidIdException(ErrorMessage.INVALID_ID);
         }
         if (agreementRepository.existsById(UUID.fromString(agreementId))) {
             agreementRepository.deleteById(UUID.fromString(agreementId));
-            return true;
         }
-        return false;
+        throw new UserNotExistException(ErrorMessage.USER_NOT_EXIST);
     }
 
     @Override
     @Transactional
     public List<AgreementDto> findAgreementWhereManagerId(UUID managerId) {
-        if (!Valid.isValidUUID(managerId.toString())) {
-            throw new InvalidIdException(ErrorMessage.INVALID_ID);
-        }
         List<Agreement> agreementList = employeeRepository.findAgreementByManagerId(managerId);
         return agreementMapper.agreementToAgreementDto(agreementList);
     }
@@ -58,10 +54,8 @@ public class AgreementServiceImpl implements AgreementService {
     @Override
     @Transactional
     public List<AgreementDto> findAgreementsWhereClientIdIs(UUID clientId) {
-        if (!Valid.isValidUUID(clientId.toString())) {
-            throw new InvalidIdException(ErrorMessage.INVALID_ID);
-        }
-        List<Agreement> agreements = userRepository.findAgreementsClientIdIs(clientId);
+        List<Agreement> agreements = agreementRepository.findAgreementsClientIdIs(clientId);
+        System.out.println(agreements + "0000000000000000000000000000000");
         return agreementMapper.agreementToAgreementDto(agreements);
     }
 }

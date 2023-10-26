@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.UUID;
 
 public interface AgreementService {
-    boolean deleteById(String agreementId) throws InvalidIdException;
+    void deleteById(String agreementId) throws InvalidIdException;
 
     List<AgreementDto> findAgreementWhereManagerId(UUID managerId);
 

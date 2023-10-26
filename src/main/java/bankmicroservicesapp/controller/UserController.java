@@ -1,6 +1,7 @@
 package bankmicroservicesapp.controller;
 
 import bankmicroservicesapp.controller.util.Valid;
+import bankmicroservicesapp.dto.UserDto;
 import bankmicroservicesapp.entity.User;
 import bankmicroservicesapp.exeption.ErrorMessage;
 import bankmicroservicesapp.exeption.InvalidIdException;
@@ -26,17 +27,11 @@ public class UserController {
     }
 
     @GetMapping("/{userId}")
-    public User getById(@PathVariable("userId") String userId) {
-        Optional<User> optUser;
-        if (!Valid.isValidUUID(userId)) {
-            throw new InvalidIdException(ErrorMessage.INVALID_ID);
-        }
+    public UserDto getById(@PathVariable("userId") String userId) {
+        UserDto optUser;
         optUser = userService.findById(userId);
 
-        if (optUser.isEmpty()) {
-            throw new UserNotExistException(ErrorMessage.USER_NOT_EXIST);
-        }
-        return optUser.get();
+        return optUser;
     }
 }
 

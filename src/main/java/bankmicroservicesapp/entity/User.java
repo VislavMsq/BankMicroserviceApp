@@ -53,13 +53,9 @@ public class User {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
-    @JsonIgnore
-    @OneToOne(mappedBy = "user",
-            fetch = FetchType.LAZY,
-            cascade = {MERGE, PERSIST, REFRESH})
+    @OneToOne(mappedBy = "user", fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
     private Account account;
 
-    @JsonIgnore
     @OneToOne(mappedBy = "user", fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
     private Employee employee;
 
@@ -76,7 +72,7 @@ public class User {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, taxCode, email, phone);
+        return Objects.hash(id, email, phone);
     }
 
     @Override
@@ -84,8 +80,14 @@ public class User {
         return "User{" +
                 "id=" + id +
                 ", taxCode='" + taxCode + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
                 ", userPassword='" + userPassword + '\'' +
+                ", address='" + address + '\'' +
                 ", phone='" + phone + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
                 '}';
     }
 }

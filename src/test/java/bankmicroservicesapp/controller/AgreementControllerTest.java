@@ -37,7 +37,7 @@ class AgreementControllerTest {
     }
 
     @Test
-    void findAgreementManager() throws Exception {
+    void findAgreementManagerTest() throws Exception {
         List<AgreementDto> expectedAgreementList = new ArrayList<>();
         AgreementDto agreementDto = new AgreementDto();
         agreementDto.setProductName("HealthInsurance");
@@ -58,7 +58,6 @@ class AgreementControllerTest {
                 .andReturn();
 
         String agreementResultJson = mockMvc1.getResponse().getContentAsString();
-        System.out.println(agreementResultJson + "*********************************************");
         List<AgreementDto> actual = objectMapper.readValue(agreementResultJson, new TypeReference<>() {
         });
 
@@ -68,6 +67,34 @@ class AgreementControllerTest {
     }
 
     @Test
-    void findAgreementsClientIdIs() {
+    void findAgreementsClientIdIsTest() throws Exception {
+        List<AgreementDto> agreementDtos = new ArrayList<>();
+        AgreementDto agreementDto = new AgreementDto();
+        agreementDto.setProductName("HealthInsurance");
+        agreementDto.setUserId("05ebe134-0d14-4675-99ef-d07da2b2212f");
+        agreementDto.setInterestRate("10.2");
+        agreementDto.setCurrencyCode("USD");
+        agreementDto.setStatus("Completed");
+        agreementDto.setDiscount("0.0");
+        agreementDto.setAgreementLimit("5000.0");
+        agreementDto.setSum("500.0");
+
+        agreementDtos.add(agreementDto);
+
+        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/agreement/get/agreementClientId")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .with(csrf())
+                        .param("clientId", "a242f83f-a341-45f4-9430-e43cfbf55361"))
+                .andReturn();
+
+        System.out.println(mvcResult.getResponse().getContentAsString() + "*************************");
+
+        String agreementsJsonResult = mvcResult.getResponse().getContentAsString();
+
+        List<AgreementDto> actual = objectMapper.readValue(agreementsJsonResult, new TypeReference<>() {
+        });
+
+        Assertions.assertEquals(200, mvcResult.getResponse().getStatus());
+        Assertions.assertEquals(agreementDtos, actual);
     }
 }
