@@ -4,7 +4,6 @@ import bankmicroservicesapp.controller.util.Valid;
 import bankmicroservicesapp.dto.AgreementDto;
 import bankmicroservicesapp.exeption.ErrorMessage;
 import bankmicroservicesapp.exeption.InvalidIdException;
-import bankmicroservicesapp.exeption.UserNotExistException;
 import bankmicroservicesapp.service.AgreementService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -29,6 +28,11 @@ public class AgreementController {
         throw new ResponseStatusException(HttpStatus.OK);
     }
 
+    @RequestMapping("/get/{id}")
+    public AgreementDto getById(@PathVariable("id") UUID id) {
+        return agreementService.findAgreementById(id);
+    }
+
     @GetMapping("/get/agreementManager")
     public List<AgreementDto> findAgreementManager(@RequestParam(name = "managerId") UUID managerId) {
         return agreementService.findAgreementWhereManagerId(managerId);
@@ -36,9 +40,6 @@ public class AgreementController {
 
     @GetMapping("/get/agreementClientId")
     public List<AgreementDto> findAgreementsClientIdIs(@RequestParam(name = "clientId") UUID clientId) {
-        if (!Valid.isValidUUID(clientId.toString())) {
-            throw new InvalidIdException(ErrorMessage.INVALID_ID);
-        }
         return agreementService.findAgreementsWhereClientIdIs(clientId);
     }
 }

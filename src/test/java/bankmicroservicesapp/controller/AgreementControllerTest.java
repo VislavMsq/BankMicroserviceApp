@@ -16,6 +16,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 
@@ -32,8 +33,23 @@ class AgreementControllerTest {
     private ObjectMapper objectMapper;
 
     @Test
-    void deleteById() {
+    void deleteById() throws Exception {
 
+        MvcResult mockMvc1 = mockMvc.perform(MockMvcRequestBuilders.delete("/agreement/delete/a242f83f-a341-45f4-9430-e43cfbf55361")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .with(csrf()))
+                .andReturn();
+
+        Assertions.assertEquals(200, mockMvc1.getResponse().getStatus());
+
+        mockMvc1 = mockMvc.perform(MockMvcRequestBuilders.get("/agreement/get/a242f83f-a341-45f4-9430-e43cfbf55361")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .with(csrf()))
+                .andReturn();
+
+        Map<String, Object> objectMap = objectMapper.readValue(mockMvc1.getResponse().getContentAsString(), new TypeReference<>() {
+        });
+        Assertions.assertEquals("NOT_FOUND", objectMap.get("statusCode").toString());
     }
 
     @Test
@@ -84,7 +100,7 @@ class AgreementControllerTest {
         MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/agreement/get/agreementClientId")
                         .contentType(MediaType.APPLICATION_JSON)
                         .with(csrf())
-                        .param("clientId", "a242f83f-a341-45f4-9430-e43cfbf55361"))
+                        .param("clientId", "05ebe134-0d14-4675-99ef-d07da2b2212f"))
                 .andReturn();
 
         System.out.println(mvcResult.getResponse().getContentAsString() + "*************************");
@@ -95,6 +111,6 @@ class AgreementControllerTest {
         });
 
         Assertions.assertEquals(200, mvcResult.getResponse().getStatus());
-        Assertions.assertEquals(agreementDtos, actual);
+        Assertions.assertEquals(actual, agreementDtos);
     }
 }

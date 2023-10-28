@@ -3,9 +3,9 @@ package bankmicroservicesapp.service.impl;
 import bankmicroservicesapp.controller.util.Valid;
 import bankmicroservicesapp.dto.UserDto;
 import bankmicroservicesapp.entity.User;
+import bankmicroservicesapp.exeption.DataNotExistException;
 import bankmicroservicesapp.exeption.ErrorMessage;
 import bankmicroservicesapp.exeption.InvalidIdException;
-import bankmicroservicesapp.exeption.UserNotExistException;
 import bankmicroservicesapp.mapper.UserMapper;
 import bankmicroservicesapp.repository.UserRepository;
 import bankmicroservicesapp.service.UserService;
@@ -31,6 +31,6 @@ public class UserServiceImpl implements UserService {
             throw new InvalidIdException(ErrorMessage.INVALID_ID);
         }
         Optional<User> user = userRepository.findById(UUID.fromString(userId));
-        return userMapper.toDto(user.orElseThrow(() -> new UserNotExistException(ErrorMessage.USER_NOT_EXIST)));
+        return userMapper.toDto(user.orElseThrow(() -> new DataNotExistException(ErrorMessage.DATA_NOT_EXIST)));
     }
 }

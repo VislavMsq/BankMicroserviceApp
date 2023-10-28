@@ -8,6 +8,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
@@ -38,12 +40,16 @@ public class Product {
     private StatusProduct productStatus;
 
     @Column(name = "interest_rate")
-    private double interestRate;
+    private Double interestRate;
 
     @Column(name = "created_at")
+    @Temporal(TemporalType.TIMESTAMP)
+    @CreationTimestamp
     private LocalDateTime createdAt;
 
     @Column(name = "updated_at")
+    @Temporal(TemporalType.TIMESTAMP)
+    @UpdateTimestamp
     private LocalDateTime updatedAt;
 
     @OneToMany(mappedBy = "product",fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})

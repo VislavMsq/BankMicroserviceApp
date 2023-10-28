@@ -3,6 +3,7 @@ package bankmicroservicesapp.controller.exceptionHandlerController;
 
 import bankmicroservicesapp.exeption.CreateAccountControllerException;
 
+import bankmicroservicesapp.exeption.DataNotExistException;
 import bankmicroservicesapp.exeption.InvalidIdException;
 import bankmicroservicesapp.exeption.InvalidStatusException;
 import org.springframework.http.HttpStatus;
@@ -26,7 +27,7 @@ public class ResponseExceptionHandler extends ResponseEntityExceptionHandler {
         return ResponseEntity.ofNullable(errorResponse);
     }
 
-    @ExceptionHandler({InvalidIdException.class})
+    @ExceptionHandler({InvalidIdException.class, DataNotExistException.class})
     public ResponseEntity<ErrorResponse> notFoundExceptionHandler(Exception ex) {
         ErrorResponse errorResponse = ErrorResponse.builder(
                         ex, HttpStatus.NOT_FOUND,
@@ -34,4 +35,5 @@ public class ResponseExceptionHandler extends ResponseEntityExceptionHandler {
                 .build();
         return ResponseEntity.ofNullable(errorResponse);
     }
+
 }

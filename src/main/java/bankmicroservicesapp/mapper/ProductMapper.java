@@ -1,20 +1,26 @@
 package bankmicroservicesapp.mapper;
 
 import bankmicroservicesapp.dto.ProductDto;
+import bankmicroservicesapp.dto.ProductUpdateDto;
 import bankmicroservicesapp.entity.Product;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.Named;
+import org.mapstruct.*;
 
 import java.util.List;
 import java.util.UUID;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
 public interface ProductMapper {
+
+    Product update(Product from, @MappingTarget Product to);
+
+    Product toObj(ProductUpdateDto productDto);
+
 
     @Mapping(source = "id", target = "id", qualifiedByName = "UUIDToString")
     @Mapping(source = "interestRate", target = "interestRate", qualifiedByName = "toDouble")
-    List<ProductDto> productToProductDto(List<Product> productList);
+    List<ProductDto> toDto(List<Product> productList);
+
+    ProductUpdateDto toDto(Product product);
 
     @Named("UUIDToString")
     default String UUIDToString(UUID uuid) {

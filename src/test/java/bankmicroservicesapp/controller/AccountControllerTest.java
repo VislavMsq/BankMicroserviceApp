@@ -26,12 +26,11 @@ import static org.springframework.security.test.web.servlet.request.SecurityMock
 @Sql("/testDb.sql")
 @Sql("/addTestData.sql")
 class AccountControllerTest {
-    //
+
     @Autowired
     private MockMvc mockMvc;           // мок для тестирования запросов
     @Autowired
     private ObjectMapper objectMapper; // конвертор в джон
-
 
     @Test
     void shouldCreateAccount() throws Exception {
@@ -96,12 +95,8 @@ class AccountControllerTest {
         });
 
         Assertions.assertEquals(200, mvcResult.getResponse().getStatus()); // ++
-        Assertions.assertEquals(expected, actual); // тут асерт своих ожидаемых означений
+        Assertions.assertEquals(expected, actual);
 
-/*
-        String accountResultJson = accountCreatingResult.getResponse().getContentAsString(); // достали стригну
-        Account accountResult = objectMapper.readValue(accountResultJson, Account.class); // сконвертировали строку в дсон
- */
 
     }
 }

@@ -25,14 +25,14 @@ import static org.springframework.security.test.web.servlet.request.SecurityMock
 @Sql("/testDb.sql")
 @Sql("/addTestData.sql")
 class TransactionControllerTest {
+//
+//    @Autowired
+//    private MockMvc mockMvc;
+//    @Autowired
+//    private ObjectMapper objectMapper;
 
-    @Autowired
-    private MockMvc mockMvc;
-    @Autowired
-    private ObjectMapper objectMapper;
-
-    @Test
-    void getAllTransactionTest() throws Exception {
+//    @Test
+//    void getAllTransactionTest() throws Exception {
 //        List<TransactionDto> transactionDtoList = new ArrayList<>();
 //        TransactionDto transactionDto = new TransactionDto();
 //        transactionDto.setId();
@@ -48,5 +48,4 @@ class TransactionControllerTest {
 //                        .with(csrf()))
 //                .andReturn();
 
-    }
 }

@@ -12,4 +12,7 @@ public interface AgreementService {
     List<AgreementDto> findAgreementWhereManagerId(UUID managerId);
 
     List<AgreementDto> findAgreementsWhereClientIdIs(UUID clientId);
+
+    AgreementDto findAgreementById(UUID id);
+
 }

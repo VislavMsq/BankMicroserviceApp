@@ -1,9 +1,14 @@
 package bankmicroservicesapp.service.impl;
 
+import bankmicroservicesapp.controller.util.Valid;
 import bankmicroservicesapp.dto.ProductDto;
+import bankmicroservicesapp.dto.ProductUpdateDto;
 import bankmicroservicesapp.entity.Product;
 import bankmicroservicesapp.entity.enums.StatusProduct;
 import bankmicroservicesapp.entity.enums.TypeProduct;
+import bankmicroservicesapp.exeption.DataNotExistException;
+import bankmicroservicesapp.exeption.ErrorMessage;
+import bankmicroservicesapp.exeption.InvalidIdException;
 import bankmicroservicesapp.mapper.ProductMapper;
 import bankmicroservicesapp.repository.ProductRepository;
 import bankmicroservicesapp.service.ProductService;
@@ -12,6 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -25,20 +31,19 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     @Transactional
-    public Product updateProduct(ProductDto productDto) {
-        Product product = new Product();
-        product.setProductType(TypeProduct.valueOf(productDto.getProductType()));
-        product.setProductStatus(StatusProduct.valueOf(productDto.getProductStatus()));
-        product.setInterestRate(Double.parseDouble(productDto.getInterestRate()));
-        product.setCreatedAt(LocalDateTime.now());
-        product.setUpdatedAt(LocalDateTime.now());
-        productRepository.save(product);
-        return product;
+    public ProductUpdateDto updateProduct(ProductUpdateDto productDto, UUID id) {
+        if (!Valid.isValidUUID(id.toString())) {
+            throw new InvalidIdException(ErrorMessage.INVALID_ID);
+        }
+        Product prod = productMapper.update(productMapper.toObj(productDto), productRepository.findById(id)
+                .orElseThrow(() -> new DataNotExistException(ErrorMessage.DATA_NOT_EXIST)));
+        productRepository.save(prod);
+        return productMapper.toDto(prod);
     }
 
     @Override
     public List<ProductDto> findAllProductWhereAgreementQuantityMoreThan(Double quantityAgreement) {
         List<Product> productList = productRepository.findProductAgreementQuantity(quantityAgreement);
-        return productMapper.productToProductDto(productList);
+        return productMapper.toDto(productList);
     }
 }
