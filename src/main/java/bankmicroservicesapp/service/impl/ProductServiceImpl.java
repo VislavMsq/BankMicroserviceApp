@@ -1,12 +1,9 @@
 package bankmicroservicesapp.service.impl;
 
 import bankmicroservicesapp.controller.util.Valid;
-import bankmicroservicesapp.dto.AgreementDto;
 import bankmicroservicesapp.dto.ProductDto;
 import bankmicroservicesapp.dto.ProductUpdateDto;
 import bankmicroservicesapp.entity.Product;
-import bankmicroservicesapp.entity.enums.StatusProduct;
-import bankmicroservicesapp.entity.enums.TypeProduct;
 import bankmicroservicesapp.exeption.DataNotExistException;
 import bankmicroservicesapp.exeption.ErrorMessage;
 import bankmicroservicesapp.exeption.InvalidIdException;
@@ -16,7 +13,6 @@ import bankmicroservicesapp.service.ProductService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 

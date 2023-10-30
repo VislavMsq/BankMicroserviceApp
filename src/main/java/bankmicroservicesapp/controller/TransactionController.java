@@ -1,7 +1,6 @@
 package bankmicroservicesapp.controller;
 
 import bankmicroservicesapp.dto.TransactionDto;
-import bankmicroservicesapp.entity.Transaction;
 import bankmicroservicesapp.service.TransactionService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

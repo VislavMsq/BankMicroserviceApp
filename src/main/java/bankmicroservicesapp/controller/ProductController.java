@@ -1,9 +1,7 @@
 package bankmicroservicesapp.controller;
 
-import bankmicroservicesapp.dto.AgreementDto;
 import bankmicroservicesapp.dto.ProductDto;
 import bankmicroservicesapp.dto.ProductUpdateDto;
-import bankmicroservicesapp.entity.Product;
 import bankmicroservicesapp.service.ProductService;
 import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
@@ -26,7 +24,7 @@ public class ProductController {
     }
 
     @RequestMapping(value = "/update/{id}")
-    public ProductUpdateDto updateProduct(@RequestBody ProductUpdateDto productDto,@PathVariable("id") UUID id) {
+    public ProductUpdateDto updateProduct(@RequestBody ProductUpdateDto productDto, @PathVariable("id") UUID id) {
         return productService.updateProduct(productDto, id);
     }
 

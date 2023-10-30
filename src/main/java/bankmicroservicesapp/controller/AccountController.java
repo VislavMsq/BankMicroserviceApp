@@ -2,8 +2,6 @@ package bankmicroservicesapp.controller;
 
 import bankmicroservicesapp.dto.AccountDto;
 import bankmicroservicesapp.entity.Account;
-import bankmicroservicesapp.exeption.CreateAccountControllerException;
-import bankmicroservicesapp.exeption.InvalidStatusException;
 import bankmicroservicesapp.service.AccountService;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,12 +17,12 @@ public class AccountController {
     }
 
     @PostMapping("/create")
-    public Account createAccount(@RequestBody AccountDto accountDto){
+    public Account createAccount(@RequestBody AccountDto accountDto) {
         return accountService.createdAccount(accountDto);
     }
 
     @GetMapping("/get-all/by-status")
-    public List<AccountDto> getAllStatus(@RequestParam(name = "status") String status){
+    public List<AccountDto> getAllStatus(@RequestParam(name = "status") String status) {
         return accountService.getAllByStatus(status);
     }
 }

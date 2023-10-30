@@ -1,9 +1,6 @@
 package bankmicroservicesapp.dto;
 
-import bankmicroservicesapp.entity.Account;
 import lombok.Data;
-
-import java.util.UUID;
 
 @Data
 public class TransactionDto {

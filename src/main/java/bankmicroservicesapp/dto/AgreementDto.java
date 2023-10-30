@@ -1,6 +1,5 @@
 package bankmicroservicesapp.dto;
 
-import bankmicroservicesapp.entity.enums.StatusAgreement;
 import lombok.Data;
 
 @Data

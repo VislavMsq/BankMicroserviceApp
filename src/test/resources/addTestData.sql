@@ -19,6 +19,13 @@ VALUES ('11ebe124-0d14-4675-99ef-d07da2b2222a', '05ebe134-0d14-4675-99ef-d07da2b
         'Active',
         '12250.00', 'USD', '5', '2023-09-18 12:12:00', '2023-08-20 11:30:00');
 
+INSERT INTO TRANSACTIONS (id, debit_account_id, credit_account_id, transaction_type, amount, transaction_description,
+                          updated_at)
+VALUES ('06752bb6-809f-400a-afff-50aaf6ccd647', '11ebe124-0d14-4675-99ef-d07da2b2222a',
+        '11ebe124-0d14-4675-99ef-d07da2b2222a', 'TransferFunds',
+        '0.00',
+        'for cookies', '2023-08-22 08:10:00');
+
 INSERT INTO PRODUCTS (id, product_type, product_status, interest_rate, created_at, updated_at)
 VALUES ('60587cf0-aaa3-475a-8ef8-aa452c6e8fe9', 'HealthInsurance', 'Available', '2.9900', '2023-09-18 12:12:00',
         '2023-08-20 11:30:00');

@@ -56,7 +56,6 @@ public class AgreementServiceImpl implements AgreementService {
             throw new InvalidIdException(ErrorMessage.INVALID_ID);
         }
         List<Agreement> agreements = agreementRepository.findAgreementsClientIdIs(clientId);
-        System.out.println(agreements + "0000000000000000000000000000000");
         return agreementMapper.agreementToAgreementDto(agreements);
     }
 

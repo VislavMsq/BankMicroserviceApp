@@ -5,7 +5,6 @@ import bankmicroservicesapp.entity.Transaction;
 import bankmicroservicesapp.mapper.TransactionMapper;
 import bankmicroservicesapp.repository.TransactionRepository;
 import bankmicroservicesapp.service.TransactionService;
-import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,10 +20,9 @@ public class TransactionServiceImpl implements TransactionService {
         this.transactionMapper = transactionMapper;
     }
 
-
     @Override
     public List<TransactionDto> getAll() {
-        List<Transaction> transactions = transactionRepository.findAll(Example.of(new Transaction()));
+        List<Transaction> transactions = transactionRepository.findAll();
         return transactionMapper.transactionToTransactionDto(transactions);
     }
 }

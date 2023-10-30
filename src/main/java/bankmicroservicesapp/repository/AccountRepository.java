@@ -2,7 +2,6 @@ package bankmicroservicesapp.repository;
 
 import bankmicroservicesapp.entity.Account;
 import bankmicroservicesapp.entity.enums.StatusAccount;
-import lombok.experimental.PackagePrivate;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

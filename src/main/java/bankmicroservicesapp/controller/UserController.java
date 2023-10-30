@@ -19,10 +19,7 @@ public class UserController {
 
     @GetMapping("/{userId}")
     public UserDto getById(@PathVariable("userId") String userId) {
-        UserDto optUser;
-        optUser = userService.findById(userId);
-
-        return optUser;
+        return userService.findById(userId);
     }
 }
 

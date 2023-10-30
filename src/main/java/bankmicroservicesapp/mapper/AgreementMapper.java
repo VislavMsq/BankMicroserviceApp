@@ -12,7 +12,7 @@ import java.util.UUID;
 @Mapper(componentModel = "spring")
 public interface AgreementMapper {
 
-    @Mapping(source = "account.user.id", target = "userId",qualifiedByName = "UUIDToString")
+    @Mapping(source = "account.user.id", target = "userId", qualifiedByName = "UUIDToString")
     @Mapping(source = "product.productType", target = "productName")
     AgreementDto toDto(Agreement agreement);
 
@@ -21,12 +21,6 @@ public interface AgreementMapper {
     @Mapping(source = "agreementLimit", target = "agreementLimit", qualifiedByName = "toDouble")
     @Mapping(source = "sum", target = "sum", qualifiedByName = "toDouble")
     List<AgreementDto> agreementToAgreementDto(List<Agreement> managerId);
-
-
-    @Named("toDouble")
-    default Double toDoubleParse(String string) {
-        return Double.parseDouble(string);
-    }
 
     @Named("UUIDToString")
     default String UUIDToString(UUID uuid) {

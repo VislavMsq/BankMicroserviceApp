@@ -4,7 +4,6 @@ import bankmicroservicesapp.dto.AccountDto;
 import bankmicroservicesapp.entity.Account;
 import bankmicroservicesapp.entity.User;
 import bankmicroservicesapp.entity.enums.StatusAccount;
-import bankmicroservicesapp.entity.enums.TypeAccount;
 import bankmicroservicesapp.exeption.CreateAccountControllerException;
 import bankmicroservicesapp.exeption.ErrorMessage;
 import bankmicroservicesapp.exeption.InvalidStatusException;
