@@ -16,6 +16,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 
@@ -31,8 +32,34 @@ class ProductControllerTest {
     private ObjectMapper objectMapper;
 
     @Test
-    void updateProduct() {
+    void updateProductTest() throws Exception {
+        ProductDto productDto = new ProductDto();
+        productDto.setProductType("PersonalLoans");
 
+        String prodDtoString = objectMapper.writeValueAsString(productDto);
+
+        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.post("/product/update/60587cf0-aaa3-475a-8ef8-aa452c6e8fe9")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .with(csrf())
+                        .content(prodDtoString))
+                .andReturn();
+
+        Assertions.assertEquals(200, mvcResult.getResponse().getStatus());
+
+        mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/product/get/60587cf0-aaa3-475a-8ef8-aa452c6e8fe9")
+                        .with(csrf()))
+                .andReturn();
+
+        ProductDto prodDtoString2 = objectMapper.readValue(mvcResult.getResponse().getContentAsString(), new TypeReference<>() {
+        });
+
+        ProductDto productDto1 = new ProductDto();
+        productDto1.setId("60587cf0-aaa3-475a-8ef8-aa452c6e8fe9");
+        productDto1.setProductType("PersonalLoans");
+        productDto1.setProductStatus("Available");
+        productDto1.setInterestRate("2.99");
+
+        Assertions.assertEquals(productDto1, prodDtoString2);
     }
 
     @Test

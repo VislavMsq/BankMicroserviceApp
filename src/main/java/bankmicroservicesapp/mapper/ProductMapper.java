@@ -20,7 +20,9 @@ public interface ProductMapper {
     @Mapping(source = "interestRate", target = "interestRate", qualifiedByName = "toDouble")
     List<ProductDto> toDto(List<Product> productList);
 
-    ProductUpdateDto toDto(Product product);
+    ProductUpdateDto toUpdateDto(Product product);
+    ProductDto toDto(Product product);
+
 
     @Named("UUIDToString")
     default String UUIDToString(UUID uuid) {

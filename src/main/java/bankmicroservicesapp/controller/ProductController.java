@@ -1,5 +1,6 @@
 package bankmicroservicesapp.controller;
 
+import bankmicroservicesapp.dto.AgreementDto;
 import bankmicroservicesapp.dto.ProductDto;
 import bankmicroservicesapp.dto.ProductUpdateDto;
 import bankmicroservicesapp.entity.Product;
@@ -17,6 +18,11 @@ public class ProductController {
 
     public ProductController(ProductService productService) {
         this.productService = productService;
+    }
+
+    @RequestMapping("/get/{id}")
+    public ProductDto getById(@PathVariable("id") UUID id) {
+        return productService.findProductById(id);
     }
 
     @RequestMapping(value = "/update/{id}")

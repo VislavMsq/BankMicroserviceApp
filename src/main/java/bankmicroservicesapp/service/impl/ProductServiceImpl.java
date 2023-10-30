@@ -1,6 +1,7 @@
 package bankmicroservicesapp.service.impl;
 
 import bankmicroservicesapp.controller.util.Valid;
+import bankmicroservicesapp.dto.AgreementDto;
 import bankmicroservicesapp.dto.ProductDto;
 import bankmicroservicesapp.dto.ProductUpdateDto;
 import bankmicroservicesapp.entity.Product;
@@ -38,12 +39,21 @@ public class ProductServiceImpl implements ProductService {
         Product prod = productMapper.update(productMapper.toObj(productDto), productRepository.findById(id)
                 .orElseThrow(() -> new DataNotExistException(ErrorMessage.DATA_NOT_EXIST)));
         productRepository.save(prod);
-        return productMapper.toDto(prod);
+        return productMapper.toUpdateDto(prod);
     }
 
     @Override
     public List<ProductDto> findAllProductWhereAgreementQuantityMoreThan(Double quantityAgreement) {
         List<Product> productList = productRepository.findProductAgreementQuantity(quantityAgreement);
         return productMapper.toDto(productList);
+    }
+
+    @Override
+    public ProductDto findProductById(UUID id) {
+        if (!Valid.isValidUUID(id.toString())) {
+            throw new InvalidIdException(ErrorMessage.INVALID_ID);
+        }
+        return productMapper.toDto(productRepository.findById(id).orElseThrow(() ->
+                new DataNotExistException(ErrorMessage.INVALID_ID)));
     }
 }
