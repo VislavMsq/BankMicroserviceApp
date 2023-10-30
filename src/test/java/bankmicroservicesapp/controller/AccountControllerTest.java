@@ -85,7 +85,7 @@ class AccountControllerTest {
         MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/account/get-all/by-status")
                         .contentType(MediaType.APPLICATION_JSON) //  каком формате мы будем возвращать
                         .with(csrf())
-                        .param("status", "Active"))//todo как положить через анатацию реквест парам в боди
+                        .param("status", "Active"))
                 .andReturn();
 
         String accountResultJson = mvcResult.getResponse().getContentAsString();     // достали стригну
