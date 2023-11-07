@@ -83,7 +83,7 @@ class AccountControllerTest {
         expected.add(accountDto);
 
         MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/account/get-all/by-status")
-                        .contentType(MediaType.APPLICATION_JSON) //  каком формате мы будем возвращать
+                        .contentType(MediaType.APPLICATION_JSON)
                         .with(csrf())
                         .param("status", "Active"))
                 .andReturn();
@@ -93,7 +93,7 @@ class AccountControllerTest {
         List<AccountDto> actual = objectMapper.readValue(accountResultJson, new TypeReference<>() {
         });
 
-        Assertions.assertEquals(200, mvcResult.getResponse().getStatus()); // ++
+        Assertions.assertEquals(200, mvcResult.getResponse().getStatus());
         Assertions.assertEquals(expected, actual);
 
 
