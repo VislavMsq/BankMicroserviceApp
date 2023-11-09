@@ -2,9 +2,7 @@ package bankmicroservicesapp.controller;
 
 import bankmicroservicesapp.dto.TransactionDto;
 import bankmicroservicesapp.service.TransactionService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,4 +20,10 @@ public class TransactionController {
     public List<TransactionDto> getAllTransaction() {
         return transactionService.getAll();
     }
+
+    @PostMapping("/create")
+    public TransactionDto createTransaction(@RequestBody TransactionDto transactionDto){
+        return transactionService.createTransaction(transactionDto);
+    }
+
 }

@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface TransactionService {
     List<TransactionDto> getAll();
+
+    TransactionDto createTransaction(TransactionDto transactionDto);
 }
