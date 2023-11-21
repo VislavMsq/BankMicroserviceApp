@@ -48,14 +48,21 @@ public class TransactionServiceImpl implements TransactionService {
         return transactionMapper.toDto(transaction);
     }
 
-    // TODO дописать updateCreditAccount
-
-
+    private Account updateCreditAccount(TransactionDto transactionDto, Transaction transaction) {
+        String creditAccountId = transactionDto.getCreditAccountId();
+        Account creditAccount = accountRepository.findById(UUID.fromString(creditAccountId))
+                .orElseThrow(()-> new DataNotExistException(ErrorMessage.ACCOUNT_NOT_FOUND));
+        BigDecimal creditBalance = creditAccount.getBalance().add(transaction.getAmount());
+        creditAccount.setBalance(creditBalance);
+        creditAccount.setUpdatedAt(LocalDateTime.now());
+        accountRepository.save(creditAccount);
+        return creditAccount;
+    }
 
     private Account updateDebitAccount(TransactionDto transactionDto, Transaction transaction) {
         String debitAccountId = transactionDto.getCreditAccountId();
         Account debitAccount = accountRepository.findById(UUID.fromString(debitAccountId))
-                .orElseThrow(() -> new DataNotExistException(ErrorMessage.DATA_NOT_EXIST));
+                .orElseThrow(() -> new DataNotExistException(ErrorMessage.ACCOUNT_IS_NULL));
         if (debitAccount.getBalance().compareTo(transaction.getAmount()) < 0) {
             throw new NotEnoughMoneyException(ErrorMessage.NOT_ENOUGH_MONEY);
         }
