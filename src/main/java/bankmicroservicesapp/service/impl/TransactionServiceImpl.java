@@ -40,7 +40,7 @@ public class TransactionServiceImpl implements TransactionService {
     public TransactionDto createTransaction(TransactionDto transactionDto) {
         Transaction transaction = transactionMapper.toEntity(transactionDto);
         Account debitAccount = updateDebitAccount(transactionDto, transaction);
-        Account creditAccount = updateDebitAccount(transactionDto, transaction);
+        Account creditAccount = updateCreditAccount(transactionDto, transaction);
         transaction.setDebitAccountId(debitAccount);
         transaction.setCreditAccountId(creditAccount);
         transaction.setUpdatedAt(LocalDateTime.now());
@@ -51,7 +51,7 @@ public class TransactionServiceImpl implements TransactionService {
     private Account updateCreditAccount(TransactionDto transactionDto, Transaction transaction) {
         String creditAccountId = transactionDto.getCreditAccountId();
         Account creditAccount = accountRepository.findById(UUID.fromString(creditAccountId))
-                .orElseThrow(()-> new DataNotExistException(ErrorMessage.ACCOUNT_NOT_FOUND));
+                .orElseThrow(() -> new DataNotExistException(ErrorMessage.ACCOUNT_NOT_FOUND));
         BigDecimal creditBalance = creditAccount.getBalance().add(transaction.getAmount());
         creditAccount.setBalance(creditBalance);
         creditAccount.setUpdatedAt(LocalDateTime.now());
