@@ -1,0 +1,513 @@
+2023-11-02T22:01:49.098+01:00  INFO 21896 --- [main] b.BankMicroservicesAppApplication        : Starting BankMicroservicesAppApplication using Java 19.0.2 with PID 21896 (C:\programmers\Project\BankMicroservicesApp\target\classes started by Tel-ran.de in C:\programmers\Project\BankMicroservicesApp)
+2023-11-02T22:01:49.125+01:00  INFO 21896 --- [main] b.BankMicroservicesAppApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-11-02T22:01:52.046+01:00  INFO 21896 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-11-02T22:01:52.052+01:00  INFO 21896 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-11-02T22:01:52.251+01:00  INFO 21896 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface bankmicroservicesapp.repository.AccountRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-02T22:01:52.255+01:00  INFO 21896 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface bankmicroservicesapp.repository.AgreementRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-02T22:01:52.263+01:00  INFO 21896 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface bankmicroservicesapp.repository.EmployeeRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-02T22:01:52.271+01:00  INFO 21896 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface bankmicroservicesapp.repository.ProductRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-02T22:01:52.275+01:00  INFO 21896 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface bankmicroservicesapp.repository.TransactionRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-02T22:01:52.280+01:00  INFO 21896 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface bankmicroservicesapp.repository.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-02T22:01:52.294+01:00  INFO 21896 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 217 ms. Found 0 JDBC repository interfaces.
+2023-11-02T22:01:52.326+01:00  INFO 21896 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-11-02T22:01:52.333+01:00  INFO 21896 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-02T22:01:52.532+01:00  INFO 21896 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 186 ms. Found 6 JPA repository interfaces.
+2023-11-02T22:01:56.701+01:00  INFO 21896 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-11-02T22:01:56.739+01:00  INFO 21896 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-02T22:01:56.741+01:00  INFO 21896 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-11-02T22:01:57.093+01:00  INFO 21896 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-02T22:01:57.094+01:00  INFO 21896 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 7670 ms
+2023-11-02T22:01:57.852+01:00  INFO 21896 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-02T22:01:59.136+01:00  INFO 21896 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@40c76f5a
+2023-11-02T22:01:59.145+01:00  INFO 21896 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-02T22:02:00.835+01:00  INFO 21896 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2023-11-02T22:02:00.856+01:00  INFO 21896 --- [main] liquibase.command                        : Dropping Database Objects in schema: BankDataBase.BankDataBase
+2023-11-02T22:02:02.346+01:00  INFO 21896 --- [main] liquibase.database                       : Successfully deleted all supported object types in schema BankDataBase.BankDataBase.
+2023-11-02T22:02:02.363+01:00  WARN 21896 --- [main] liquibase.lockservice                    : Failed to release change log lock
+2023-11-02T22:02:02.374+01:00  INFO 21896 --- [main] liquibase.command                        : Command execution complete
+2023-11-02T22:02:04.883+01:00  INFO 21896 --- [main] liquibase.changelog                      : Creating database history table with name: BankDataBase.DATABASECHANGELOG
+2023-11-02T22:02:04.956+01:00  INFO 21896 --- [main] liquibase.changelog                      : Reading from BankDataBase.DATABASECHANGELOG
+2023-11-02T22:02:05.285+01:00  INFO 21896 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2023-11-02T22:02:05.309+01:00  INFO 21896 --- [main] liquibase.command                        : Using deploymentId: 8958925308
+2023-11-02T22:02:05.314+01:00  INFO 21896 --- [main] liquibase.changelog                      : Reading from BankDataBase.DATABASECHANGELOG
+2023-11-02T22:02:05.860+01:00  INFO 21896 --- [main] liquibase.changelog                      : Marking ChangeSet: "db/changelog/changes/v0.0.1-SNAPSHOT/drop-tables-changelog.xml::drop account table::Vladislav M." as ran despite precondition failure due to onFail='MARK_RAN': 
+          db/changelog/changelog-master.xml : Table BankDataBase.account does not exist
+
+2023-11-02T22:02:05.932+01:00  INFO 21896 --- [main] liquibase.changelog                      : Marking ChangeSet: "db/changelog/changes/v0.0.1-SNAPSHOT/drop-tables-changelog.xml::drop agreement table::Vladislav M." as ran despite precondition failure due to onFail='MARK_RAN': 
+          db/changelog/changelog-master.xml : Table BankDataBase.agreement does not exist
+
+2023-11-02T22:02:05.975+01:00  INFO 21896 --- [main] liquibase.changelog                      : Marking ChangeSet: "db/changelog/changes/v0.0.1-SNAPSHOT/drop-tables-changelog.xml::drop employee table::Vladislav M." as ran despite precondition failure due to onFail='MARK_RAN': 
+          db/changelog/changelog-master.xml : Table BankDataBase.employee does not exist
+
+2023-11-02T22:02:06.019+01:00  INFO 21896 --- [main] liquibase.changelog                      : Marking ChangeSet: "db/changelog/changes/v0.0.1-SNAPSHOT/drop-tables-changelog.xml::drop product table::Vladislav M." as ran despite precondition failure due to onFail='MARK_RAN': 
+          db/changelog/changelog-master.xml : Table BankDataBase.product does not exist
+
+2023-11-02T22:02:06.072+01:00  INFO 21896 --- [main] liquibase.changelog                      : Marking ChangeSet: "db/changelog/changes/v0.0.1-SNAPSHOT/drop-tables-changelog.xml::drop transaction table::Vladislav M." as ran despite precondition failure due to onFail='MARK_RAN': 
+          db/changelog/changelog-master.xml : Table BankDataBase.transaction does not exist
+
+2023-11-02T22:02:06.116+01:00  INFO 21896 --- [main] liquibase.changelog                      : Marking ChangeSet: "db/changelog/changes/v0.0.1-SNAPSHOT/drop-tables-changelog.xml::drop user table::Vladislav M." as ran despite precondition failure due to onFail='MARK_RAN': 
+          db/changelog/changelog-master.xml : Table BankDataBase.user does not exist
+
+2023-11-02T22:02:06.265+01:00  INFO 21896 --- [main] liquibase.changelog                      : Table users created
+2023-11-02T22:02:06.267+01:00  INFO 21896 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/create-tables-changelog.xml::create users table::Vladislav M. ran successfully in 135ms
+2023-11-02T22:02:06.349+01:00  INFO 21896 --- [main] liquibase.changelog                      : Table products created
+2023-11-02T22:02:06.350+01:00  INFO 21896 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/create-tables-changelog.xml::create products table::Vladislav M. ran successfully in 64ms
+2023-11-02T22:02:06.438+01:00  INFO 21896 --- [main] liquibase.changelog                      : Table accounts created
+2023-11-02T22:02:06.440+01:00  INFO 21896 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/create-tables-changelog.xml::create accounts table::Vladislav M. ran successfully in 83ms
+2023-11-02T22:02:06.517+01:00  INFO 21896 --- [main] liquibase.changelog                      : Table employees created
+2023-11-02T22:02:06.518+01:00  INFO 21896 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/create-tables-changelog.xml::create employees table::Vladislav M. ran successfully in 69ms
+2023-11-02T22:02:06.596+01:00  INFO 21896 --- [main] liquibase.changelog                      : Table transactions created
+2023-11-02T22:02:06.597+01:00  INFO 21896 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/create-tables-changelog.xml::create transactions table::Vladislav M. ran successfully in 67ms
+2023-11-02T22:02:06.685+01:00  INFO 21896 --- [main] liquibase.changelog                      : Table agreements created
+2023-11-02T22:02:06.689+01:00  INFO 21896 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/create-tables-changelog.xml::create agreements table::Vladislav M. ran successfully in 83ms
+2023-11-02T22:02:06.717+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into products
+2023-11-02T22:02:06.721+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into products
+2023-11-02T22:02:06.724+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into products
+2023-11-02T22:02:06.727+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into products
+2023-11-02T22:02:06.730+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into products
+2023-11-02T22:02:06.734+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into products
+2023-11-02T22:02:06.738+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into products
+2023-11-02T22:02:06.741+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into products
+2023-11-02T22:02:06.743+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into products
+2023-11-02T22:02:06.746+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into products
+2023-11-02T22:02:06.749+01:00  INFO 21896 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/insert-products-tables-changelog.xml::insert products table::Vladislav M. ran successfully in 40ms
+2023-11-02T22:02:06.854+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:02:06.858+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:02:06.863+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:02:06.866+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:02:06.869+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:02:06.872+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:02:06.875+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:02:06.877+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:02:06.880+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:02:06.882+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:02:06.885+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:02:06.887+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:02:06.891+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:02:06.897+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:02:06.902+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:02:06.908+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:02:06.914+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:02:06.917+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:02:06.921+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:02:06.926+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:02:06.928+01:00  INFO 21896 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/insert-users-tables-changelog.xml::insert users table::Vladislav M. ran successfully in 93ms
+2023-11-02T22:02:06.976+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:02:06.984+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:02:06.991+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:02:06.995+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:02:06.998+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:02:07.002+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:02:07.004+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:02:07.008+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:02:07.011+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:02:07.014+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:02:07.016+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:02:07.020+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:02:07.024+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:02:07.026+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:02:07.030+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:02:07.034+01:00  INFO 21896 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/insert-accounts-changelog.xml::insert accounts table::Vladislav M. ran successfully in 71ms
+2023-11-02T22:02:07.061+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into employees
+2023-11-02T22:02:07.064+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into employees
+2023-11-02T22:02:07.067+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into employees
+2023-11-02T22:02:07.069+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into employees
+2023-11-02T22:02:07.073+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into employees
+2023-11-02T22:02:07.075+01:00  INFO 21896 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/insert-employees-changelog.xml::insert employees table::Vladislav M. ran successfully in 20ms
+2023-11-02T22:02:07.109+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into transactions
+2023-11-02T22:02:07.112+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into transactions
+2023-11-02T22:02:07.114+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into transactions
+2023-11-02T22:02:07.117+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into transactions
+2023-11-02T22:02:07.119+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into transactions
+2023-11-02T22:02:07.122+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into transactions
+2023-11-02T22:02:07.125+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into transactions
+2023-11-02T22:02:07.127+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into transactions
+2023-11-02T22:02:07.130+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into transactions
+2023-11-02T22:02:07.132+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into transactions
+2023-11-02T22:02:07.134+01:00  INFO 21896 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/insert-transactions-changelog.xml::insert transactions table::Vladislav M. ran successfully in 30ms
+2023-11-02T22:02:07.173+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into agreements
+2023-11-02T22:02:07.175+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into agreements
+2023-11-02T22:02:07.177+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into agreements
+2023-11-02T22:02:07.180+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into agreements
+2023-11-02T22:02:07.183+01:00  INFO 21896 --- [main] liquibase.changelog                      : New row inserted into agreements
+2023-11-02T22:02:07.185+01:00  INFO 21896 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/insert-agreements-changelog.xml::insert agreements table::Vladislav M. ran successfully in 17ms
+2023-11-02T22:02:07.194+01:00  INFO 21896 --- [main] liquibase.util                           : UPDATE SUMMARY
+2023-11-02T22:02:07.194+01:00  INFO 21896 --- [main] liquibase.util                           : Run:                         18
+2023-11-02T22:02:07.194+01:00  INFO 21896 --- [main] liquibase.util                           : Previously run:               0
+2023-11-02T22:02:07.194+01:00  INFO 21896 --- [main] liquibase.util                           : Filtered out:                 0
+2023-11-02T22:02:07.194+01:00  INFO 21896 --- [main] liquibase.util                           : -------------------------------
+2023-11-02T22:02:07.194+01:00  INFO 21896 --- [main] liquibase.util                           : Total change sets:           18
+
+2023-11-02T22:02:07.195+01:00  INFO 21896 --- [main] liquibase.util                           : Update summary generated
+2023-11-02T22:02:07.198+01:00  INFO 21896 --- [main] liquibase.command                        : Update command completed successfully.
+2023-11-02T22:02:07.204+01:00  INFO 21896 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2023-11-02T22:02:07.205+01:00  INFO 21896 --- [main] liquibase.command                        : Command execution complete
+2023-11-02T22:02:07.433+01:00  INFO 21896 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-02T22:02:07.579+01:00  INFO 21896 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-11-02T22:02:07.584+01:00  INFO 21896 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-02T22:02:07.935+01:00  INFO 21896 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-11-02T22:02:08.241+01:00  INFO 21896 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-02T22:02:08.897+01:00  INFO 21896 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-11-02T22:02:11.051+01:00  INFO 21896 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-02T22:02:11.059+01:00  INFO 21896 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-02T22:02:12.393+01:00  INFO 21896 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-11-02T22:02:19.234+01:00  INFO 21896 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-02T22:02:19.266+01:00  INFO 21896 --- [main] b.BankMicroservicesAppApplication        : Started BankMicroservicesAppApplication in 33.132 seconds (process running for 37.239)
+2023-11-02T22:02:35.535+01:00  INFO 21896 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-02T22:02:35.536+01:00  INFO 21896 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-11-02T22:02:35.537+01:00  INFO 21896 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-11-02T22:02:35.652+01:00  INFO 21896 --- [http-nio-8080-exec-1] b.aspect.LoggingAspect                   : NEW REQUEST:
+IP : 0:0:0:0:0:0:0:1
+URL : http://localhost:8080/account/get-all/by-status
+HTTP_METHOD : GET
+CONTROLLER_METHOD : bankmicroservicesapp.controller.AccountController.getAllStatus
+2023-11-02T22:02:35.668+01:00  INFO 21896 --- [http-nio-8080-exec-1] b.aspect.LoggingAspect                   : RUN SERVICE:
+SERVICE_METHOD : bankmicroservicesapp.service.impl.AccountServiceImpl.getAllByStatus
+2023-11-02T22:02:36.139+01:00  INFO 21896 --- [http-nio-8080-exec-1] b.aspect.LoggingAspect                   : 
+Return value: [AccountDto(userId=ee7a4a8c-7149-4a3a-a84e-0e1489ec8d3f, name=Lars.Nielsen, type=Personal, status=New, currencyCode=EUR, bankRating=5, balance=330.0), AccountDto(userId=ff047ece-ad76-4f25-b542-9c117a91532a, name=Anna.Petrova, type=Personal, status=New, currencyCode=UAH, bankRating=5, balance=87000.0), AccountDto(userId=636f9932-8c10-4046-906a-151a794aa10a, name=Giovanni.Bianchi, type=Personal, status=New, currencyCode=EUR, bankRating=5, balance=82000.0), AccountDto(userId=e484cda6-dbda-459f-a97a-3f8a601cc135, name=Eva.Müller, type=Personal, status=New, currencyCode=USD, bankRating=5, balance=820.0), AccountDto(userId=26cbd100-02c0-4477-837d-dea633a48252, name=Jacques.Dubois, type=Personal, status=New, currencyCode=USD, bankRating=5, balance=7200.0), AccountDto(userId=f334ccc8-3578-4101-b453-d590ecd3646e, name=Hans.Jensen, type=Personal, status=New, currencyCode=EUR, bankRating=5, balance=3290.0), AccountDto(userId=86e768e1-7890-4323-aea3-86607998d09a, name=Sofia.García, type=Personal, status=New, currencyCode=EUR, bankRating=5, balance=12500.0), AccountDto(userId=a1ce95e4-e2c4-4573-91e0-2857d219b6b9, name=Sophie.Müller, type=Personal, status=New, currencyCode=EUR, bankRating=5, balance=33200.0), AccountDto(userId=b203e0f5-8e55-411f-971b-64bb8d028328, name=Luca.Moretti, type=Personal, status=New, currencyCode=CZK, bankRating=5, balance=192000.0), AccountDto(userId=2538cc96-e3ff-4a96-9d19-ba3759ad1d87, name=John.Smith, type=Personal, status=New, currencyCode=EUR, bankRating=5, balance=3500.0), AccountDto(userId=95373e88-f655-43f8-a086-06434e10a60a, name=Emma.Smith, type=Personal, status=New, currencyCode=USD, bankRating=5, balance=18000.0), AccountDto(userId=8f3c7555-f31c-4fe0-b846-09760134a43d, name=Luca.Rossi, type=Personal, status=New, currencyCode=PLN, bankRating=5, balance=72000.0), AccountDto(userId=ef6942fc-70c0-4c0a-ae18-72c220b12785, name=Maria.Garcia, type=Personal, status=New, currencyCode=EUR, bankRating=5, balance=980.0), AccountDto(userId=3b6397e8-d11b-48f9-ae74-cae3e19fb0d4, name=Miguel.Rodríguez, type=Personal, status=New, currencyCode=USD, bankRating=5, balance=6900.0), AccountDto(userId=52fc5bed-8959-436f-8efb-b66bdd47959d, name=Pierre.Dupont, type=Personal, status=New, currencyCode=TRY, bankRating=5, balance=190500.0)]
+END OF REQUEST
+2023-11-02T22:06:21.749+01:00  INFO 21896 --- [http-nio-8080-exec-5] b.aspect.LoggingAspect                   : NEW REQUEST:
+IP : 0:0:0:0:0:0:0:1
+URL : http://localhost:8080/account/get-all/by-status
+HTTP_METHOD : GET
+CONTROLLER_METHOD : bankmicroservicesapp.controller.AccountController.getAllStatus
+2023-11-02T22:06:21.753+01:00  INFO 21896 --- [http-nio-8080-exec-5] b.aspect.LoggingAspect                   : RUN SERVICE:
+SERVICE_METHOD : bankmicroservicesapp.service.impl.AccountServiceImpl.getAllByStatus
+2023-11-02T22:06:21.782+01:00  INFO 21896 --- [http-nio-8080-exec-5] b.aspect.LoggingAspect                   : 
+Return value: [AccountDto(userId=ee7a4a8c-7149-4a3a-a84e-0e1489ec8d3f, name=Lars.Nielsen, type=Personal, status=New, currencyCode=EUR, bankRating=5, balance=330.0), AccountDto(userId=ff047ece-ad76-4f25-b542-9c117a91532a, name=Anna.Petrova, type=Personal, status=New, currencyCode=UAH, bankRating=5, balance=87000.0), AccountDto(userId=636f9932-8c10-4046-906a-151a794aa10a, name=Giovanni.Bianchi, type=Personal, status=New, currencyCode=EUR, bankRating=5, balance=82000.0), AccountDto(userId=e484cda6-dbda-459f-a97a-3f8a601cc135, name=Eva.Müller, type=Personal, status=New, currencyCode=USD, bankRating=5, balance=820.0), AccountDto(userId=26cbd100-02c0-4477-837d-dea633a48252, name=Jacques.Dubois, type=Personal, status=New, currencyCode=USD, bankRating=5, balance=7200.0), AccountDto(userId=f334ccc8-3578-4101-b453-d590ecd3646e, name=Hans.Jensen, type=Personal, status=New, currencyCode=EUR, bankRating=5, balance=3290.0), AccountDto(userId=86e768e1-7890-4323-aea3-86607998d09a, name=Sofia.García, type=Personal, status=New, currencyCode=EUR, bankRating=5, balance=12500.0), AccountDto(userId=a1ce95e4-e2c4-4573-91e0-2857d219b6b9, name=Sophie.Müller, type=Personal, status=New, currencyCode=EUR, bankRating=5, balance=33200.0), AccountDto(userId=b203e0f5-8e55-411f-971b-64bb8d028328, name=Luca.Moretti, type=Personal, status=New, currencyCode=CZK, bankRating=5, balance=192000.0), AccountDto(userId=2538cc96-e3ff-4a96-9d19-ba3759ad1d87, name=John.Smith, type=Personal, status=New, currencyCode=EUR, bankRating=5, balance=3500.0), AccountDto(userId=95373e88-f655-43f8-a086-06434e10a60a, name=Emma.Smith, type=Personal, status=New, currencyCode=USD, bankRating=5, balance=18000.0), AccountDto(userId=8f3c7555-f31c-4fe0-b846-09760134a43d, name=Luca.Rossi, type=Personal, status=New, currencyCode=PLN, bankRating=5, balance=72000.0), AccountDto(userId=ef6942fc-70c0-4c0a-ae18-72c220b12785, name=Maria.Garcia, type=Personal, status=New, currencyCode=EUR, bankRating=5, balance=980.0), AccountDto(userId=3b6397e8-d11b-48f9-ae74-cae3e19fb0d4, name=Miguel.Rodríguez, type=Personal, status=New, currencyCode=USD, bankRating=5, balance=6900.0), AccountDto(userId=52fc5bed-8959-436f-8efb-b66bdd47959d, name=Pierre.Dupont, type=Personal, status=New, currencyCode=TRY, bankRating=5, balance=190500.0)]
+END OF REQUEST
+2023-11-02T22:07:03.733+01:00  INFO 21896 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-02T22:07:03.739+01:00  INFO 21896 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-02T22:07:03.755+01:00  INFO 21896 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-02T22:09:46.778+01:00  INFO 4972 --- [main] b.BankMicroservicesAppApplication        : Starting BankMicroservicesAppApplication using Java 19.0.2 with PID 4972 (C:\programmers\Project\BankMicroservicesApp\target\classes started by Tel-ran.de in C:\programmers\Project\BankMicroservicesApp)
+2023-11-02T22:09:46.785+01:00  INFO 4972 --- [main] b.BankMicroservicesAppApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-11-02T22:09:48.010+01:00  INFO 4972 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-11-02T22:09:48.013+01:00  INFO 4972 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-11-02T22:09:48.077+01:00  INFO 4972 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface bankmicroservicesapp.repository.AccountRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-02T22:09:48.079+01:00  INFO 4972 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface bankmicroservicesapp.repository.AgreementRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-02T22:09:48.082+01:00  INFO 4972 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface bankmicroservicesapp.repository.EmployeeRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-02T22:09:48.084+01:00  INFO 4972 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface bankmicroservicesapp.repository.ProductRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-02T22:09:48.086+01:00  INFO 4972 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface bankmicroservicesapp.repository.TransactionRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-02T22:09:48.088+01:00  INFO 4972 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface bankmicroservicesapp.repository.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-02T22:09:48.089+01:00  INFO 4972 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 64 ms. Found 0 JDBC repository interfaces.
+2023-11-02T22:09:48.103+01:00  INFO 4972 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-11-02T22:09:48.104+01:00  INFO 4972 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-02T22:09:48.171+01:00  INFO 4972 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 58 ms. Found 6 JPA repository interfaces.
+2023-11-02T22:09:49.336+01:00  INFO 4972 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-11-02T22:09:49.352+01:00  INFO 4972 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-02T22:09:49.352+01:00  INFO 4972 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-11-02T22:09:49.487+01:00  INFO 4972 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-02T22:09:49.488+01:00  INFO 4972 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2606 ms
+2023-11-02T22:09:49.772+01:00  INFO 4972 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-02T22:09:50.354+01:00  INFO 4972 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4899799b
+2023-11-02T22:09:50.357+01:00  INFO 4972 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-02T22:09:50.878+01:00  INFO 4972 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2023-11-02T22:09:50.888+01:00  INFO 4972 --- [main] liquibase.command                        : Dropping Database Objects in schema: BankDataBase.BankDataBase
+2023-11-02T22:09:51.399+01:00  INFO 4972 --- [main] liquibase.database                       : Successfully deleted all supported object types in schema BankDataBase.BankDataBase.
+2023-11-02T22:09:51.412+01:00  WARN 4972 --- [main] liquibase.lockservice                    : Failed to release change log lock
+2023-11-02T22:09:51.415+01:00  INFO 4972 --- [main] liquibase.command                        : Command execution complete
+2023-11-02T22:09:52.485+01:00  INFO 4972 --- [main] liquibase.changelog                      : Creating database history table with name: BankDataBase.DATABASECHANGELOG
+2023-11-02T22:09:52.533+01:00  INFO 4972 --- [main] liquibase.changelog                      : Reading from BankDataBase.DATABASECHANGELOG
+2023-11-02T22:09:52.758+01:00  INFO 4972 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2023-11-02T22:09:52.772+01:00  INFO 4972 --- [main] liquibase.command                        : Using deploymentId: 8959392772
+2023-11-02T22:09:52.775+01:00  INFO 4972 --- [main] liquibase.changelog                      : Reading from BankDataBase.DATABASECHANGELOG
+2023-11-02T22:09:52.979+01:00  INFO 4972 --- [main] liquibase.changelog                      : Marking ChangeSet: "db/changelog/changes/v0.0.1-SNAPSHOT/drop-tables-changelog.xml::drop account table::Vladislav M." as ran despite precondition failure due to onFail='MARK_RAN': 
+          db/changelog/changelog-master.xml : Table BankDataBase.account does not exist
+
+2023-11-02T22:09:53.032+01:00  INFO 4972 --- [main] liquibase.changelog                      : Marking ChangeSet: "db/changelog/changes/v0.0.1-SNAPSHOT/drop-tables-changelog.xml::drop agreement table::Vladislav M." as ran despite precondition failure due to onFail='MARK_RAN': 
+          db/changelog/changelog-master.xml : Table BankDataBase.agreement does not exist
+
+2023-11-02T22:09:53.061+01:00  INFO 4972 --- [main] liquibase.changelog                      : Marking ChangeSet: "db/changelog/changes/v0.0.1-SNAPSHOT/drop-tables-changelog.xml::drop employee table::Vladislav M." as ran despite precondition failure due to onFail='MARK_RAN': 
+          db/changelog/changelog-master.xml : Table BankDataBase.employee does not exist
+
+2023-11-02T22:09:53.079+01:00  INFO 4972 --- [main] liquibase.changelog                      : Marking ChangeSet: "db/changelog/changes/v0.0.1-SNAPSHOT/drop-tables-changelog.xml::drop product table::Vladislav M." as ran despite precondition failure due to onFail='MARK_RAN': 
+          db/changelog/changelog-master.xml : Table BankDataBase.product does not exist
+
+2023-11-02T22:09:53.098+01:00  INFO 4972 --- [main] liquibase.changelog                      : Marking ChangeSet: "db/changelog/changes/v0.0.1-SNAPSHOT/drop-tables-changelog.xml::drop transaction table::Vladislav M." as ran despite precondition failure due to onFail='MARK_RAN': 
+          db/changelog/changelog-master.xml : Table BankDataBase.transaction does not exist
+
+2023-11-02T22:09:53.120+01:00  INFO 4972 --- [main] liquibase.changelog                      : Marking ChangeSet: "db/changelog/changes/v0.0.1-SNAPSHOT/drop-tables-changelog.xml::drop user table::Vladislav M." as ran despite precondition failure due to onFail='MARK_RAN': 
+          db/changelog/changelog-master.xml : Table BankDataBase.user does not exist
+
+2023-11-02T22:09:53.208+01:00  INFO 4972 --- [main] liquibase.changelog                      : Table users created
+2023-11-02T22:09:53.210+01:00  INFO 4972 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/create-tables-changelog.xml::create users table::Vladislav M. ran successfully in 78ms
+2023-11-02T22:09:53.283+01:00  INFO 4972 --- [main] liquibase.changelog                      : Table products created
+2023-11-02T22:09:53.284+01:00  INFO 4972 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/create-tables-changelog.xml::create products table::Vladislav M. ran successfully in 56ms
+2023-11-02T22:09:53.518+01:00  INFO 4972 --- [main] liquibase.changelog                      : Table accounts created
+2023-11-02T22:09:53.520+01:00  INFO 4972 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/create-tables-changelog.xml::create accounts table::Vladislav M. ran successfully in 221ms
+2023-11-02T22:09:53.603+01:00  INFO 4972 --- [main] liquibase.changelog                      : Table employees created
+2023-11-02T22:09:53.604+01:00  INFO 4972 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/create-tables-changelog.xml::create employees table::Vladislav M. ran successfully in 73ms
+2023-11-02T22:09:53.712+01:00  INFO 4972 --- [main] liquibase.changelog                      : Table transactions created
+2023-11-02T22:09:53.713+01:00  INFO 4972 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/create-tables-changelog.xml::create transactions table::Vladislav M. ran successfully in 98ms
+2023-11-02T22:09:53.830+01:00  INFO 4972 --- [main] liquibase.changelog                      : Table agreements created
+2023-11-02T22:09:53.832+01:00  INFO 4972 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/create-tables-changelog.xml::create agreements table::Vladislav M. ran successfully in 106ms
+2023-11-02T22:09:53.880+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into products
+2023-11-02T22:09:53.883+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into products
+2023-11-02T22:09:53.885+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into products
+2023-11-02T22:09:53.887+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into products
+2023-11-02T22:09:53.889+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into products
+2023-11-02T22:09:53.891+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into products
+2023-11-02T22:09:53.893+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into products
+2023-11-02T22:09:53.896+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into products
+2023-11-02T22:09:53.898+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into products
+2023-11-02T22:09:53.900+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into products
+2023-11-02T22:09:53.919+01:00  INFO 4972 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/insert-products-tables-changelog.xml::insert products table::Vladislav M. ran successfully in 69ms
+2023-11-02T22:09:54.061+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:09:54.065+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:09:54.069+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:09:54.073+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:09:54.076+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:09:54.079+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:09:54.084+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:09:54.087+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:09:54.091+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:09:54.094+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:09:54.097+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:09:54.101+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:09:54.104+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:09:54.107+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:09:54.111+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:09:54.115+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:09:54.118+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:09:54.122+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:09:54.125+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:09:54.129+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:09:54.135+01:00  INFO 4972 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/insert-users-tables-changelog.xml::insert users table::Vladislav M. ran successfully in 93ms
+2023-11-02T22:09:54.184+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:09:54.186+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:09:54.189+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:09:54.191+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:09:54.194+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:09:54.198+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:09:54.201+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:09:54.204+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:09:54.208+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:09:54.212+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:09:54.216+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:09:54.219+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:09:54.222+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:09:54.226+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:09:54.229+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:09:54.231+01:00  INFO 4972 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/insert-accounts-changelog.xml::insert accounts table::Vladislav M. ran successfully in 51ms
+2023-11-02T22:09:54.254+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into employees
+2023-11-02T22:09:54.257+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into employees
+2023-11-02T22:09:54.259+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into employees
+2023-11-02T22:09:54.263+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into employees
+2023-11-02T22:09:54.266+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into employees
+2023-11-02T22:09:54.269+01:00  INFO 4972 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/insert-employees-changelog.xml::insert employees table::Vladislav M. ran successfully in 21ms
+2023-11-02T22:09:54.303+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into transactions
+2023-11-02T22:09:54.306+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into transactions
+2023-11-02T22:09:54.311+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into transactions
+2023-11-02T22:09:54.315+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into transactions
+2023-11-02T22:09:54.319+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into transactions
+2023-11-02T22:09:54.322+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into transactions
+2023-11-02T22:09:54.327+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into transactions
+2023-11-02T22:09:54.333+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into transactions
+2023-11-02T22:09:54.336+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into transactions
+2023-11-02T22:09:54.340+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into transactions
+2023-11-02T22:09:54.343+01:00  INFO 4972 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/insert-transactions-changelog.xml::insert transactions table::Vladislav M. ran successfully in 47ms
+2023-11-02T22:09:54.368+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into agreements
+2023-11-02T22:09:54.371+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into agreements
+2023-11-02T22:09:54.375+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into agreements
+2023-11-02T22:09:54.378+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into agreements
+2023-11-02T22:09:54.381+01:00  INFO 4972 --- [main] liquibase.changelog                      : New row inserted into agreements
+2023-11-02T22:09:54.384+01:00  INFO 4972 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/insert-agreements-changelog.xml::insert agreements table::Vladislav M. ran successfully in 23ms
+2023-11-02T22:09:54.394+01:00  INFO 4972 --- [main] liquibase.util                           : UPDATE SUMMARY
+2023-11-02T22:09:54.394+01:00  INFO 4972 --- [main] liquibase.util                           : Run:                         18
+2023-11-02T22:09:54.394+01:00  INFO 4972 --- [main] liquibase.util                           : Previously run:               0
+2023-11-02T22:09:54.394+01:00  INFO 4972 --- [main] liquibase.util                           : Filtered out:                 0
+2023-11-02T22:09:54.394+01:00  INFO 4972 --- [main] liquibase.util                           : -------------------------------
+2023-11-02T22:09:54.395+01:00  INFO 4972 --- [main] liquibase.util                           : Total change sets:           18
+
+2023-11-02T22:09:54.395+01:00  INFO 4972 --- [main] liquibase.util                           : Update summary generated
+2023-11-02T22:09:54.398+01:00  INFO 4972 --- [main] liquibase.command                        : Update command completed successfully.
+2023-11-02T22:09:54.403+01:00  INFO 4972 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2023-11-02T22:09:54.404+01:00  INFO 4972 --- [main] liquibase.command                        : Command execution complete
+2023-11-02T22:09:54.647+01:00  INFO 4972 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-02T22:09:54.776+01:00  INFO 4972 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-11-02T22:09:54.781+01:00  INFO 4972 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-02T22:09:55.113+01:00  INFO 4972 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-11-02T22:09:55.356+01:00  INFO 4972 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-02T22:09:55.832+01:00  INFO 4972 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-11-02T22:09:57.210+01:00  INFO 4972 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-02T22:09:57.215+01:00  INFO 4972 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-02T22:09:58.238+01:00  INFO 4972 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-11-02T22:10:00.951+01:00  INFO 4972 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-02T22:10:00.965+01:00  INFO 4972 --- [main] b.BankMicroservicesAppApplication        : Started BankMicroservicesAppApplication in 15.341 seconds (process running for 16.635)
+2023-11-02T22:10:03.783+01:00  INFO 4972 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-02T22:10:03.783+01:00  INFO 4972 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-11-02T22:10:03.786+01:00  INFO 4972 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-11-02T22:10:43.336+01:00  INFO 4972 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-02T22:10:43.341+01:00  INFO 4972 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-02T22:10:43.352+01:00  INFO 4972 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-02T22:10:48.728+01:00  INFO 8228 --- [main] b.BankMicroservicesAppApplication        : Starting BankMicroservicesAppApplication using Java 19.0.2 with PID 8228 (C:\programmers\Project\BankMicroservicesApp\target\classes started by Tel-ran.de in C:\programmers\Project\BankMicroservicesApp)
+2023-11-02T22:10:48.736+01:00  INFO 8228 --- [main] b.BankMicroservicesAppApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-11-02T22:10:50.038+01:00  INFO 8228 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-11-02T22:10:50.040+01:00  INFO 8228 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-11-02T22:10:50.091+01:00  INFO 8228 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface bankmicroservicesapp.repository.AccountRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-02T22:10:50.093+01:00  INFO 8228 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface bankmicroservicesapp.repository.AgreementRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-02T22:10:50.096+01:00  INFO 8228 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface bankmicroservicesapp.repository.EmployeeRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-02T22:10:50.098+01:00  INFO 8228 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface bankmicroservicesapp.repository.ProductRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-02T22:10:50.100+01:00  INFO 8228 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface bankmicroservicesapp.repository.TransactionRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-02T22:10:50.101+01:00  INFO 8228 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface bankmicroservicesapp.repository.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-11-02T22:10:50.103+01:00  INFO 8228 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 56 ms. Found 0 JDBC repository interfaces.
+2023-11-02T22:10:50.117+01:00  INFO 8228 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-11-02T22:10:50.119+01:00  INFO 8228 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-02T22:10:50.187+01:00  INFO 8228 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 61 ms. Found 6 JPA repository interfaces.
+2023-11-02T22:10:51.340+01:00  INFO 8228 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-11-02T22:10:51.353+01:00  INFO 8228 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-02T22:10:51.354+01:00  INFO 8228 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-11-02T22:10:51.494+01:00  INFO 8228 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-02T22:10:51.494+01:00  INFO 8228 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2664 ms
+2023-11-02T22:10:51.767+01:00  INFO 8228 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-02T22:10:52.214+01:00  INFO 8228 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6ee37ca7
+2023-11-02T22:10:52.217+01:00  INFO 8228 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-02T22:10:52.697+01:00  INFO 8228 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2023-11-02T22:10:52.707+01:00  INFO 8228 --- [main] liquibase.command                        : Dropping Database Objects in schema: BankDataBase.BankDataBase
+2023-11-02T22:10:53.183+01:00  INFO 8228 --- [main] liquibase.database                       : Successfully deleted all supported object types in schema BankDataBase.BankDataBase.
+2023-11-02T22:10:53.195+01:00  WARN 8228 --- [main] liquibase.lockservice                    : Failed to release change log lock
+2023-11-02T22:10:53.198+01:00  INFO 8228 --- [main] liquibase.command                        : Command execution complete
+2023-11-02T22:10:54.245+01:00  INFO 8228 --- [main] liquibase.changelog                      : Creating database history table with name: BankDataBase.DATABASECHANGELOG
+2023-11-02T22:10:54.281+01:00  INFO 8228 --- [main] liquibase.changelog                      : Reading from BankDataBase.DATABASECHANGELOG
+2023-11-02T22:10:54.458+01:00  INFO 8228 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2023-11-02T22:10:54.475+01:00  INFO 8228 --- [main] liquibase.command                        : Using deploymentId: 8959454475
+2023-11-02T22:10:54.478+01:00  INFO 8228 --- [main] liquibase.changelog                      : Reading from BankDataBase.DATABASECHANGELOG
+2023-11-02T22:10:54.631+01:00  INFO 8228 --- [main] liquibase.changelog                      : Marking ChangeSet: "db/changelog/changes/v0.0.1-SNAPSHOT/drop-tables-changelog.xml::drop account table::Vladislav M." as ran despite precondition failure due to onFail='MARK_RAN': 
+          db/changelog/changelog-master.xml : Table BankDataBase.account does not exist
+
+2023-11-02T22:10:54.649+01:00  INFO 8228 --- [main] liquibase.changelog                      : Marking ChangeSet: "db/changelog/changes/v0.0.1-SNAPSHOT/drop-tables-changelog.xml::drop agreement table::Vladislav M." as ran despite precondition failure due to onFail='MARK_RAN': 
+          db/changelog/changelog-master.xml : Table BankDataBase.agreement does not exist
+
+2023-11-02T22:10:54.666+01:00  INFO 8228 --- [main] liquibase.changelog                      : Marking ChangeSet: "db/changelog/changes/v0.0.1-SNAPSHOT/drop-tables-changelog.xml::drop employee table::Vladislav M." as ran despite precondition failure due to onFail='MARK_RAN': 
+          db/changelog/changelog-master.xml : Table BankDataBase.employee does not exist
+
+2023-11-02T22:10:54.688+01:00  INFO 8228 --- [main] liquibase.changelog                      : Marking ChangeSet: "db/changelog/changes/v0.0.1-SNAPSHOT/drop-tables-changelog.xml::drop product table::Vladislav M." as ran despite precondition failure due to onFail='MARK_RAN': 
+          db/changelog/changelog-master.xml : Table BankDataBase.product does not exist
+
+2023-11-02T22:10:54.712+01:00  INFO 8228 --- [main] liquibase.changelog                      : Marking ChangeSet: "db/changelog/changes/v0.0.1-SNAPSHOT/drop-tables-changelog.xml::drop transaction table::Vladislav M." as ran despite precondition failure due to onFail='MARK_RAN': 
+          db/changelog/changelog-master.xml : Table BankDataBase.transaction does not exist
+
+2023-11-02T22:10:54.735+01:00  INFO 8228 --- [main] liquibase.changelog                      : Marking ChangeSet: "db/changelog/changes/v0.0.1-SNAPSHOT/drop-tables-changelog.xml::drop user table::Vladislav M." as ran despite precondition failure due to onFail='MARK_RAN': 
+          db/changelog/changelog-master.xml : Table BankDataBase.user does not exist
+
+2023-11-02T22:10:54.799+01:00  INFO 8228 --- [main] liquibase.changelog                      : Table users created
+2023-11-02T22:10:54.801+01:00  INFO 8228 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/create-tables-changelog.xml::create users table::Vladislav M. ran successfully in 55ms
+2023-11-02T22:10:54.843+01:00  INFO 8228 --- [main] liquibase.changelog                      : Table products created
+2023-11-02T22:10:54.844+01:00  INFO 8228 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/create-tables-changelog.xml::create products table::Vladislav M. ran successfully in 36ms
+2023-11-02T22:10:54.895+01:00  INFO 8228 --- [main] liquibase.changelog                      : Table accounts created
+2023-11-02T22:10:54.897+01:00  INFO 8228 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/create-tables-changelog.xml::create accounts table::Vladislav M. ran successfully in 46ms
+2023-11-02T22:10:55.014+01:00  INFO 8228 --- [main] liquibase.changelog                      : Table employees created
+2023-11-02T22:10:55.015+01:00  INFO 8228 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/create-tables-changelog.xml::create employees table::Vladislav M. ran successfully in 107ms
+2023-11-02T22:10:55.068+01:00  INFO 8228 --- [main] liquibase.changelog                      : Table transactions created
+2023-11-02T22:10:55.068+01:00  INFO 8228 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/create-tables-changelog.xml::create transactions table::Vladislav M. ran successfully in 47ms
+2023-11-02T22:10:55.139+01:00  INFO 8228 --- [main] liquibase.changelog                      : Table agreements created
+2023-11-02T22:10:55.151+01:00  INFO 8228 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/create-tables-changelog.xml::create agreements table::Vladislav M. ran successfully in 76ms
+2023-11-02T22:10:55.181+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into products
+2023-11-02T22:10:55.185+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into products
+2023-11-02T22:10:55.188+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into products
+2023-11-02T22:10:55.191+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into products
+2023-11-02T22:10:55.194+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into products
+2023-11-02T22:10:55.197+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into products
+2023-11-02T22:10:55.201+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into products
+2023-11-02T22:10:55.203+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into products
+2023-11-02T22:10:55.206+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into products
+2023-11-02T22:10:55.209+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into products
+2023-11-02T22:10:55.213+01:00  INFO 8228 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/insert-products-tables-changelog.xml::insert products table::Vladislav M. ran successfully in 38ms
+2023-11-02T22:10:55.251+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:10:55.254+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:10:55.258+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:10:55.261+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:10:55.263+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:10:55.266+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:10:55.268+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:10:55.271+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:10:55.274+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:10:55.276+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:10:55.279+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:10:55.283+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:10:55.287+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:10:55.289+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:10:55.293+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:10:55.296+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:10:55.298+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:10:55.302+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:10:55.304+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:10:55.307+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-02T22:10:55.309+01:00  INFO 8228 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/insert-users-tables-changelog.xml::insert users table::Vladislav M. ran successfully in 64ms
+2023-11-02T22:10:55.351+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:10:55.354+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:10:55.358+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:10:55.361+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:10:55.366+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:10:55.368+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:10:55.372+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:10:55.375+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:10:55.377+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:10:55.380+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:10:55.384+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:10:55.389+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:10:55.392+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:10:55.396+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:10:55.400+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-02T22:10:55.401+01:00  INFO 8228 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/insert-accounts-changelog.xml::insert accounts table::Vladislav M. ran successfully in 55ms
+2023-11-02T22:10:55.425+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into employees
+2023-11-02T22:10:55.429+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into employees
+2023-11-02T22:10:55.432+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into employees
+2023-11-02T22:10:55.437+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into employees
+2023-11-02T22:10:55.440+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into employees
+2023-11-02T22:10:55.442+01:00  INFO 8228 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/insert-employees-changelog.xml::insert employees table::Vladislav M. ran successfully in 23ms
+2023-11-02T22:10:55.484+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into transactions
+2023-11-02T22:10:55.487+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into transactions
+2023-11-02T22:10:55.491+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into transactions
+2023-11-02T22:10:55.496+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into transactions
+2023-11-02T22:10:55.499+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into transactions
+2023-11-02T22:10:55.501+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into transactions
+2023-11-02T22:10:55.504+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into transactions
+2023-11-02T22:10:55.508+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into transactions
+2023-11-02T22:10:55.511+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into transactions
+2023-11-02T22:10:55.513+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into transactions
+2023-11-02T22:10:55.516+01:00  INFO 8228 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/insert-transactions-changelog.xml::insert transactions table::Vladislav M. ran successfully in 40ms
+2023-11-02T22:10:55.544+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into agreements
+2023-11-02T22:10:55.547+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into agreements
+2023-11-02T22:10:55.550+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into agreements
+2023-11-02T22:10:55.553+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into agreements
+2023-11-02T22:10:55.556+01:00  INFO 8228 --- [main] liquibase.changelog                      : New row inserted into agreements
+2023-11-02T22:10:55.560+01:00  INFO 8228 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/insert-agreements-changelog.xml::insert agreements table::Vladislav M. ran successfully in 20ms
+2023-11-02T22:10:55.578+01:00  INFO 8228 --- [main] liquibase.util                           : UPDATE SUMMARY
+2023-11-02T22:10:55.578+01:00  INFO 8228 --- [main] liquibase.util                           : Run:                         18
+2023-11-02T22:10:55.578+01:00  INFO 8228 --- [main] liquibase.util                           : Previously run:               0
+2023-11-02T22:10:55.578+01:00  INFO 8228 --- [main] liquibase.util                           : Filtered out:                 0
+2023-11-02T22:10:55.578+01:00  INFO 8228 --- [main] liquibase.util                           : -------------------------------
+2023-11-02T22:10:55.579+01:00  INFO 8228 --- [main] liquibase.util                           : Total change sets:           18
+
+2023-11-02T22:10:55.580+01:00  INFO 8228 --- [main] liquibase.util                           : Update summary generated
+2023-11-02T22:10:55.587+01:00  INFO 8228 --- [main] liquibase.command                        : Update command completed successfully.
+2023-11-02T22:10:55.595+01:00  INFO 8228 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2023-11-02T22:10:55.596+01:00  INFO 8228 --- [main] liquibase.command                        : Command execution complete
+2023-11-02T22:10:55.839+01:00  INFO 8228 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-02T22:10:55.942+01:00  INFO 8228 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-11-02T22:10:55.945+01:00  INFO 8228 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-02T22:10:56.448+01:00  INFO 8228 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-11-02T22:10:56.689+01:00  INFO 8228 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-02T22:10:57.124+01:00  INFO 8228 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-11-02T22:10:58.454+01:00  INFO 8228 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-02T22:10:58.458+01:00  INFO 8228 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-02T22:10:59.248+01:00  INFO 8228 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-11-02T22:11:02.432+01:00  INFO 8228 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-02T22:11:02.443+01:00  INFO 8228 --- [main] b.BankMicroservicesAppApplication        : Started BankMicroservicesAppApplication in 14.834 seconds (process running for 16.152)
+2023-11-02T22:11:04.979+01:00  INFO 8228 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-02T22:11:04.979+01:00  INFO 8228 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-11-02T22:11:04.980+01:00  INFO 8228 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-11-02T22:11:47.820+01:00  INFO 8228 --- [http-nio-8080-exec-3] b.aspect.LoggingAspect                   : NEW REQUEST:
+IP : 127.0.0.1
+URL : http://localhost:8080/account/get-all/by-status
+HTTP_METHOD : GET
+CONTROLLER_METHOD : bankmicroservicesapp.controller.AccountController.getAllStatus
+2023-11-02T22:11:47.840+01:00  INFO 8228 --- [http-nio-8080-exec-3] b.aspect.LoggingAspect                   : RUN SERVICE:
+SERVICE_METHOD : bankmicroservicesapp.service.impl.AccountServiceImpl.getAllByStatus
+2023-11-02T22:11:48.129+01:00  INFO 8228 --- [http-nio-8080-exec-3] b.aspect.LoggingAspect                   : 
+Return value: [AccountDto(userId=ee7a4a8c-7149-4a3a-a84e-0e1489ec8d3f, name=Lars.Nielsen, type=Personal, status=New, currencyCode=EUR, bankRating=5, balance=330.0), AccountDto(userId=ff047ece-ad76-4f25-b542-9c117a91532a, name=Anna.Petrova, type=Personal, status=New, currencyCode=UAH, bankRating=5, balance=87000.0), AccountDto(userId=636f9932-8c10-4046-906a-151a794aa10a, name=Giovanni.Bianchi, type=Personal, status=New, currencyCode=EUR, bankRating=5, balance=82000.0), AccountDto(userId=e484cda6-dbda-459f-a97a-3f8a601cc135, name=Eva.Müller, type=Personal, status=New, currencyCode=USD, bankRating=5, balance=820.0), AccountDto(userId=26cbd100-02c0-4477-837d-dea633a48252, name=Jacques.Dubois, type=Personal, status=New, currencyCode=USD, bankRating=5, balance=7200.0), AccountDto(userId=f334ccc8-3578-4101-b453-d590ecd3646e, name=Hans.Jensen, type=Personal, status=New, currencyCode=EUR, bankRating=5, balance=3290.0), AccountDto(userId=86e768e1-7890-4323-aea3-86607998d09a, name=Sofia.García, type=Personal, status=New, currencyCode=EUR, bankRating=5, balance=12500.0), AccountDto(userId=a1ce95e4-e2c4-4573-91e0-2857d219b6b9, name=Sophie.Müller, type=Personal, status=New, currencyCode=EUR, bankRating=5, balance=33200.0), AccountDto(userId=b203e0f5-8e55-411f-971b-64bb8d028328, name=Luca.Moretti, type=Personal, status=New, currencyCode=CZK, bankRating=5, balance=192000.0), AccountDto(userId=2538cc96-e3ff-4a96-9d19-ba3759ad1d87, name=John.Smith, type=Personal, status=New, currencyCode=EUR, bankRating=5, balance=3500.0), AccountDto(userId=95373e88-f655-43f8-a086-06434e10a60a, name=Emma.Smith, type=Personal, status=New, currencyCode=USD, bankRating=5, balance=18000.0), AccountDto(userId=8f3c7555-f31c-4fe0-b846-09760134a43d, name=Luca.Rossi, type=Personal, status=New, currencyCode=PLN, bankRating=5, balance=72000.0), AccountDto(userId=ef6942fc-70c0-4c0a-ae18-72c220b12785, name=Maria.Garcia, type=Personal, status=New, currencyCode=EUR, bankRating=5, balance=980.0), AccountDto(userId=3b6397e8-d11b-48f9-ae74-cae3e19fb0d4, name=Miguel.Rodríguez, type=Personal, status=New, currencyCode=USD, bankRating=5, balance=6900.0), AccountDto(userId=52fc5bed-8959-436f-8efb-b66bdd47959d, name=Pierre.Dupont, type=Personal, status=New, currencyCode=TRY, bankRating=5, balance=190500.0)]
+END OF REQUEST
+2023-11-02T22:11:59.016+01:00  INFO 8228 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-02T22:11:59.019+01:00  INFO 8228 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-02T22:11:59.029+01:00  INFO 8228 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
