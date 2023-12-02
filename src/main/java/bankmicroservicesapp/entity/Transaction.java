@@ -45,11 +45,11 @@ public class Transaction {
 
     @JoinColumn(name = "debit_account_id", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
-    private Account debitAccountId;
+    private Account debitAccount;
 
     @JoinColumn(name = "credit_account_id", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
-    private Account creditAccountId;
+    private Account creditAccount;
 
     @Override
     public boolean equals(Object o) {

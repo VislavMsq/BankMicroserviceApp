@@ -1,12 +1,14 @@
 package bankmicroservicesapp.service;
 
+import bankmicroservicesapp.dto.CreateTransactionDto;
 import bankmicroservicesapp.dto.TransactionDto;
-import bankmicroservicesapp.entity.Transaction;
 
 import java.util.List;
 
 public interface TransactionService {
     List<TransactionDto> getAll();
 
-    TransactionDto createTransaction(TransactionDto transactionDto);
+    TransactionDto createTransaction(CreateTransactionDto transactionDto);
 }
+
+

@@ -1,5 +1,6 @@
 package bankmicroservicesapp.service.impl;
 
+import bankmicroservicesapp.dto.CreateTransactionDto;
 import bankmicroservicesapp.dto.TransactionDto;
 import bankmicroservicesapp.entity.Account;
 import bankmicroservicesapp.entity.Transaction;
@@ -9,6 +10,7 @@ import bankmicroservicesapp.exeption.NotEnoughMoneyException;
 import bankmicroservicesapp.mapper.TransactionMapper;
 import bankmicroservicesapp.repository.AccountRepository;
 import bankmicroservicesapp.repository.TransactionRepository;
+import bankmicroservicesapp.service.AccountService;
 import bankmicroservicesapp.service.TransactionService;
 import org.springframework.stereotype.Service;
 
@@ -24,7 +26,7 @@ public class TransactionServiceImpl implements TransactionService {
     private final TransactionMapper transactionMapper;
     private final AccountRepository accountRepository;
 
-    public TransactionServiceImpl(TransactionRepository transactionRepository, TransactionMapper transactionMapper, AccountRepository accountRepository) {
+    public TransactionServiceImpl(TransactionRepository transactionRepository, TransactionMapper transactionMapper, AccountService accountService, AccountRepository accountRepository) {
         this.transactionRepository = transactionRepository;
         this.transactionMapper = transactionMapper;
         this.accountRepository = accountRepository;
@@ -37,19 +39,24 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     @Override
-    public TransactionDto createTransaction(TransactionDto transactionDto) {
-        Transaction transaction = transactionMapper.toEntity(transactionDto);
-        Account debitAccount = updateDebitAccount(transactionDto, transaction);
-        Account creditAccount = updateCreditAccount(transactionDto, transaction);
-        transaction.setDebitAccountId(debitAccount);
-        transaction.setCreditAccountId(creditAccount);
+    public TransactionDto createTransaction(CreateTransactionDto createTransactionDto) {
+        Transaction transaction = transactionMapper.toEntity(createTransactionDto);
+        transaction.setCreditAccount(accountRepository.findById(UUID.fromString(createTransactionDto.getToAccountId()))
+                .orElseThrow(() -> new DataNotExistException(ErrorMessage.DATA_NOT_EXIST)));
+        transaction.setDebitAccount(accountRepository.findById(UUID.fromString(createTransactionDto.getFromAccountId()))
+                .orElseThrow(() -> new DataNotExistException(ErrorMessage.DATA_NOT_EXIST)));
+
+        Account debitAccount = updateDebitAccount(createTransactionDto, transaction);
+        Account creditAccount = updateCreditAccount(createTransactionDto, transaction);
+        transaction.setDebitAccount(debitAccount);
+        transaction.setCreditAccount(creditAccount);
         transaction.setUpdatedAt(LocalDateTime.now());
         transactionRepository.save(transaction);
         return transactionMapper.toDto(transaction);
     }
 
-    private Account updateCreditAccount(TransactionDto transactionDto, Transaction transaction) {
-        String creditAccountId = transactionDto.getCreditAccountId();
+    private Account updateCreditAccount(CreateTransactionDto createTransactionDto, Transaction transaction) {
+        String creditAccountId = createTransactionDto.getToAccountId();
         Account creditAccount = accountRepository.findById(UUID.fromString(creditAccountId))
                 .orElseThrow(() -> new DataNotExistException(ErrorMessage.ACCOUNT_NOT_FOUND));
         BigDecimal creditBalance = creditAccount.getBalance().add(transaction.getAmount());
@@ -59,8 +66,8 @@ public class TransactionServiceImpl implements TransactionService {
         return creditAccount;
     }
 
-    private Account updateDebitAccount(TransactionDto transactionDto, Transaction transaction) {
-        String debitAccountId = transactionDto.getCreditAccountId();
+    private Account updateDebitAccount(CreateTransactionDto createTransactionDto, Transaction transaction) {
+        String debitAccountId = createTransactionDto.getFromAccountId();
         Account debitAccount = accountRepository.findById(UUID.fromString(debitAccountId))
                 .orElseThrow(() -> new DataNotExistException(ErrorMessage.ACCOUNT_IS_NULL));
         if (debitAccount.getBalance().compareTo(transaction.getAmount()) < 0) {

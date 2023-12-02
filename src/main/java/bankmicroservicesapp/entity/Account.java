@@ -15,7 +15,6 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 import java.util.UUID;
 
 import static jakarta.persistence.CascadeType.*;
@@ -71,10 +70,10 @@ public class Account {
     @OneToMany(mappedBy = "account",fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
     private List<Agreement> agreements;
 
-    @OneToMany(mappedBy = "debitAccountId",fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
+    @OneToMany(mappedBy = "debitAccount",fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
     private List<Transaction> debits;
 
-    @OneToMany(mappedBy = "creditAccountId",fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
+    @OneToMany(mappedBy = "creditAccount",fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
     private List<Transaction> credits;
 
 

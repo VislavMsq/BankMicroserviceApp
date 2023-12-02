@@ -12,6 +12,4 @@ public class TransactionDto {
     // account
     String debitAccountId;
     String creditAccountId;
-
-
 }

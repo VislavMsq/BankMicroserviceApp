@@ -2,6 +2,7 @@ package bankmicroservicesapp.controller;
 
 import bankmicroservicesapp.dto.UserDto;
 import bankmicroservicesapp.service.UserService;
+import bankmicroservicesapp.validation.annotation.ValidUUID;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,9 +18,9 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping("/{userId}")
-    public UserDto getById(@PathVariable("userId") String userId) {
-        return userService.findById(userId);
+    @GetMapping("/by-id/{id}")
+    public UserDto getById(@ValidUUID @PathVariable("id") String id) {
+        return userService.findById(id);
     }
 }
 

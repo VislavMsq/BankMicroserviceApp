@@ -5,6 +5,7 @@ import bankmicroservicesapp.entity.Account;
 import bankmicroservicesapp.entity.User;
 import bankmicroservicesapp.entity.enums.StatusAccount;
 import bankmicroservicesapp.exeption.CreateAccountControllerException;
+import bankmicroservicesapp.exeption.DataNotExistException;
 import bankmicroservicesapp.exeption.ErrorMessage;
 import bankmicroservicesapp.exeption.InvalidStatusException;
 import bankmicroservicesapp.mapper.AccountMapper;
@@ -51,7 +52,7 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     @Transactional
-    public List<AccountDto> getAllByStatus(String status){
+    public List<AccountDto> getAllByStatus(String status) {
         try {
             StatusAccount.valueOf(status);
         } catch (Exception e) {
@@ -59,6 +60,12 @@ public class AccountServiceImpl implements AccountService {
         }
         List<Account> accounts = accountRepository.findAllByStatus(StatusAccount.valueOf(status));
         return accountMapper.accountsToAccountsDto(accounts);
+    }
+
+    @Override
+    public AccountDto getById(String id) {
+        return accountMapper.toDto(accountRepository.findById(UUID.fromString(id)).orElseThrow(
+                () -> new DataNotExistException(ErrorMessage.DATA_NOT_EXIST)));
     }
 }
 

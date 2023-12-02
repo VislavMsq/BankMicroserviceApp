@@ -4,27 +4,20 @@ import bankmicroservicesapp.dto.AgreementDto;
 import bankmicroservicesapp.entity.Agreement;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import org.mapstruct.Named;
 
 import java.util.List;
-import java.util.UUID;
 
 @Mapper(componentModel = "spring")
 public interface AgreementMapper {
 
-    @Mapping(source = "account.user.id", target = "userId", qualifiedByName = "UUIDToString")
+    @Mapping(source = "account.user.id", target = "userId")
     @Mapping(source = "product.productType", target = "productName")
     AgreementDto toDto(Agreement agreement);
 
-    @Mapping(source = "interestRate", target = "interestRate", qualifiedByName = "toDouble")
-    @Mapping(source = "discount", target = "discount", qualifiedByName = "toDouble")
-    @Mapping(source = "agreementLimit", target = "agreementLimit", qualifiedByName = "toDouble")
-    @Mapping(source = "sum", target = "sum", qualifiedByName = "toDouble")
+    @Mapping(source = "interestRate", target = "interestRate")
+    @Mapping(source = "discount", target = "discount")
+    @Mapping(source = "agreementLimit", target = "agreementLimit")
+    @Mapping(source = "sum", target = "sum")
     List<AgreementDto> agreementToAgreementDto(List<Agreement> managerId);
-
-    @Named("UUIDToString")
-    default String UUIDToString(UUID uuid) {
-        return uuid.toString();
-    }
 
 }

@@ -1,5 +1,6 @@
 package bankmicroservicesapp.controller;
 
+import bankmicroservicesapp.dto.CreateTransactionDto;
 import bankmicroservicesapp.dto.TransactionDto;
 import bankmicroservicesapp.service.TransactionService;
 import org.springframework.web.bind.annotation.*;
@@ -22,7 +23,7 @@ public class TransactionController {
     }
 
     @PostMapping("/create")
-    public TransactionDto createTransaction(@RequestBody TransactionDto transactionDto){
+    public TransactionDto createTransaction(@RequestBody CreateTransactionDto transactionDto){
         return transactionService.createTransaction(transactionDto);
     }
 

@@ -3,14 +3,10 @@ package bankmicroservicesapp.entity;
 import bankmicroservicesapp.entity.enums.Currency;
 import bankmicroservicesapp.entity.enums.StatusAgreement;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.UUID;
@@ -31,7 +27,7 @@ public class Agreement {
     private UUID id;
 
     @Column(name = "interest_rate")
-    private double interestRate;
+    private Double interestRate;
 
     @Column(name = "currency_code")
     @Enumerated(EnumType.STRING)
@@ -42,13 +38,13 @@ public class Agreement {
     private StatusAgreement status;
 
     @Column(name = "discount")
-    private double discount;
+    private Double discount;
 
     @Column(name = "agreement_limit")
-    private double agreementLimit;
+    private Double agreementLimit;
 
     @Column(name = "sum")
-    private double sum;
+    private Double sum;
 
     @Column(name = "created_at")
     @Temporal(TemporalType.TIMESTAMP)
@@ -61,15 +57,15 @@ public class Agreement {
     private LocalDateTime updatedAt;
 
     @JoinColumn(name = "account_id", referencedColumnName = "id")
-    @ManyToOne(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {MERGE, PERSIST, REFRESH})
     private Account account;
 
     @JoinColumn(name = "product_id", referencedColumnName = "id")
-    @ManyToOne(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {MERGE, PERSIST, REFRESH})
     private Product product;
 
     @JoinColumn(name = "manager_id", referencedColumnName = "id")
-    @ManyToOne(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {MERGE, PERSIST, REFRESH})
     private Employee manager;
 
     @Override
