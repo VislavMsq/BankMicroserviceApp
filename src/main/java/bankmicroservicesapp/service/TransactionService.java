@@ -8,7 +8,7 @@ import java.util.List;
 public interface TransactionService {
     List<TransactionDto> getAll();
 
-    TransactionDto createTransaction(CreateTransactionDto transactionDto);
+    TransactionDto createTransaction(CreateTransactionDto createTransactionDto);
 }
 
 

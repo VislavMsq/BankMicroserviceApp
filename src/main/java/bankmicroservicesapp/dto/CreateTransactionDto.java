@@ -7,7 +7,7 @@ public class CreateTransactionDto {
     String fromAccountId;
     String toAccountId;
     // transaction
-    String transaction_type;
+    String type;
     String amount;
     String description;
 

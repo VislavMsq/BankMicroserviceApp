@@ -49,16 +49,15 @@ class AccountControllerTest {
         MvcResult accountCreatingResult = mockMvc.perform(MockMvcRequestBuilders.post("/account/create")
                         .contentType(MediaType.APPLICATION_JSON) // в каком формате вернет(или положит?) значение наш контроллер
                         .with(csrf())
-                        .content(accountStringDto)) // кладем, что принимает контроллер
-                .andReturn();                       // возвращает ответ из контроллера
+                        .content(accountStringDto))
+                .andReturn();
         // then
-        // достал статус код
         Assertions.assertEquals(200, accountCreatingResult.getResponse().getStatus());
 
         String accountResultJson = accountCreatingResult.getResponse().getContentAsString(); // достали стригну
         Account accountResult = objectMapper.readValue(accountResultJson, Account.class);    // сконвертировали строку в дсон
 
-        Assertions.assertEquals(accountDto.getName(), accountResult.getName());              // сравниваю поля
+        Assertions.assertEquals(accountDto.getName(), accountResult.getName());
         Assertions.assertEquals(accountDto.getType(), accountResult.getType().toString());
         Assertions.assertEquals(accountDto.getStatus(), accountResult.getStatus().toString());
         Assertions.assertEquals(accountDto.getCurrencyCode(), accountResult.getCurrencyCode().toString());

@@ -23,8 +23,8 @@ public class TransactionController {
     }
 
     @PostMapping("/create")
-    public TransactionDto createTransaction(@RequestBody CreateTransactionDto transactionDto){
-        return transactionService.createTransaction(transactionDto);
+    public TransactionDto createTransaction(@RequestBody CreateTransactionDto createTransactionDto){
+        return transactionService.createTransaction(createTransactionDto);
     }
 
 }

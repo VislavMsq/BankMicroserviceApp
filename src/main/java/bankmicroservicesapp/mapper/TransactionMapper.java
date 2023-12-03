@@ -16,13 +16,10 @@ public interface TransactionMapper {
 
     Transaction toEntity(TransactionDto transactionDto);
 
-    Transaction toEntity(CreateTransactionDto transactionDto);
+    Transaction toEntity(CreateTransactionDto createTransactionDto);
 
     @Mapping(source = "id", target = "id")
     @Mapping(source = "amount", target = "amount")
     List<TransactionDto> transactionToTransactionDto(List<Transaction> transactionsList);
 
-//    default Account stringAccount(String id){
-//
-//    }
 }

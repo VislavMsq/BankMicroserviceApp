@@ -19,6 +19,12 @@ VALUES ('11ebe124-0d14-4675-99ef-d07da2b2222a', '05ebe134-0d14-4675-99ef-d07da2b
         'Active',
         '12250.00', 'USD', '5', '2023-09-18 12:12:00', '2023-08-20 11:30:00');
 
+INSERT INTO ACCOUNTS (id, client_id, account_name, account_type, account_status, balance, currency_code, bank_rating,
+                      created_at, updated_at)
+VALUES ('91ebe124-0d14-4675-99ef-d07da2b3222a', '7d80f158-2eff-4328-9921-0792706fe2d5', 'Marco.Ferrari', 'Personal',
+        'Active',
+        '53000.00', 'USD', '5', '2023-09-18 12:12:00', '2023-07-20 11:45:00');
+
 INSERT INTO TRANSACTIONS (id, debit_account_id, credit_account_id, transaction_type, amount, transaction_description,
                           updated_at)
 VALUES ('06752bb6-809f-400a-afff-50aaf6ccd647', '11ebe124-0d14-4675-99ef-d07da2b2222a',

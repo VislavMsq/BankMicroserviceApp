@@ -1,5 +1,6 @@
 package bankmicroservicesapp.controller;
 
+import bankmicroservicesapp.dto.CreateTransactionDto;
 import bankmicroservicesapp.dto.TransactionDto;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -56,5 +57,40 @@ class TransactionControllerTest {
 
         Assertions.assertEquals(200, mockMvc1.getResponse().getStatus());
         Assertions.assertEquals(actual, transactionDtoList);
+    }
+
+    @Test
+    void createTransaction() throws Exception {
+        CreateTransactionDto createTransactionDto = new CreateTransactionDto();
+        createTransactionDto.setFromAccountId("11ebe124-0d14-4675-99ef-d07da2b2222a");
+        createTransactionDto.setToAccountId("91ebe124-0d14-4675-99ef-d07da2b3222a");
+        createTransactionDto.setType("TransferFunds");
+        createTransactionDto.setAmount("150.0");
+        createTransactionDto.setDescription("for cookies");
+
+        String data = objectMapper.writeValueAsString(createTransactionDto);
+
+        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.post("/transaction/create")
+                        .content(data)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .with(csrf()))
+                .andReturn();
+
+        TransactionDto transactionDto = objectMapper.readValue(mvcResult.getResponse().getContentAsString(),
+                new TypeReference<>() {
+                });
+
+        Assertions.assertEquals(200, mvcResult.getResponse().getStatus());
+
+        TransactionDto expected = new TransactionDto();
+        expected.setId(transactionDto.getId());
+        expected.setDebitAccountId("11ebe124-0d14-4675-99ef-d07da2b2222a");
+        expected.setCreditAccountId("91ebe124-0d14-4675-99ef-d07da2b3222a");
+        expected.setType("TransferFunds");
+        expected.setAmount("150.0");
+        expected.setDescription("for cookies");
+
+        Assertions.assertEquals(expected, transactionDto);
+
     }
 }

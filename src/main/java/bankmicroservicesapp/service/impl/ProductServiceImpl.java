@@ -1,12 +1,10 @@
 package bankmicroservicesapp.service.impl;
 
-import bankmicroservicesapp.controller.util.Valid;
 import bankmicroservicesapp.dto.ProductDto;
 import bankmicroservicesapp.dto.ProductUpdateDto;
 import bankmicroservicesapp.entity.Product;
 import bankmicroservicesapp.exeption.DataNotExistException;
 import bankmicroservicesapp.exeption.ErrorMessage;
-import bankmicroservicesapp.exeption.InvalidIdException;
 import bankmicroservicesapp.mapper.ProductMapper;
 import bankmicroservicesapp.repository.ProductRepository;
 import bankmicroservicesapp.service.ProductService;
@@ -29,9 +27,6 @@ public class ProductServiceImpl implements ProductService {
     @Override
     @Transactional
     public ProductUpdateDto updateProduct(ProductUpdateDto productDto, UUID id) {
-        if (!Valid.isValidUUID(id.toString())) {
-            throw new InvalidIdException(ErrorMessage.INVALID_ID);
-        }
         Product prod = productMapper.update(productMapper.toObj(productDto), productRepository.findById(id)
                 .orElseThrow(() -> new DataNotExistException(ErrorMessage.DATA_NOT_EXIST)));
         productRepository.save(prod);
@@ -46,9 +41,6 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ProductDto findProductById(UUID id) {
-        if (!Valid.isValidUUID(id.toString())) {
-            throw new InvalidIdException(ErrorMessage.INVALID_ID);
-        }
         return productMapper.toDto(productRepository.findById(id).orElseThrow(() ->
                 new DataNotExistException(ErrorMessage.INVALID_ID)));
     }

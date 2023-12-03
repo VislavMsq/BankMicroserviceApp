@@ -1,11 +1,9 @@
 package bankmicroservicesapp.service.impl;
 
-import bankmicroservicesapp.controller.util.Valid;
 import bankmicroservicesapp.dto.AgreementDto;
 import bankmicroservicesapp.entity.Agreement;
 import bankmicroservicesapp.exeption.DataNotExistException;
 import bankmicroservicesapp.exeption.ErrorMessage;
-import bankmicroservicesapp.exeption.InvalidIdException;
 import bankmicroservicesapp.mapper.AgreementMapper;
 import bankmicroservicesapp.repository.AgreementRepository;
 import bankmicroservicesapp.repository.EmployeeRepository;
@@ -33,9 +31,6 @@ public class AgreementServiceImpl implements AgreementService {
 
     @Override
     public void deleteById(String agreementId) {
-        if (!Valid.isValidUUID(agreementId)) {
-            throw new InvalidIdException(ErrorMessage.INVALID_ID);
-        }
         if (agreementRepository.existsById(UUID.fromString(agreementId))) {
             agreementRepository.deleteById(UUID.fromString(agreementId));
         }
@@ -52,18 +47,12 @@ public class AgreementServiceImpl implements AgreementService {
     @Override
     @Transactional
     public List<AgreementDto> findAgreementsWhereClientIdIs(UUID clientId) {
-        if (!Valid.isValidUUID(clientId.toString())) {
-            throw new InvalidIdException(ErrorMessage.INVALID_ID);
-        }
         List<Agreement> agreements = agreementRepository.findAgreementsClientIdIs(clientId);
         return agreementMapper.agreementToAgreementDto(agreements);
     }
 
     @Override
     public AgreementDto findAgreementById(UUID id) {
-        if (!Valid.isValidUUID(id.toString())) {
-            throw new InvalidIdException(ErrorMessage.INVALID_ID);
-        }
         return agreementMapper.toDto(agreementRepository.findById(id).orElseThrow(
                 () -> new DataNotExistException(ErrorMessage.DATA_NOT_EXIST)));
     }

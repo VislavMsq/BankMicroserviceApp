@@ -51,7 +51,7 @@ public class Account {
     private Currency currencyCode;
 
     @Column(name = "bank_rating")
-    private int bankRating;
+    private Integer bankRating;
 
     @Column(name = "created_at")
     @Temporal(TemporalType.TIMESTAMP)
@@ -64,7 +64,7 @@ public class Account {
     private LocalDateTime updatedAt;
 
     @JoinColumn(name = "client_id", referencedColumnName = "id")
-    @OneToOne(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
+    @OneToOne(fetch = FetchType.EAGER, cascade = {MERGE, PERSIST, REFRESH})
     private User user;
 
     @OneToMany(mappedBy = "account",fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})

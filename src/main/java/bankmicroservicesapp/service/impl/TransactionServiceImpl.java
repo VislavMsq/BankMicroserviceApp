@@ -13,6 +13,7 @@ import bankmicroservicesapp.repository.TransactionRepository;
 import bankmicroservicesapp.service.AccountService;
 import bankmicroservicesapp.service.TransactionService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -39,12 +40,15 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     @Override
+    @Transactional
     public TransactionDto createTransaction(CreateTransactionDto createTransactionDto) {
         Transaction transaction = transactionMapper.toEntity(createTransactionDto);
         transaction.setCreditAccount(accountRepository.findById(UUID.fromString(createTransactionDto.getToAccountId()))
-                .orElseThrow(() -> new DataNotExistException(ErrorMessage.DATA_NOT_EXIST)));
+                .orElseThrow(() -> new DataNotExistException(ErrorMessage.DATA_NOT_EXIST + " : "
+                        + createTransactionDto.getToAccountId())));
         transaction.setDebitAccount(accountRepository.findById(UUID.fromString(createTransactionDto.getFromAccountId()))
-                .orElseThrow(() -> new DataNotExistException(ErrorMessage.DATA_NOT_EXIST)));
+                .orElseThrow(() -> new DataNotExistException(ErrorMessage.DATA_NOT_EXIST + " : "
+                        + createTransactionDto.getFromAccountId())));
 
         Account debitAccount = updateDebitAccount(createTransactionDto, transaction);
         Account creditAccount = updateCreditAccount(createTransactionDto, transaction);
