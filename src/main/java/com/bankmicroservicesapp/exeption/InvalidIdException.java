@@ -1,0 +1,7 @@
+package com.bankmicroservicesapp.exeption;
+
+public class InvalidIdException extends RuntimeException {
+    public InvalidIdException(String s) {
+        super(s);
+    }
+}
