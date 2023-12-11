@@ -12,14 +12,27 @@ CREATE TABLE IF NOT EXISTS USERS
     updated_at    TIMESTAMP
 );
 
+CREATE TABLE IF NOT EXISTS EMPLOYEES
+(
+    id              uuid PRIMARY KEY,
+    user_id         uuid,
+    employee_type   varchar(40),
+    employee_status varchar(28),
+    created_at      TIMESTAMP,
+    updated_at      TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES USERS (id)
+    );
+
 CREATE TABLE IF NOT EXISTS PRODUCTS
 (
     id             uuid PRIMARY KEY,
+    employee_id    uuid,
     product_type   varchar(70),
     product_status varchar(20),
     interest_rate  decimal(6, 4),
     created_at     TIMESTAMP,
-    updated_at     TIMESTAMP
+    updated_at     TIMESTAMP,
+    FOREIGN KEY (employee_id) REFERENCES EMPLOYEES (id)
 );
 
 CREATE TABLE IF NOT EXISTS ACCOUNTS
@@ -35,17 +48,6 @@ CREATE TABLE IF NOT EXISTS ACCOUNTS
     created_at     TIMESTAMP,
     updated_at     TIMESTAMP,
     FOREIGN KEY (client_id) REFERENCES USERS (id)
-);
-
-CREATE TABLE IF NOT EXISTS EMPLOYEES
-(
-    id              uuid PRIMARY KEY,
-    user_id         uuid,
-    employee_type   varchar(40),
-    employee_status varchar(28),
-    created_at      TIMESTAMP,
-    updated_at      TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES USERS (id)
 );
 
 CREATE TABLE IF NOT EXISTS TRANSACTIONS

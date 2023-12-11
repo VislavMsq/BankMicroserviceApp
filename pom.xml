@@ -173,7 +173,10 @@
                 </dependencies>
                 <configuration>
                     <excludes>
-                        <exclude>com/**/entity/*</exclude>
+                        <exclude>com/**/entity/**/*</exclude>
+                        <exclude>com/**/controller/**/*</exclude>
+                        <exclude>com/**/dto/*</exclude>
+                        <exclude>com/**/validation/**/*</exclude>
                         <exclude>com/**/aspect/*</exclude>
                         <exclude>com/**/enums/*</exclude>
                         <exclude>com/**/exception/*</exclude>
