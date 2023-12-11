@@ -1,11 +1,11 @@
 package com.bankmicroservicesapp.controller.exceptionHandlerController;
 
 
-import com.bankmicroservicesapp.exeption.CreateAccountControllerException;
+import com.bankmicroservicesapp.exception.CreateAccountControllerException;
 
-import com.bankmicroservicesapp.exeption.DataNotExistException;
-import com.bankmicroservicesapp.exeption.InvalidIdException;
-import com.bankmicroservicesapp.exeption.InvalidStatusException;
+import com.bankmicroservicesapp.exception.DataNotExistException;
+import com.bankmicroservicesapp.exception.InvalidIdException;
+import com.bankmicroservicesapp.exception.InvalidStatusException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.ErrorResponse;

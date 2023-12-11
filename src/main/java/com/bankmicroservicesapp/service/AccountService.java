@@ -1,7 +1,7 @@
 package com.bankmicroservicesapp.service;
 
 import com.bankmicroservicesapp.dto.AccountDto;
-import com.bankmicroservicesapp.exeption.InvalidStatusException;
+import com.bankmicroservicesapp.exception.InvalidStatusException;
 
 import java.util.List;
 

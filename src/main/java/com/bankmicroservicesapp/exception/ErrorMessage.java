@@ -1,4 +1,4 @@
-package com.bankmicroservicesapp.exeption;
+package com.bankmicroservicesapp.exception;
 
 public class ErrorMessage {
     public static final String CREATED_ACCOUNT_IMPOSSIBLE = "Created account impossible";

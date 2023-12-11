@@ -1,4 +1,4 @@
-package com.bankmicroservicesapp.exeption;
+package com.bankmicroservicesapp.exception;
 
 public class NotEnoughMoneyException extends RuntimeException {
     public NotEnoughMoneyException(String message) {

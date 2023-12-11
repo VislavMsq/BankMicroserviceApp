@@ -2,8 +2,8 @@ package com.bankmicroservicesapp.service.impl;
 
 import com.bankmicroservicesapp.dto.UserDto;
 import com.bankmicroservicesapp.entity.User;
-import com.bankmicroservicesapp.exeption.DataNotExistException;
-import com.bankmicroservicesapp.exeption.ErrorMessage;
+import com.bankmicroservicesapp.exception.DataNotExistException;
+import com.bankmicroservicesapp.exception.ErrorMessage;
 import com.bankmicroservicesapp.mapper.UserMapper;
 import com.bankmicroservicesapp.repository.UserRepository;
 import com.bankmicroservicesapp.service.UserService;

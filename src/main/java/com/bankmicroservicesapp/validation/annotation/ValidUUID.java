@@ -1,6 +1,6 @@
 package com.bankmicroservicesapp.validation.annotation;
 
-import com.bankmicroservicesapp.exeption.ErrorMessage;
+import com.bankmicroservicesapp.exception.ErrorMessage;
 import com.bankmicroservicesapp.validation.constrains.ValidUUIDConstraint;
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;

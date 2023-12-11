@@ -1,7 +1,7 @@
 package com.bankmicroservicesapp.service;
 
 import com.bankmicroservicesapp.dto.AgreementDto;
-import com.bankmicroservicesapp.exeption.InvalidIdException;
+import com.bankmicroservicesapp.exception.InvalidIdException;
 
 import java.util.List;
 import java.util.UUID;

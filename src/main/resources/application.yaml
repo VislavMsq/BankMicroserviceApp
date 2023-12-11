@@ -1,4 +1,8 @@
 spring:
+  #настройка thymeleaf
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
   main:
     banner-mode: off
 

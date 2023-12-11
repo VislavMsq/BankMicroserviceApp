@@ -2,8 +2,8 @@ package com.bankmicroservicesapp.service.impl;
 
 import com.bankmicroservicesapp.dto.AgreementDto;
 import com.bankmicroservicesapp.entity.Agreement;
-import com.bankmicroservicesapp.exeption.DataNotExistException;
-import com.bankmicroservicesapp.exeption.ErrorMessage;
+import com.bankmicroservicesapp.exception.DataNotExistException;
+import com.bankmicroservicesapp.exception.ErrorMessage;
 import com.bankmicroservicesapp.mapper.AgreementMapper;
 import com.bankmicroservicesapp.repository.AgreementRepository;
 import com.bankmicroservicesapp.repository.EmployeeRepository;
