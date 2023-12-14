@@ -8,10 +8,10 @@
 
     <include file="/db/changelog/changes/v0.0.1-SNAPSHOT/drop-tables-changelog.xml"/>
     <include file="/db/changelog/changes/v0.0.1-SNAPSHOT/create-tables-changelog.xml"/>
-    <include file="/db/changelog/changes/v0.0.1-SNAPSHOT/insert-products-tables-changelog.xml"/>
     <include file="/db/changelog/changes/v0.0.1-SNAPSHOT/insert-users-tables-changelog.xml"/>
     <include file="/db/changelog/changes/v0.0.1-SNAPSHOT/insert-accounts-changelog.xml"/>
     <include file="/db/changelog/changes/v0.0.1-SNAPSHOT/insert-employees-changelog.xml"/>
+    <include file="/db/changelog/changes/v0.0.1-SNAPSHOT/insert-products-tables-changelog.xml"/>
     <include file="/db/changelog/changes/v0.0.1-SNAPSHOT/insert-transactions-changelog.xml"/>
     <include file="/db/changelog/changes/v0.0.1-SNAPSHOT/insert-agreements-changelog.xml"/>
 

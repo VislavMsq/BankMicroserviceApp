@@ -29,9 +29,9 @@ import static org.springframework.security.test.web.servlet.request.SecurityMock
 class AccountControllerTest {
 
     @Autowired
-    private MockMvc mockMvc;           // мок для тестирования запросов
+    private MockMvc mockMvc;
     @Autowired
-    private ObjectMapper objectMapper; // конвертор в джон
+    private ObjectMapper objectMapper;
 
     @Test
     void shouldCreateAccount() throws Exception {
@@ -45,18 +45,18 @@ class AccountControllerTest {
         accountDto.setBankRating("5");
         accountDto.setBalance("350.00");
 
-        String accountStringDto = objectMapper.writeValueAsString(accountDto); // convent v json
+        String accountStringDto = objectMapper.writeValueAsString(accountDto);
         // when
         MvcResult accountCreatingResult = mockMvc.perform(MockMvcRequestBuilders.post("/account/create")
-                        .contentType(MediaType.APPLICATION_JSON) // в каком формате вернет(или положит?) значение наш контроллер
+                        .contentType(MediaType.APPLICATION_JSON)
                         .with(csrf())
                         .content(accountStringDto))
                 .andReturn();
         // then
         Assertions.assertEquals(200, accountCreatingResult.getResponse().getStatus());
 
-        String accountResultJson = accountCreatingResult.getResponse().getContentAsString(); // достали стригну
-        Account accountResult = objectMapper.readValue(accountResultJson, Account.class);    // сконвертировали строку в дсон
+        String accountResultJson = accountCreatingResult.getResponse().getContentAsString();
+        Account accountResult = objectMapper.readValue(accountResultJson, Account.class);
 
         Assertions.assertEquals(accountDto.getName(), accountResult.getName());
         Assertions.assertEquals(accountDto.getType(), accountResult.getType().toString());
@@ -88,7 +88,7 @@ class AccountControllerTest {
                         .param("status", "Active"))
                 .andReturn();
 
-        String accountResultJson = mvcResult.getResponse().getContentAsString();     // достали стригну
+        String accountResultJson = mvcResult.getResponse().getContentAsString();
 
         List<AccountDto> actual = objectMapper.readValue(accountResultJson, new TypeReference<>() {
         });

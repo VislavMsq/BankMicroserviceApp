@@ -9,6 +9,7 @@
     <changeSet author="Vladislav M." id="insert products table">
         <insert tableName="products">
             <column name="id" valueComputed="UUID_TO_BIN('9cacda22-eaa2-43b0-b3f5-581d70388cd2')"/>
+            <column name="employee_id" valueComputed="UUID_TO_BIN('26d76f8c-1e24-4b36-9664-dc9d6416b1a1')"/>
             <column name="product_status" value="Available"/>
             <column name="product_type" value="PersonalLoans"/>
             <column name="interest_rate" value="5.00"/>
@@ -17,6 +18,7 @@
         </insert>
         <insert tableName="products">
             <column name="id" valueComputed="UUID_TO_BIN('23ba09c7-ae60-41a2-ba58-66ebaf916bfe')"/>
+            <column name="employee_id" valueComputed="UUID_TO_BIN('5b92d682-015a-4a12-9e25-33daa97ebdec')"/>
             <column name="product_status" value="Available"/>
             <column name="product_type" value="MortgageLoans"/>
             <column name="interest_rate" value="2.75"/>
@@ -25,6 +27,7 @@
         </insert>
         <insert tableName="products">
             <column name="id" valueComputed="UUID_TO_BIN('60587cf0-aaa3-475a-8ef8-aa452c6e8fe9')"/>
+            <column name="employee_id" valueComputed="UUID_TO_BIN('86a238e3-d380-4bd9-adb4-6c6d95310096')"/>
             <column name="product_status" value="Available"/>
             <column name="product_type" value="AutoLoans"/>
             <column name="interest_rate" value="4.49"/>
@@ -33,6 +36,7 @@
         </insert>
         <insert tableName="products">
             <column name="id" valueComputed="UUID_TO_BIN('25cd8073-241b-4239-884c-574ea4588fa7')"/>
+            <column name="employee_id" valueComputed="UUID_TO_BIN('b243a938-8297-4f3f-bb32-a186378b6c49')"/>
             <column name="product_status" value="Promotion"/>
             <column name="product_type" value="Deposits"/>
             <column name="interest_rate" value="2.99"/>

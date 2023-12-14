@@ -16,11 +16,11 @@ import java.util.Arrays;
 @Slf4j //SELF LOGGING FACADE FOR JAVA
 public class LoggingAspect {
 
-    @Pointcut("execution(public * bankmicroservicesapp.controller.*.*(..))")
+    @Pointcut("execution(public * com.bankmicroservicesapp.controller.*.*(..))")
     public void controllerLog() {
     }
 
-    @Pointcut("execution(public * bankmicroservicesapp.service.*.*(..))")
+    @Pointcut("execution(public * com.bankmicroservicesapp.service.*.*(..))")
     public void serviceLog() {
     }
 

@@ -47,6 +47,36 @@
         </createTable>
     </changeSet>
     <!-- endregion user -->
+    <!-- region employees -->
+    <!-- employees table -->
+    <changeSet author="Vladislav M." id="create employees table">
+        <preConditions onFail="CONTINUE" onFailMessage="Table employees already exists">
+            <not>
+                <tableExists tableName="employees"/>
+            </not>
+        </preConditions>
+        <createTable tableName="employees">
+            <column name="id" type="binary(16)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="user_id" type="binary(16)">
+                <constraints foreignKeyName="user_id" references="users(id)" nullable="false"/>
+            </column>
+            <column name="employee_type" type="varchar(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="employee_status" type="varchar(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_at" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_at" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <!-- endregion employees -->
     <!-- region products -->
     <!-- products table -->
     <changeSet author="Vladislav M." id="create products table">
@@ -58,6 +88,9 @@
         <createTable tableName="products">
             <column name="id" type="binary(16)">
                 <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="employee_id" type="binary(16)">
+                <constraints foreignKeyName="employee_id" references="employees(id)" nullable="false"/>
             </column>
             <column name="product_type" type="varchar(20)">
                 <constraints nullable="false"/>
@@ -76,8 +109,8 @@
             </column>
         </createTable>
     </changeSet>
-    <!-- endregion products -->
     <!-- region accounts -->
+    <!-- endregion products -->
     <!-- accounts table -->
     <changeSet author="Vladislav M." id="create accounts table">
         <preConditions onFail="CONTINUE" onFailMessage="Table accounts already exists">
@@ -119,36 +152,6 @@
         </createTable>
     </changeSet>
     <!-- endregion accounts -->
-    <!-- region employees -->
-    <!-- employees table -->
-    <changeSet author="Vladislav M." id="create employees table">
-        <preConditions onFail="CONTINUE" onFailMessage="Table employees already exists">
-            <not>
-                <tableExists tableName="employees"/>
-            </not>
-        </preConditions>
-        <createTable tableName="employees">
-            <column name="id" type="binary(16)">
-                <constraints primaryKey="true" nullable="false"/>
-            </column>
-            <column name="user_id" type="binary(16)">
-                <constraints foreignKeyName="user_id" references="users(id)" nullable="false"/>
-            </column>
-            <column name="employee_type" type="varchar(20)">
-                <constraints nullable="false"/>
-            </column>
-            <column name="employee_status" type="varchar(20)">
-                <constraints nullable="false"/>
-            </column>
-            <column name="created_at" type="timestamp">
-                <constraints nullable="false"/>
-            </column>
-            <column name="updated_at" type="timestamp">
-                <constraints nullable="false"/>
-            </column>
-        </createTable>
-    </changeSet>
-    <!-- endregion employees -->
     <!-- region transactions -->
     <!-- transactions table -->
     <changeSet author="Vladislav M." id="create transactions table">

@@ -19,12 +19,12 @@ public class ProductController {
         this.productService = productService;
     }
 
-    @RequestMapping("/get/by-id/{id}")
+    @GetMapping("/get/by-id/{id}")
     public ProductDto getById(@ValidUUID @PathVariable("id") UUID id) {
         return productService.findProductById(id);
     }
 
-    @RequestMapping(value = "/update/by-id/{id}")
+    @PutMapping(value = "/update/by-id/{id}")
     public ProductUpdateDto updateProduct(@ValidUUID @RequestBody ProductUpdateDto productDto, @PathVariable("id") UUID id) {
         return productService.updateProduct(productDto, id);
     }

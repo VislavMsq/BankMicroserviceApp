@@ -19,14 +19,14 @@ public class AgreementController {
         this.agreementService = agreementService;
     }
 
-    @RequestMapping(value = "/delete/{id}", method = {RequestMethod.GET, RequestMethod.DELETE})
+    @RequestMapping(value = "/delete/{id}", method = {RequestMethod.DELETE})
     @ResponseStatus(HttpStatus.OK)
     public void deleteById(@ValidUUID @PathVariable("id") String id) {
         agreementService.deleteById(id);
         throw new ResponseStatusException(HttpStatus.OK);
     }
 
-    @RequestMapping("/get/{id}")
+    @GetMapping("/get/{id}")
     public AgreementDto getById(@ValidUUID @PathVariable("id") UUID id) {
         return agreementService.findAgreementById(id);
     }

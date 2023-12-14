@@ -27,6 +27,10 @@ public class RedirectController {
     public String redirectJacoco() {
         return "index";
     }
+    @GetMapping({"/login"})
+    public String redirectLogin() {
+        return "login";
+    }
     @GetMapping("/swagger")
     public String redirectSwagger() {
         return "redirect:/swagger-ui/index.html";

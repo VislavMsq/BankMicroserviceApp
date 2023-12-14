@@ -29,10 +29,6 @@ public class UserServiceImpl implements UserService {
         User user = userRepository.findById(UUID.fromString(userId)).orElseThrow(() ->
                 new DataNotExistException(ErrorMessage.DATA_NOT_EXIST));
 
-
-        // employee → user → employee → user → employee → user → employee → user → employee → user → employee → user → employee
-        // employee → user → account → transaction
-
         return userMapper.toDto(user);
     }
 }

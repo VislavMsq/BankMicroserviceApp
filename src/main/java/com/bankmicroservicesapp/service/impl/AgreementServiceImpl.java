@@ -33,6 +33,7 @@ public class AgreementServiceImpl implements AgreementService {
     public void deleteById(String agreementId) {
         if (agreementRepository.existsById(UUID.fromString(agreementId))) {
             agreementRepository.deleteById(UUID.fromString(agreementId));
+            return;
         }
         throw new DataNotExistException(ErrorMessage.DATA_NOT_EXIST);
     }

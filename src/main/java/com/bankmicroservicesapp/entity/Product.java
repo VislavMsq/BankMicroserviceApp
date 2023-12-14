@@ -51,9 +51,10 @@ public class Product {
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 
-    @OneToMany(mappedBy = "product",fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
+    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
     private Set<Agreement> agreements;
-    ///////////////////
+
+    @JoinColumn(name = "employee_id", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY, cascade = {MERGE, PERSIST, REFRESH})
     private Employee employee;
 
