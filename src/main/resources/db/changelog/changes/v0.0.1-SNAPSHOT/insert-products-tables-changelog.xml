@@ -45,6 +45,7 @@
         </insert>
         <insert tableName="products">
             <column name="id" valueComputed="UUID_TO_BIN('36c58152-4a2f-4053-b565-3db2b1e8ae43')"/>
+            <column name="employee_id" valueComputed="UUID_TO_BIN('f55c9e21-8995-4a73-b6cc-e23cc13efa39')"/>
             <column name="product_status" value="Promotion"/>
             <column name="product_type" value="Savings"/>
             <column name="interest_rate" value="9.22"/>
@@ -53,6 +54,7 @@
         </insert>
         <insert tableName="products">
             <column name="id" valueComputed="UUID_TO_BIN('dcdbe4ac-9355-4014-91d5-e283a007b659')"/>
+            <column name="employee_id" valueComputed="UUID_TO_BIN('26d76f8c-1e24-4b36-9664-dc9d6416b1a1')"/>
             <column name="product_status" value="Promotion"/>
             <column name="product_type" value="InvestmentFunds"/>
             <column name="interest_rate" value="8.60"/>
@@ -61,6 +63,7 @@
         </insert>
         <insert tableName="products">
             <column name="id" valueComputed="UUID_TO_BIN('a7b1f911-e5db-41ba-8f5f-16a2049228a0')"/>
+            <column name="employee_id" valueComputed="UUID_TO_BIN('5b92d682-015a-4a12-9e25-33daa97ebdec')"/>
             <column name="product_status" value="Available"/>
             <column name="product_type" value="AutoInsurance"/>
             <column name="interest_rate" value="5.87"/>
@@ -69,6 +72,7 @@
         </insert>
         <insert tableName="products">
             <column name="id" valueComputed="UUID_TO_BIN('a346692a-305e-45c4-a552-b982c252aaea')"/>
+            <column name="employee_id" valueComputed="UUID_TO_BIN('86a238e3-d380-4bd9-adb4-6c6d95310096')"/>
             <column name="product_status" value="Available"/>
             <column name="product_type" value="HomeInsurance"/>
             <column name="interest_rate" value="5.22"/>
@@ -77,6 +81,7 @@
         </insert>
         <insert tableName="products">
             <column name="id" valueComputed="UUID_TO_BIN('81d4032b-39b4-4705-ab6c-3384e478f151')"/>
+            <column name="employee_id" valueComputed="UUID_TO_BIN('b243a938-8297-4f3f-bb32-a186378b6c49')"/>
             <column name="product_status" value="Archived"/>
             <column name="product_type" value="HealthInsurance"/>
             <column name="interest_rate" value="3.35"/>
@@ -85,6 +90,7 @@
         </insert>
         <insert tableName="products">
             <column name="id" valueComputed="UUID_TO_BIN('e5949180-d64a-4c66-a355-aba692b890e6')"/>
+            <column name="employee_id" valueComputed="UUID_TO_BIN('f55c9e21-8995-4a73-b6cc-e23cc13efa39')"/>
             <column name="product_status" value="NotAvailable"/>
             <column name="product_type" value="LifeInsurance"/>
             <column name="interest_rate" value="4.84"/>

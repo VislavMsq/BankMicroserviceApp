@@ -13,7 +13,7 @@ import java.util.Arrays;
 
 @Aspect
 @Component
-@Slf4j //SELF LOGGING FACADE FOR JAVA
+@Slf4j
 public class LoggingAspect {
 
     @Pointcut("execution(public * com.bankmicroservicesapp.controller.*.*(..))")
