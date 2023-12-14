@@ -49,7 +49,6 @@ public class AccountServiceImpl implements AccountService {
         return accountMapper.toDto(account);
     }
 
-
     @Override
     @Transactional
     public List<AccountDto> getAllByStatus(String status) {

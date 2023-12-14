@@ -1,5 +1,4 @@
 spring:
-  #настройка thymeleaf
   thymeleaf:
     prefix: classpath:/templates/
     suffix: .html
